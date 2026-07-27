@@ -346,21 +346,21 @@ const ServicesSection = () => {
       >
         <SectionContent className="h-full grid grid-cols-1 lg:grid-cols-12 items-center lg:items-stretch gap-8 lg:gap-16 max-w-[1440px] mx-auto w-full px-5 lg:px-12 py-6 lg:py-0">
 
-          {/* Left Column (Approx 35-38%) */}
-          <div className="w-full lg:col-span-5 xl:col-span-4 flex-none flex flex-col justify-start h-full max-h-full pt-4 lg:pt-16 pb-4 lg:pb-6">
+          {/* Left Column (33% on small laptop, ~41% on large desktop) */}
+          <div className="w-full lg:col-span-4 xl:col-span-4 2xl:col-span-5 flex-none flex flex-col justify-start h-full max-h-full pt-4 lg:pt-8 xl:pt-16 pb-4 lg:pb-2 xl:pb-6">
 
-            <div className="mb-4 lg:mb-6 shrink-0 mt-0">
-              <span className="text-primary font-bold tracking-widest text-xs md:text-sm uppercase mb-3 block">Expertise</span>
-              <h2 className="anim-heading font-heading font-extrabold text-[clamp(32px,5vw,48px)] text-[#0F172A] leading-[1.1] tracking-[-0.04em] mb-4">
+            <div className="mb-4 lg:mb-4 xl:mb-6 shrink-0 mt-0">
+              <span className="text-primary font-bold tracking-widest text-xs md:text-sm uppercase mb-2 xl:mb-3 block">Expertise</span>
+              <h2 className="anim-heading font-heading font-extrabold text-[clamp(28px,4vw,36px)] xl:text-[clamp(32px,5vw,48px)] text-[#0F172A] leading-[1.1] tracking-[-0.04em] mb-3 xl:mb-4">
                 Enterprise Services
               </h2>
-              <p className="anim-desc text-base md:text-lg text-slate-600 max-w-[450px] leading-relaxed font-light">
+              <p className="anim-desc text-sm xl:text-lg text-slate-600 max-w-[450px] leading-relaxed font-light">
                 Consulting, implementation, and managed services to modernize operations and simplify complex workflows.
               </p>
             </div>
 
             <div className="anim-left-nav flex relative w-full flex-col lg:pl-0 shrink-0 h-full overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
-              <div className="flex flex-col w-full relative z-20 gap-0.5 py-1">
+              <div className="flex flex-col w-full relative z-20 gap-0 lg:gap-0.5 py-0.5 xl:py-1">
                 {/* Timeline Background Line */}
                 <div className="hidden lg:block absolute left-[19.5px] top-[24px] bottom-[24px] w-[1px] bg-slate-200 z-0"></div>
 
@@ -379,10 +379,10 @@ const ServicesSection = () => {
                       </div>
 
                       {/* Card */}
-                      <div className={`flex-1 flex items-center gap-2 px-2 py-1 lg:px-2.5 lg:py-1 rounded-lg transition-all duration-300 relative overflow-hidden
+                      <div className={`flex-1 flex items-center gap-2 px-2 py-0.5 lg:px-2 lg:py-0.5 xl:px-2.5 xl:py-1 rounded-lg transition-all duration-300 relative overflow-hidden
                         ${isActive ? 'bg-white shadow-sm border border-slate-100 scale-[1.01]' : 'bg-transparent hover:bg-white/50 border border-transparent'}
                       `}>
-                        <div className={`w-7 h-7 lg:w-8 lg:h-8 rounded-md flex items-center justify-center transition-all duration-300 shrink-0
+                        <div className={`w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 rounded-md flex items-center justify-center transition-all duration-300 shrink-0
                             ${isActive ? 'bg-blue-50 text-blue-600' : 'bg-transparent text-slate-400 group-hover:text-blue-500'}
                          `}>
                           <div className="transition-transform duration-300 group-hover:scale-110">
@@ -390,10 +390,10 @@ const ServicesSection = () => {
                           </div>
                         </div>
                         <div className="flex flex-col">
-                          <span className={`text-[9px] font-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
+                          <span className={`text-[8.5px] xl:text-[9px] font-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
                             {service.category}
                           </span>
-                          <span className={`text-[12px] lg:text-[14px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
+                          <span className={`text-[11px] lg:text-[12px] xl:text-[14px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
                             {service.tab}
                           </span>
                         </div>
@@ -405,20 +405,20 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          {/* Right Column (Approx 62-65%) */}
+          {/* Right Column (67% on small laptop) */}
           <div
-            className="w-full lg:col-span-7 xl:col-span-8 flex flex-col justify-start relative z-20 h-full pt-4 lg:pt-16 pb-4 lg:pb-6"
+            className="w-full lg:col-span-8 xl:col-span-8 2xl:col-span-7 flex flex-col justify-start relative z-20 h-full pt-4 lg:pt-8 xl:pt-16 pb-4 lg:pb-2 xl:pb-6"
             ref={panelRef}
           >
             {/* Title & Description */}
-            <div className="anim-right-main tab-content-elements shrink-0 flex-1 mb-6 lg:mb-8 mt-0">
-              <h3 className="mt-0 text-2xl md:text-3xl lg:text-[34px] font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-3">
+            <div className="anim-right-main tab-content-elements shrink-0 flex-1 mb-4 lg:mb-6 xl:mb-8 mt-0">
+              <h3 className="mt-0 text-2xl md:text-3xl lg:text-[28px] xl:text-[34px] font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-2 xl:mb-3">
                 {activeData.title}
               </h3>
-              <p className="text-base md:text-[17px] text-[#475569] leading-[1.7] max-w-[650px] font-light mb-5">
+              <p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-[1.6] xl:leading-[1.7] max-w-[650px] font-light mb-3 xl:mb-5">
                 {activeData.description}
               </p>
-              <p className="text-base md:text-[17px] text-[#475569] leading-[1.7] max-w-[650px] font-light text-slate-400">
+              <p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-[1.6] xl:leading-[1.7] max-w-[650px] font-light text-slate-400 line-clamp-3 xl:line-clamp-none">
                 Leverage our industry-leading frameworks to transform your enterprise operations. We specialize in developing tailored, scalable architectures that integrate seamlessly with your existing infrastructure, ensuring maximum efficiency, security, and long-term sustainable growth in rapidly evolving global markets.
               </p>
             </div>
@@ -427,29 +427,29 @@ const ServicesSection = () => {
 
             {/* Bottom Section: Logos and Buttons */}
             <div className="shrink-0 flex flex-col justify-start">
-              <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4">Technology Partner</h4>
+              <h4 className="text-[10px] xl:text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2 xl:mb-4">Technology Partner</h4>
 
               {/* Partner Logos */}
-              <div className="anim-right-main tab-content-elements flex flex-row flex-wrap items-center gap-3 mb-6">
+              <div className="anim-right-main tab-content-elements flex flex-row flex-wrap items-center gap-2 xl:gap-3 mb-4 xl:mb-6">
                 {activeData.technologies.map((tech) => (
                   <div
                     key={tech.name}
-                    className="flex items-center justify-center h-10 lg:h-12 min-w-[100px] px-3 rounded-md border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+                    className="flex items-center justify-center h-8 lg:h-10 xl:h-12 min-w-[80px] xl:min-w-[100px] px-2 xl:px-3 rounded-md border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
                   >
                     <img
                       src={tech.logo}
                       alt={tech.name}
                       loading="lazy"
                       decoding="async"
-                      className="max-h-6 lg:max-h-7 max-w-[90px] object-contain"
+                      className="max-h-5 lg:max-h-6 xl:max-h-7 max-w-[80px] xl:max-w-[90px] object-contain"
                     />
                   </div>
                 ))}
               </div>
 
               {/* CTA Buttons */}
-              <div className="anim-buttons tab-content-elements flex flex-col sm:flex-row items-center gap-4 lg:gap-5 w-full sm:w-auto">
-                <Link to={`/services/${activeData.id}`} className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-6 lg:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+              <div className="anim-buttons tab-content-elements flex flex-col sm:flex-row items-center gap-3 xl:gap-5 w-full sm:w-auto">
+                <Link to={`/services/${activeData.id}`} className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-5 xl:px-8 h-10 xl:h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[13px] xl:text-[14px] transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                   Book Discovery Call <ArrowRight size={16} />
                 </Link>
                 <Link to="/case-studies" className="w-full sm:w-auto text-center bg-white border-2 border-slate-200 text-slate-800 px-6 lg:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 hover:border-slate-300">
