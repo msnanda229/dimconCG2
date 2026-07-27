@@ -34,28 +34,28 @@ const Home = () => {
         <div id="services" className="relative z-10">
           <ServicesSection />
         </div>
-        
+
         {/* 02. LOGO MARQUEE */}
         <div className="relative z-10">
           <LogoMarquee />
         </div>
-        
+
         <div className="relative z-10">
-          <GlobalOrganization/>
+          <GlobalOrganization />
         </div>
 
         {/* 06. PARTNER ECOSYSTEM */}
         <div id="partner-ecosystem" className="relative z-10">
           <PartnerEcosystem />
         </div>
-        
+
         {/* 08. INDUSTRY EXPERTISE */}
         <div id="industries" className="relative z-10">
           <IndustriesSection />
         </div>
-        
+
         <div className='relative z-10'>
-          <AssessmentCta/>
+          <AssessmentCta />
         </div>
 
         {/* 07. AECCAR */}
@@ -67,7 +67,7 @@ const Home = () => {
         <div id="awards" className="relative z-10">
           <AwardsSection />
         </div>
-    
+
         {/* 09. CASE STUDIES */}
         <div id="case-studies" className="relative z-10">
           <CaseStudies />
@@ -82,7 +82,7 @@ const Home = () => {
         <div id="insights" className="relative z-10">
           <InsightsSection />
         </div>
-        
+
         {/* 14. DISCOVERY CTA */}
         <div id="contact" className="relative z-10">
           <CtaSection />

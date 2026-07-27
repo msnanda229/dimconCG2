@@ -91,9 +91,9 @@ const Layout = () => {
     <div className="min-h-screen bg-background text-foreground flex flex-col font-body">
       {/* Global Scroll Progress Bar */}
       <div ref={progressBarRef} className="scroll-progress fixed top-0 left-0 h-1 bg-primary z-[100] origin-left w-full" style={{ transform: 'scaleX(0)' }} />
-      
+
       <CardNav />
-      
+
       <main ref={mainRef} className="flex-1">
         <Outlet />
       </main>

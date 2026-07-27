@@ -25,13 +25,13 @@ function App() {
           <InitialLoader onComplete={() => setIsInitialLoading(false)} />
         )}
       </AnimatePresence>
-      
+
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="industries" element={<Industries />} />
-            
+
             {/* Catch-all to seamlessly redirect any old/unused paths back to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>

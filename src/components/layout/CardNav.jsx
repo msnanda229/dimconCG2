@@ -278,6 +278,7 @@ const CardNav = () => {
                 <motion.img 
                   src="/logo.png" 
                   alt="Dimension Consulting Logo" 
+                  fetchpriority="high"
                   className="h-9 md:h-10 lg:h-12 xl:h-14 object-contain max-w-[180px] xl:max-w-[220px] w-auto group-hover:scale-[1.03] transition-transform duration-300 ease-out"
                   animate={{
                     filter: (effectiveIsScrolled || isLightBg) ? "brightness(1) invert(0)" : "brightness(0) invert(1)",
@@ -582,7 +583,7 @@ const CardNav = () => {
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
               <div className="p-6 border-b border-[#E2E8F0] flex items-center justify-between">
-                <img src="/logo.png" alt="Dimension Consulting Logo" className="h-8 object-contain" />
+                <img src="/logo.png" alt="Dimension Consulting Logo" fetchpriority="high" className="h-8 object-contain" />
                 <button 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-4 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-colors"

@@ -168,7 +168,7 @@ const ServicesSection = () => {
               Math.floor(scrollProgress * servicesData.length),
               servicesData.length - 1
             ));
-            
+
             if (targetIndex !== activeTab && targetIndex !== targetTabRef.current) {
               const scrollingDown = targetIndex > targetTabRef.current;
               const nextIndex = targetTabRef.current + (scrollingDown ? 1 : -1);
@@ -312,12 +312,12 @@ const ServicesSection = () => {
           // Staggered in animation
           gsap.fromTo(elementsArray,
             { opacity: 0, y: yOffset },
-            { 
-              opacity: 1, 
-              y: 0, 
-              duration: 0.4, 
-              stagger: 0.08, 
-              ease: "power2.out" 
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.4,
+              stagger: 0.08,
+              ease: "power2.out"
             }
           );
 
@@ -363,9 +363,9 @@ const ServicesSection = () => {
               <div className="flex flex-col w-full relative z-20 gap-0.5 py-1">
                 {/* Timeline Background Line */}
                 <div className="hidden lg:block absolute left-[19.5px] top-[24px] bottom-[24px] w-[1px] bg-slate-200 z-0"></div>
-                
+
                 {/* Animated Active Line */}
-                <div 
+                <div
                   className="hidden lg:block absolute left-[19.5px] top-[24px] w-[1px] bg-blue-600 transition-all duration-500 ease-out z-10"
                   style={{ height: `calc(${activeTab / (servicesData.length - 1)} * (100% - 48px))` }}
                 ></div>
@@ -377,26 +377,26 @@ const ServicesSection = () => {
                       <div className="hidden lg:flex shrink-0 w-10 items-center justify-center relative">
                         <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2 h-2 bg-blue-600' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-blue-400 opacity-60'}`}></div>
                       </div>
-                      
+
                       {/* Card */}
                       <div className={`flex-1 flex items-center gap-2 px-2 py-1 lg:px-2.5 lg:py-1 rounded-lg transition-all duration-300 relative overflow-hidden
                         ${isActive ? 'bg-white shadow-sm border border-slate-100 scale-[1.01]' : 'bg-transparent hover:bg-white/50 border border-transparent'}
                       `}>
-                         <div className={`w-7 h-7 lg:w-8 lg:h-8 rounded-md flex items-center justify-center transition-all duration-300 shrink-0
+                        <div className={`w-7 h-7 lg:w-8 lg:h-8 rounded-md flex items-center justify-center transition-all duration-300 shrink-0
                             ${isActive ? 'bg-blue-50 text-blue-600' : 'bg-transparent text-slate-400 group-hover:text-blue-500'}
                          `}>
-                           <div className="transition-transform duration-300 group-hover:scale-110">
-                             {React.cloneElement(service.icon, { size: 14 })}
-                           </div>
-                         </div>
-                         <div className="flex flex-col">
-                           <span className={`text-[9px] font-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
-                             {service.category}
-                           </span>
-                           <span className={`text-[12px] lg:text-[14px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
-                             {service.tab}
-                           </span>
-                         </div>
+                          <div className="transition-transform duration-300 group-hover:scale-110">
+                            {React.cloneElement(service.icon, { size: 14 })}
+                          </div>
+                        </div>
+                        <div className="flex flex-col">
+                          <span className={`text-[9px] font-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
+                            {service.category}
+                          </span>
+                          <span className={`text-[12px] lg:text-[14px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
+                            {service.tab}
+                          </span>
+                        </div>
                       </div>
                     </div>
                   );
@@ -428,7 +428,7 @@ const ServicesSection = () => {
             {/* Bottom Section: Logos and Buttons */}
             <div className="shrink-0 flex flex-col justify-start">
               <h4 className="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-4">Technology Partner</h4>
-              
+
               {/* Partner Logos */}
               <div className="anim-right-main tab-content-elements flex flex-row flex-wrap items-center gap-3 mb-6">
                 {activeData.technologies.map((tech) => (
@@ -446,7 +446,7 @@ const ServicesSection = () => {
                   </div>
                 ))}
               </div>
-              
+
               {/* CTA Buttons */}
               <div className="anim-buttons tab-content-elements flex flex-col sm:flex-row items-center gap-4 lg:gap-5 w-full sm:w-auto">
                 <Link to={`/services/${activeData.id}`} className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-6 lg:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
