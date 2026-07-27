@@ -1,0 +1,26 @@
+[
+  {
+    "category": "Cloud Strategy",
+    "title": "The Future of Oracle ERP Cloud in Manufacturing",
+    "description": "How leading manufacturers are utilizing Oracle's latest AI enhancements to predict supply chain disruptions before they happen.",
+    "slug": "blog",
+    "date": "Aug 12, 2026",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    "category": "Digital Transformation",
+    "title": "Migrating Legacy Systems with AECCAR™",
+    "description": "A deep dive into our proprietary implementation methodology and how it guarantees 99% project success rates.",
+    "slug": "blog",
+    "date": "Aug 05, 2026",
+    "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
+  },
+  {
+    "category": "Data & AI",
+    "title": "Predictive Analytics in Financial Services",
+    "description": "Leveraging Snowflake and Databricks to unlock real-time risk assessment and automated regulatory compliance.",
+    "slug": "blog",
+    "date": "Jul 28, 2026",
+    "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+  }
+]

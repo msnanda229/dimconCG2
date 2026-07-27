@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #05070C;
+    --foreground: #FFFFFF;
+    --card: rgba(255,255,255,.08);
+    --card-foreground: #fff;
+    --primary: #2E7DF6;
+    --primary-foreground: #fff;
+    --secondary: rgba(255,255,255,.08);
+    --secondary-foreground: #fff;
+    --muted: rgba(255,255,255,.06);
+    --muted-foreground: #CBD5E1;
+    --accent: #33D2FF;
+    --accent-foreground: #fff;
+    --border: rgba(255,255,255,.10);
+    --input: rgba(255,255,255,.12);
+    --ring: #33D2FF;
+    --bg-alt: #0F172A;
+    --radius: 24px;
+    --font-heading: 'Geist', 'Inter', system-ui, sans-serif;
+    --font-body: 'Geist', 'Inter', system-ui, sans-serif;
+  }
+
+  * { @apply border-border; }
+  * {
+    transition-property: background-color, color, border-color, fill, stroke, box-shadow;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -.045em;
+  }
+  h1 { font-size: clamp(52px, 7vw, 110px); line-height: .9; font-weight: 900; }
+  h2 { font-size: clamp(36px, 5vw, 64px); }
+  h3 { font-size: clamp(24px, 3vw, 36px); }
+  ::selection { background: #2E7DF6; color: #fff; }
+  *:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+}
+
+@layer utilities {
+  .font-heading { font-family: var(--font-heading); }
+  .font-body { font-family: var(--font-body); }
+  .container-default { @apply mx-auto px-8 md:px-10 lg:px-12 max-w-[1440px]; }
+
+  .section-padding { @apply py-12 md:py-16 lg:py-20; }
+
+  .section-label { @apply uppercase tracking-[0.18em] text-xs font-semibold text-cyan-300 mb-5 block; }
+}
+
+/* Hero marquee keyframes — moved from inline <style> for performance */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-left 35s linear infinite;
+  will-change: transform;
+}
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+/* Hero SVG floating card animations */
+@keyframes hero-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+@keyframes hero-float-delayed {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: hero-float 6s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-float-delayed {
+  animation: hero-float-delayed 7s ease-in-out infinite;
+  will-change: transform;
+}
+.animate-float-fast {
+  animation: hero-float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* GlobalOrganization map animations */
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes dataPacketMove {
+  from { stroke-dashoffset: 100; }
+  to { stroke-dashoffset: -100; }
+}
+.data-line {
+  stroke-dasharray: 4 24;
+  animation: dataPacketMove 3s linear infinite;
+}

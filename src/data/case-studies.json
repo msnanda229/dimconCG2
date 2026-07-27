@@ -1,0 +1,38 @@
+[
+  {
+    "client": "Global Healthcare Provider",
+    "industry": "Healthcare",
+    "challenge": "Fragmented supply chain operations across 50+ hospitals led to critical stockouts and uncontrolled procurement costs.",
+    "solution": "Implemented Oracle Cloud SCM with AI-driven demand forecasting and automated replenishment workflows.",
+    "outcome": "Achieved real-time inventory visibility and standardized procurement processes globally.",
+    "businessImpact": "Eliminated critical medical stockouts, drastically improving patient care reliability while reducing manual overhead.",
+    "roiMetric": "40%",
+    "roiLabel": "Reduction in supply chain costs",
+    "slug": "case-studies",
+    "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    "client": "Fortune 500 Manufacturer",
+    "industry": "Manufacturing",
+    "challenge": "Legacy on-premise systems caused severe data silos, resulting in a 14-day financial close process.",
+    "solution": "Seamless migration to NetSuite Cloud ERP using the AECCAR™ framework to standardize global financial processes.",
+    "outcome": "Unified financial reporting and automated multi-subsidiary consolidations.",
+    "businessImpact": "Accelerated the financial close to just 3 days, providing executives with real-time financial insights.",
+    "roiMetric": "2M+",
+    "roiLabel": "Annual savings in operational overhead",
+    "slug": "case-studies",
+    "image": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    "client": "Leading Financial Institution",
+    "industry": "Financial Services",
+    "challenge": "5 distinct, siloed CRM systems prevented a unified 360-degree view of high-net-worth clients.",
+    "solution": "Consolidated all divisions onto Salesforce Financial Services Cloud with Einstein AI predictive scoring.",
+    "outcome": "Created a single source of truth for client data with intelligent next-best-action recommendations.",
+    "businessImpact": "Increased cross-sell ratios and significantly improved relationship manager productivity.",
+    "roiMetric": "99.9%",
+    "roiLabel": "Data accuracy post-migration",
+    "slug": "case-studies",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+  }
+]

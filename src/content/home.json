@@ -1,0 +1,51 @@
+{
+  "hero": {
+    "trustBadge": "Certified Oracle • Salesforce • NetSuite • Workday Partner",
+    "headline": [
+      "The AI-First",
+      "ERP Partner for",
+      "Modern Enterprises"
+    ],
+    "description": "We combine enterprise ERP expertise with AI to automate workflows, optimize operations, and help businesses unlock greater value from every technology investment.",
+    "buttons": {
+      "primary": {
+        "text": "Book Discovery Call",
+        "link": "/contact"
+      },
+      "secondary": {
+        "text": "Explore Services",
+        "link": "/services"
+      }
+    },
+    "statistics": [
+      {
+        "value": 25,
+        "suffix": "+",
+        "label": "Years Experience"
+      },
+      {
+        "value": 500,
+        "suffix": "+",
+        "label": "Projects Delivered"
+      },
+      {
+        "value": 150,
+        "suffix": "+",
+        "label": "Enterprise Clients"
+      },
+      {
+        "value": 98,
+        "suffix": "%",
+        "label": "Customer Satisfaction"
+      }
+    ],
+    "partners": [
+      { "name": "Oracle", "url": "https://cdn.worldvectorlogo.com/logos/oracle-6.svg" },
+      { "name": "Salesforce", "url": "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" },
+      { "name": "NetSuite", "url": "https://cdn.worldvectorlogo.com/logos/netsuite.svg" },
+      { "name": "Workday", "url": "https://cdn.worldvectorlogo.com/logos/workday.svg" },
+      { "name": "AWS", "url": "https://cdn.worldvectorlogo.com/logos/amazon-web-services-2.svg" },
+      { "name": "Microsoft", "url": "https://cdn.worldvectorlogo.com/logos/microsoft-5.svg" }
+    ]
+  }
+}
