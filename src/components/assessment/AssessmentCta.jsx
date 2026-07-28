@@ -16,7 +16,7 @@ const AssessmentCta = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative flex items-center justify-center w-full h-full lg:justify-start order-2 lg:order-1 mt-10 lg:mt-0"
+            className="relative flex items-center justify-center w-full h-full lg:justify-end order-2 lg:order-2 mt-10 lg:mt-0"
           >
             <div className="absolute -inset-10 bg-[#E28B2B]/15 blur-[100px] rounded-full" />
             <motion.div
@@ -40,7 +40,7 @@ const AssessmentCta = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="order-1 lg:order-2 flex flex-col justify-center"
+           className="order-1 lg:order-1 flex flex-col justify-center"
           >
             <h2 className="text-4xl md:text-5xl font-semibold text-black mb-6 leading-[1.2] tracking-tight max-w-[520px]">
               AI Solutions
