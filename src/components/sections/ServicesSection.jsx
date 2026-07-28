@@ -326,7 +326,7 @@ const ServicesSection = () => {
             </div>
 
             <div className="anim-left-nav flex relative w-full flex-col lg:pl-0 shrink-0 h-full">
-              <div className="flex flex-col w-full relative z-20 gap-0 lg:gap-0.5 py-0.5 xl:py-1">
+              <div className="flex flex-col w-full relative z-20 gap-1 lg:gap-2 py-1 xl:py-1">
                 {/* Timeline Background Line */}
                 <div className="hidden lg:block absolute left-[19.5px] top-[24px] bottom-[24px] w-[1px] bg-slate-200 z-0"></div>
 
@@ -345,7 +345,7 @@ const ServicesSection = () => {
                       </div>
 
                       {/* Card */}
-                      <div className={`flex-1 flex items-center gap-2 px-2 py-0.5 lg:px-2 lg:py-0.5 xl:px-2 xl:py-0.5 rounded-lg transition-all duration-300 relative overflow-hidden
+                      <div className={`flex-1 flex items-center gap-1 px-2 py-0.5 lg:px-2 lg:py-0.5 xl:px-2 xl:py-0.5 rounded-lg transition-all duration-300 relative overflow-hidden
                         ${isActive ? 'bg-white shadow-sm border border-slate-100 scale-[1.01]' : 'bg-transparent hover:bg-white/50 border border-transparent'}
                       `}>
                         <div className={`w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 rounded-md flex items-center justify-center transition-all duration-300 shrink-0
@@ -356,10 +356,10 @@ const ServicesSection = () => {
                           </div>
                         </div>
                         <div className="flex flex-col">
-                          <span className={`text-[8.5px] xl:text-[9px] font-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
+                          <span className={`text-[10px] xl:text-[11px] font-semi-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
                             {service.category}
                           </span>
-                          <span className={`text-[11px] lg:text-[12px] xl:text-[14px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
+                          <span className={`text-[18px] lg:text-[20px] xl:text-[17px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
                             {service.tab}
                           </span>
                         </div>
@@ -387,12 +387,7 @@ const ServicesSection = () => {
               <p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-relaxed max-w-[650px] font-light line-clamp-2 lg:line-clamp-2 xl:line-clamp-none">
   Leverage our industry-leading frameworks to transform your enterprise operations. We specialize in developing tailored, scalable architectures that integrate seamlessly with your existing infrastructure, ensuring maximum efficiency, security, and long-term sustainable growth in rapidly evolving global markets.
 </p>
-<p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-relaxed max-w-[650px] font-light line-clamp-2 lg:line-clamp-2 xl:line-clamp-none">
-  Leverage our industry-leading frameworks to transform your enterprise operations. We specialize in developing tailored, scalable architectures that integrate seamlessly with your existing infrastructure, ensuring maximum efficiency, security, and long-term sustainable growth in rapidly evolving global markets.
-</p>
-<p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-relaxed max-w-[650px] font-light line-clamp-2 lg:line-clamp-2 xl:line-clamp-none">
-  Leverage our industry-leading frameworks to transform your enterprise operations. We specialize in developing tailored, scalable architectures that integrate seamlessly with your existing infrastructure, ensuring maximum efficiency, security, and long-term sustainable growth in rapidly evolving global markets.
-</p>
+
             </div>
 
 
