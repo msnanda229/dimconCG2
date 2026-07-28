@@ -307,7 +307,7 @@ const ServicesSection = () => {
 >
       <SectionWrapper
         id="services-section"
-        className="relative py-16 lg:py-20"
+        className="relative pt-16 lg:pt-20 pb-2"
         spacing="none"
       >
         <SectionContent className="max-w-7xl mx-auto grid grid-cols-1 min-[1000px]:grid-cols-12 gap-8 min-[1000px]:gap-12 xl:gap-16 items-start px-6 md:px-8 lg:px-10 2xl:px-0 py-12">
