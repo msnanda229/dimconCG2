@@ -18,7 +18,7 @@ const AssessmentCta = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative flex items-center justify-center w-full h-full lg:justify-end order-2 lg:order-2 mt-10 lg:mt-0"
           >
-            <div className="absolute -inset-10 bg-[#E28B2B]/15 blur-[100px] rounded-full" />
+            
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
