@@ -10,36 +10,13 @@ export const generateNavigationData = () => {
         {
           heading: "Platforms",
           items: [
-            { title: "Oracle Cloud", description: "Enterprise cloud infrastructure", icon: "Database", path: "#" },
-            { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Server", path: "#" },
-            { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "#" },
-            { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "#" },
-            { title: "Microsoft Dynamics 365", description: "Business applications suite", icon: "Layers", path: "#" },
-            { title: "SAP S/4HANA", description: "Intelligent ERP suite", icon: "Cpu", path: "#" }
+            { title: "Oracle Cloud", description: "Enterprise cloud infrastructure", icon: "Database", path: "/oracle-cloud" },
+            { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Server", path: "..innerpages/netsuite" },
+            { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "..innerpages/salesforce" },
+            { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "..innerpages/workday" }
           ]
         },
-        {
-          heading: "Services",
-          items: [
-            { title: "Cloud Migration", description: "Seamlessly move to the cloud", icon: "CloudUpload", path: "#" },
-            { title: "Application Modernization", description: "Update legacy systems", icon: "RefreshCw", path: "#" },
-            { title: "Managed Cloud Services", description: "Ongoing cloud support", icon: "Settings", path: "#" },
-            { title: "Cloud Security", description: "Protect your cloud assets", icon: "Shield", path: "#" },
-            { title: "Performance Optimization", description: "Enhance system speed", icon: "Zap", path: "#" },
-            { title: "Support & Maintenance", description: "24/7 technical support", icon: "LifeBuoy", path: "#" }
-          ]
-        },
-        {
-          heading: "Solutions",
-          items: [
-            { title: "Oracle ERP", description: "Enterprise resource planning", icon: "Server", path: "#" },
-            { title: "CRM Solutions", description: "Customer engagement", icon: "Heart", path: "#" },
-            { title: "HCM Solutions", description: "Human capital management", icon: "Users", path: "#" },
-            { title: "Financial Management", description: "Core finance operations", icon: "DollarSign", path: "#" },
-            { title: "Supply Chain", description: "Supply chain optimization", icon: "Truck", path: "#" },
-            { title: "Business Intelligence", description: "Data-driven insights", icon: "BarChart", path: "#" }
-          ]
-        }
+        
       ]
     },
     {
