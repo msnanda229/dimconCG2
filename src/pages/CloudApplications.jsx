@@ -138,8 +138,8 @@ const CloudApplications = () => {
       desc: "Unified cloud ERP for growing and mid-market businesses.",
       focus: "Cloud ERP • Financials • CRM",
       path: "/netsuite",
-      color: "from-blue-500/10 to-blue-600/5",
-      btnColor: "bg-blue-600 hover:bg-blue-700"
+      color: "from-[#0066CC]/10 to-[#004C99]/5",
+      btnColor: "bg-[#0066CC] hover:bg-[#0052A3]"
     },
     {
       logo: "/ai_logos/salesforce.png",
@@ -147,7 +147,7 @@ const CloudApplications = () => {
       desc: "Customer relationship management and engagement platform.",
       focus: "CRM • Sales • Service • Marketing",
       path: "/salesforce",
-      color: "from-sky-500/10 to-sky-600/5",
+      color: "from-[#00A1E0]/10 to-[#0077B6]/5",
       btnColor: "bg-[#00A1E0] hover:bg-[#0089BF]"
     },
     {
@@ -156,8 +156,8 @@ const CloudApplications = () => {
       desc: "Human Capital Management and Financial Management.",
       focus: "HCM • Financial Management",
       path: "/workday",
-      color: "from-blue-600/10 to-blue-800/5",
-      btnColor: "bg-[#0071CE] hover:bg-[#005A9E]"
+      color: "from-[#F58220]/10 to-[#F26722]/5",
+      btnColor: "bg-[#F58220] hover:bg-[#E56A17]"
     }
   ];
 
@@ -168,7 +168,7 @@ const CloudApplications = () => {
         {/* Background Gradients */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-50 via-white to-white opacity-70"></div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#1565D8]/5 to-transparent blur-3xl pointer-events-none"></div>
-        
+
         <SectionContent className="relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             {/* Left Content */}
@@ -198,35 +198,35 @@ const CloudApplications = () => {
             <div className="w-full lg:w-1/2 hero-graphic relative h-[500px] flex items-center justify-center">
               {/* Central glowing orb */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-400/20 rounded-full blur-[80px]"></div>
-              
+
               {/* Illustration container */}
               <div className="relative w-full max-w-[500px] h-[400px]">
-                 <img src="/cloud-applications-pattern.png" alt="Cloud Enterprise Graphic" className="w-full h-full object-contain opacity-90 drop-shadow-2xl" />
-                 
-                 {/* Floating Badges */}
-                 <motion.div 
-                    animate={{ y: [0, -10, 0] }} 
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute top-10 right-10 bg-white/90 backdrop-blur shadow-lg rounded-2xl p-4 border border-slate-100 flex items-center gap-3"
-                 >
-                   <Database className="text-[#1565D8]" size={24} />
-                   <div>
-                     <p className="text-xs text-slate-500 font-medium">Data Integration</p>
-                     <p className="text-sm font-bold text-slate-900">Seamless Flow</p>
-                   </div>
-                 </motion.div>
+                <img src="/cloud-applications-pattern.png" alt="Cloud Enterprise Graphic" className="w-full h-full object-contain opacity-90 drop-shadow-2xl" />
 
-                 <motion.div 
-                    animate={{ y: [0, 15, 0] }} 
-                    transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute bottom-10 left-10 bg-white/90 backdrop-blur shadow-lg rounded-2xl p-4 border border-slate-100 flex items-center gap-3"
-                 >
-                   <Shield className="text-[#0F4CC9]" size={24} />
-                   <div>
-                     <p className="text-xs text-slate-500 font-medium">Enterprise Grade</p>
-                     <p className="text-sm font-bold text-slate-900">High Security</p>
-                   </div>
-                 </motion.div>
+                {/* Floating Badges */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute top-10 right-10 bg-white/90 backdrop-blur shadow-lg rounded-2xl p-4 border border-slate-100 flex items-center gap-3"
+                >
+                  <Database className="text-[#1565D8]" size={24} />
+                  <div>
+                    <p className="text-xs text-slate-500 font-medium">Data Integration</p>
+                    <p className="text-sm font-bold text-slate-900">Seamless Flow</p>
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, 15, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute bottom-10 left-10 bg-white/90 backdrop-blur shadow-lg rounded-2xl p-4 border border-slate-100 flex items-center gap-3"
+                >
+                  <Shield className="text-[#0F4CC9]" size={24} />
+                  <div>
+                    <p className="text-xs text-slate-500 font-medium">Enterprise Grade</p>
+                    <p className="text-sm font-bold text-slate-900">High Security</p>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -276,22 +276,22 @@ const CloudApplications = () => {
               <div key={idx} className="platform-card group relative bg-white rounded-3xl border border-slate-200 p-8 lg:p-10 overflow-hidden hover:shadow-[0_25px_70px_-15px_rgba(21,101,216,0.12)] transition-all duration-500 hover:-translate-y-1 flex flex-col h-full">
                 {/* Decorative background gradient */}
                 <div className={`absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-to-br ${platform.color} rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none`}></div>
-                
+
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="h-12 flex items-center justify-start mb-8">
                     <img src={platform.logo} alt={platform.title} className="h-full object-contain transition-all duration-500" />
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">{platform.title}</h3>
                   <p className="text-slate-600 text-lg mb-6 leading-relaxed flex-grow">
                     {platform.desc}
                   </p>
-                  
+
                   <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 text-slate-700 text-sm font-semibold rounded-lg w-max mb-8">
                     <CheckCircle2 size={16} className="text-[#1565D8]" />
                     {platform.focus}
                   </div>
-                  
+
                   <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
                     <span className={`text-sm font-bold ${platform.btnColor.replace('bg-', 'text-').split(' ')[0]} flex items-center gap-2`}>
                       Explore {platform.title.split(' ').pop()} <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -381,7 +381,7 @@ const CloudApplications = () => {
       <SectionWrapper ref={ctaRef} className="bg-[#0F172A] py-24 relative overflow-hidden">
         {/* Glow Effects */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#1565D8]/20 rounded-full blur-[120px] pointer-events-none"></div>
-        
+
         <SectionContent className="relative z-10 text-center max-w-3xl mx-auto">
           <h2 className="cta-anim text-3xl lg:text-5xl font-heading font-black text-white mb-6">
             Not Sure Which Cloud Platform Fits Your Business?
