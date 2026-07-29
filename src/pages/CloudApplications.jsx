@@ -200,7 +200,7 @@ const CloudApplications = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-blue-400/20 rounded-full blur-[80px]"></div>
 
               {/* Illustration container */}
-              <div className="relative w-full max-w-[500px] h-[400px]">
+              <div className="relative w-full max-w-[500px] h-[500px]">
                 <img src="/cloud-applications-pattern.png" alt="Cloud Enterprise Graphic" className="w-full h-full object-contain opacity-90 drop-shadow-2xl" />
 
                 {/* Floating Badges */}
