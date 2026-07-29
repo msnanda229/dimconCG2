@@ -7,10 +7,11 @@ import InitialLoader from './components/layout/InitialLoader';
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
 const Industries = lazy(() => import('./pages/Industries'));
+const OracleCloud = lazy(() => import('./components/innerPages/oracleCloud/oracleCloud'));
 
 // Simple loading fallback component for route navigation
 const PageLoader = () => (
-  <div className="flex h-screen w-full items-center justify-center bg-background text-foreground">
+  <div className="flex h-screen w-full items-center justify-center bg-background text-[#000000]">
     <div className="w-6 h-6 border-2 border-border border-t-primary rounded-full animate-spin"></div>
   </div>
 );
@@ -28,6 +29,7 @@ function App() {
 
       <Suspense fallback={<PageLoader />}>
         <Routes>
+          <Route path="/oracle-cloud" element={<OracleCloud />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="industries" element={<Industries />} />
