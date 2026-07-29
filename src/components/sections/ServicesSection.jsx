@@ -16,8 +16,8 @@ const servicesData = [{
   category: "Innovation",
   icon: <Sparkles size={24} strokeWidth={2} />,
   title: "AI-Powered ERP",
-  description: "Bring intelligence into your everyday operations. We help you integrate AI with your ERP to automate repetitive tasks, uncover actionable insights, and enable faster, data-driven decisions across your business.",
-  description2: "By leveraging machine learning and predictive analytics, our AI solutions transform static data into strategic assets. Your systems will actively forecast trends, optimize resources, and drive continuous operational excellence.",
+  description: "Bring intelligence into your enterprise applications with AI-powered ERP solutions. Automate routine processes, gain real-time business insights, and enable faster, data-driven decisions across finance, supply chain, procurement, and operations.",
+  description2: "Leverage Oracle Cloud and AI technologies to improve operational efficiency, enhance forecasting, and create connected business processes that adapt to changing business needs. Our scalable implementation approach ensures long-term value while accelerating your digital transformation journey.",
   ctaText: "View AI ERP Case Study",
   capabilities: [
     "Enterprise AI Integration",
@@ -38,8 +38,8 @@ const servicesData = [{
   icon: <Cloud size={24} strokeWidth={2} />,
   title: "Cloud Applications",
   description:
-    "Move your business to the cloud with confidence. We help organizations implement, integrate, and optimize enterprise cloud applications that improve agility, simplify operations, and support long-term growth.",
-  description2: "Our comprehensive cloud transformation methodology ensures a seamless transition with zero disruption to your daily operations. We architect resilient, scalable environments that empower your workforce to collaborate globally, scale on demand, and rapidly deploy new innovations in a highly secure ecosystem.",
+    "Modernize your business with enterprise cloud applications built for agility, scalability, and innovation. From implementation and integration to optimization, our cloud solutions connect your business processes and help you respond faster to changing business needs.",
+  description2: "Leverage Oracle Cloud and NetSuite to unify finance, operations, supply chain, and customer data on a secure, intelligent platform. With proven implementation methodologies and deep cloud expertise, we help you maximize performance while accelerating your digital transformation journey.",
   ctaText: "View Cloud Case Study",
   capabilities: [
     "Cloud Migration Strategy",
@@ -60,8 +60,8 @@ const servicesData = [{
   category: "Implementation",
   icon: <Settings size={24} strokeWidth={2} />,
   title: "Enterprise ERP Implementation",
-  description: "From planning to go-live and beyond, we implement Oracle, NetSuite, Salesforce, and Workday solutions with a structured approach that minimizes risk, accelerates adoption, and delivers measurable business outcomes.",
-  description2: "We employ a rigorous, milestone-driven deployment framework designed to align complex software capabilities with your unique business processes. Through comprehensive stakeholder engagement and meticulous testing, we guarantee an implementation that drives immediate user adoption and accelerated return on investment.",
+  description: "Transform core business operations with enterprise ERP solutions tailored to your business goals. From strategy and implementation to integration and go-live, every deployment is designed to improve efficiency, reduce complexity, and accelerate business value.",
+  description2: "With expertise across Oracle, NetSuite, Salesforce, and Workday, our consultants deliver scalable ERP solutions backed by proven methodologies, industry best practices, and continuous support to ensure long-term success.",
   ctaText: "View ERP Case Study",
   capabilities: [
     "Full-Cycle Implementation",
@@ -84,8 +84,8 @@ const servicesData = [{
   category: "Data Strategy",
   icon: <Database size={24} strokeWidth={2} />,
   title: "Intelligent Data Migration",
-  description: "Move your data with confidence. We help you migrate enterprise data securely, preserve its accuracy, and ensure every record reaches its destination with minimal disruption to your business.",
-  description2: "Our data engineering experts utilize advanced mapping and cleansing protocols to guarantee absolute data integrity during complex system transitions. We eliminate historical redundancies and establish robust governance frameworks, ensuring your new enterprise systems are fueled by clean, reliable, and perfectly structured data.",
+  description: "Move enterprise data with confidence using a structured migration approach that minimizes risk and business disruption. From legacy systems to modern cloud platforms, every migration is planned, validated, and executed with accuracy.",
+  description2: "Powered by proven migration methodologies and integration expertise, we ensure data integrity, seamless connectivity, and a smooth transition to your new environment, helping you unlock value from day one.",
   ctaText: "View Migration Case Study",
   capabilities: [
     "Data Cleansing & Mapping",
@@ -105,8 +105,8 @@ const servicesData = [{
   category: "Operations",
   icon: <Shield size={24} strokeWidth={2} />,
   title: "Application Managed Services",
-  description: "Keep your enterprise applications running at their best. From proactive monitoring and performance optimization to issue resolution and platform enhancements, we ensure your systems remain secure, reliable, and ready for business.",
-  description2: "Acting as an extension of your internal IT team, our managed services provide unparalleled platform stability and strategic guidance. We continuously monitor system health, rapidly deploy critical updates, and architect ongoing enhancements to ensure your enterprise applications evolve in lockstep with your business objectives.",
+  description: "Keep your enterprise applications performing at their best with proactive monitoring, performance optimization, and continuous support. Our managed services ensure your business-critical systems remain secure, reliable, and ready for changing business demands.",
+  description2: "From release management and system enhancements to issue resolution and platform optimization, our experts work as an extension of your team, helping you maximize application performance and long-term business value.",
   ctaText: "View Managed Services Case Study",
   capabilities: [
     "24/7 Proactive Monitoring",
@@ -127,8 +127,8 @@ const servicesData = [{
   icon: <Users size={24} strokeWidth={2} />,
   title: "CRM Implementation",
   description:
-    "Build stronger customer relationships with CRM solutions designed to unify sales, marketing, and service. Create connected customer experiences, streamline workflows, and empower teams with actionable insights.",
-  description2: "By breaking down operational silos, our tailored CRM implementations provide a unified, 360-degree view of your customer lifecycle. We architect intuitive digital workspaces that empower your sales and support teams to deliver hyper-personalized experiences, accelerating deal velocity and maximizing long-term customer retention.",
+    "Transform customer relationships with CRM solutions that connect sales, marketing, and service on a single platform. Deliver personalized customer experiences, streamline business processes, and give every team the insights they need to build lasting relationships.",
+  description2: "Backed by deep Salesforce expertise and proven implementation methodologies, our consultants design scalable CRM solutions that improve collaboration, automate workflows, and help your business respond faster to customer needs.",
   ctaText: "View CRM Case Study",
   capabilities: [
     "Customer Journey Mapping",
@@ -335,8 +335,8 @@ const ServicesSection = () => {
                         </p>
                       </div>
                       <br />
-                      <p className='text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit sed ea error esse deleniti aliquam optio facere, pariatur fugit incidunt molestiae exercitationem excepturi itaque laboriosam modi, vitae libero, in quas!</p>
-                      <p className='text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit sed ea error esse deleniti aliquam optio facere, pariatur fugit incidunt molestiae exercitationem excepturi itaque laboriosam modi, vitae libero, in quas!</p>
+                      <p className='text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light'>{activeData.description2}</p>
+                      
 
                     </div>
                   </div>
