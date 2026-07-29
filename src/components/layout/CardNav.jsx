@@ -469,10 +469,18 @@ const CardNav = () => {
                 const category = navData.find(c => c.slug === activeMenu);
                 if (!category) return null;
                 return (
-                  <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4">
+                  <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4 relative overflow-hidden">
                     
+                    {/* Decorative Background for Cloud Applications */}
+                    {category.slug === 'cloud-applications' && (
+                      <div className="absolute inset-y-0 right-0 w-[40%] pointer-events-none z-0 opacity-50">
+                        <div className="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-transparent z-10"></div>
+                        <img src="/cloud-applications-pattern.png" alt="" className="w-full h-full object-cover object-right opacity-80 mix-blend-multiply" />
+                      </div>
+                    )}
+
                     {/* COLUMN 1: Overview */}
-                    <div className="w-[28%] flex flex-col border-r border-[#E8ECF5] pr-6 shrink-0">
+                    <div className="w-[28%] flex flex-col border-r border-[#E8ECF5] pr-6 shrink-0 relative z-10">
                       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2563EB]/10 to-[#60A5FA]/10 flex items-center justify-center text-[#2563EB] mb-6">
                         {getCategoryIcon(category.slug)}
                       </div>
@@ -493,7 +501,7 @@ const CardNav = () => {
                     </div>
                     
                     {/* COLUMN 2: Sub-navigation grid */}
-                    <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-1 content-start">
+                    <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-1 content-start relative z-10">
                       {category.columns?.map((col, colIdx) => (
                         <div key={colIdx} className="flex flex-col gap-2">
                           {col.heading && (
