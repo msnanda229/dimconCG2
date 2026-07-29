@@ -1,7 +1,7 @@
 export const generateNavigationData = () => {
   return [
     {
-      slug: "cloud applications",
+      slug: "cloud-applications",
       name: "Cloud Applications",
       description: "Enterprise-grade cloud solutions to transform your operations and drive growth.",
       icon: "Cloud",
