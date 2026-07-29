@@ -17,6 +17,7 @@ import WhyChooseDimensionCG from './WhyChooseDimensionCG';
 import DeliveryApproach from './DeliveryApproach';
 import CustomerSuccessStories from './CustomerSuccessStories';
 import OracleInsights from './OracleInsights';
+import Faq from './Faq';
 
 const OracleCloud = () => {
   // Scroll to top on mount
@@ -59,11 +60,15 @@ const OracleCloud = () => {
         {/* 8. Oracle Insights */}
         <OracleInsights />
 
-        {/* 9. CTA (Reused) */}
+        {/*9. FAQ Section */}
+        <Faq/>
+
+
+        {/* 10. CTA (Reused) */}
         <CtaSection />
       </main>
 
-      {/* 10. Footer (Reused) */}
+      {/* 11. Footer (Reused) */}
       <Footer />
     </div>
   );
