@@ -474,7 +474,7 @@ const CardNav = () => {
                         <img
                           src="/cloud-applications-pattern.png"
                           alt="Cloud Applications Illustration"
-                          className="max-w-full max-h-full object-contain object-right opacity-100 select-none"
+                          className="max-w-full max-h-full object-contain object-right opacity-50 select-none"
                           draggable={false}
                         />
                       </div>
