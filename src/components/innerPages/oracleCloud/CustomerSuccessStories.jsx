@@ -89,7 +89,7 @@ const CustomerSuccessStories = () => {
           {/* Left - Visual / Context */}
           <div className="w-full lg:w-1/2 bg-slate-900 relative p-12 flex flex-col justify-between overflow-hidden min-h-[400px]">
             {/* Background Image/Pattern */}
-            <img src="/images/manufacturing_scm.png" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" alt="Manufacturing Facility" />
+            <img src="/images/manufacturing_scm.png" className="absolute inset-0 w-full h-full object-cover opacity-40" alt="Manufacturing Facility" />
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-orange-400 via-slate-900 to-slate-900"></div>
 
             <div className="relative z-10">
