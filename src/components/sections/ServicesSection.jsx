@@ -208,16 +208,16 @@ const ServicesSection = () => {
       }
     );
 
-    const backgrounds = panelRef.current?.querySelectorAll(".orb-bg, .logo-bg");
+    const backgrounds = panelRef.current?.querySelectorAll(".orb-bg");
     if(backgrounds?.length) {
       gsap.fromTo(backgrounds, {
-        rotation: (i) => i === 0 ? -15 : 5,
+        rotation: -15,
         scale: 0.95,
         opacity: 0,
       }, {
         rotation: 0,
         scale: 1,
-        opacity: (i) => i === 0 ? 0.08 : 0.07,
+        opacity: 0.08,
         duration: 1,
         ease: "power2.out"
       });
@@ -309,15 +309,8 @@ const ServicesSection = () => {
                 
                 {/* Abstract Brand Graphics Backgrounds */}
                 <div className="absolute inset-0 pointer-events-none z-0 rounded-[24px] overflow-hidden">
-                  {/* Soft Blue Tint Glow (behind logo) */}
+                  {/* Soft Blue Tint Glow */}
                   <div className="absolute bottom-0 translate-y-1/4 right-[-10%] w-[500px] h-[500px] bg-[#1565D8] opacity-[0.08] rounded-full blur-[100px] orb-bg"></div>
-                  
-                  {/* The Dimension Logo Overlay */}
-                  <img 
-                    src="/dimconLogoIcon.png" 
-                    alt="" 
-                    className="absolute bottom-0 translate-y-[10%] -right-[5%] md:-right-[10%] lg:-right-[5%] w-[350px] lg:w-[450px] xl:w-[500px] opacity-[0.08] logo-bg mix-blend-multiply object-contain"
-                  />
                   
                   {/* Technical Dot Grid */}
                   <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#1565D8 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
