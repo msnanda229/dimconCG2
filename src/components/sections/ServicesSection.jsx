@@ -251,10 +251,10 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6 xl:gap-8 items-stretch">
             {/* Left Column (33% on small laptop, ~41% on large desktop) */}
             <div className="w-full lg:col-span-4 flex flex-col h-full">
-              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-full flex flex-col relative overflow-hidden">
+              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-slate-200/70 shadow-[0_25px_70px_-15px_rgba(21,101,216,0.12)] p-5 sm:p-6 lg:p-8 xl:py-10 xl:px-8 h-full flex flex-col relative overflow-hidden">
                 <div className="anim-left-nav relative w-full overflow-x-auto lg:overflow-visible hide-scrollbar">
                   <div className="flex lg:flex-col gap-3 lg:gap-4 w-max lg:w-full pb-2 relative z-20">
                     {/* Timeline Background Line */}
@@ -275,8 +275,8 @@ const ServicesSection = () => {
                           </div>
 
                           {/* Card */}
-                          <div className={`flex-1 flex items-center gap-3 px-4 py-2.5 lg:py-3 rounded-xl transition-all duration-300 relative overflow-hidden h-full
-                          ${isActive ? 'bg-white/95 backdrop-blur-sm shadow-[0_8px_30px_rgba(21,101,216,0.08)] border-l-[3px] border-[#1565D8] scale-[1.02] border-y border-r border-white/60' : 'bg-transparent hover:bg-[#1565D8]/5 hover:text-[#1565D8] border-l-[3px] border-transparent'}
+                          <div className={`flex-1 flex items-center gap-3 px-4 py-2.5 lg:py-3 rounded-xl transition-all duration-300 relative overflow-hidden h-full hover:-translate-y-0.5 hover:shadow-[0_15px_35px_rgba(21,101,216,0.12)]
+                          ${isActive ? 'bg-white/95 backdrop-blur-sm shadow-[0_12px_40px_rgba(21,101,216,0.14)] border-l-[3px] border-[#1565D8] scale-[1.02] border-y border-r border-slate-200/70' : 'bg-transparent hover:bg-[#1565D8]/5 hover:text-[#1565D8] border-l-[3px] border-transparent'}
                         `}>
                             <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0
                               ${isActive ? 'bg-gradient-to-br from-blue-50 to-blue-100/50 text-[#1565D8] shadow-sm' : 'bg-transparent text-slate-400 group-hover:text-[#1565D8]'}
@@ -307,7 +307,7 @@ const ServicesSection = () => {
               className="w-full lg:col-span-8 flex flex-col h-full"
               ref={panelRef}
             >
-              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-full flex flex-col relative overflow-hidden">
+              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-slate-200/70 shadow-[0_25px_70px_-15px_rgba(21,101,216,0.12)] p-5 sm:p-6 lg:p-8 xl:py-10 xl:px-8 h-full flex flex-col relative overflow-hidden">
 
                 {/* Abstract Brand Graphics Backgrounds */}
                 <div className="absolute inset-0 pointer-events-none z-0 rounded-[24px] overflow-hidden">
