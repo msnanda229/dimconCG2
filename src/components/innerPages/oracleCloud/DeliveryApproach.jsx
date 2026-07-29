@@ -82,7 +82,7 @@ const DeliveryApproach = () => {
             A Structured Approach to Oracle Cloud Success
           </h2>
           <p className="text-lg text-[#000000]">
-           A Structured Approach ensures predictable, successful Oracle Cloud implementations tailored to your business needs.
+           A structured approach ensures predictable, successful Oracle Cloud implementations tailored to your business needs.
           </p>
         </div>
 
