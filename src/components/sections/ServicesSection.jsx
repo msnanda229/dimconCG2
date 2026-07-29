@@ -254,7 +254,8 @@ const ServicesSection = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-stretch">
             {/* Left Column (33% on small laptop, ~41% on large desktop) */}
             <div className="w-full lg:col-span-4 flex flex-col h-full">
-              <div className="anim-left-nav relative w-full overflow-x-auto lg:overflow-visible hide-scrollbar">
+              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-full flex flex-col relative overflow-hidden">
+                <div className="anim-left-nav relative w-full overflow-x-auto lg:overflow-visible hide-scrollbar">
                 <div className="flex lg:flex-col gap-3 lg:gap-4 w-max lg:w-full pb-2 relative z-20">
                   {/* Timeline Background Line */}
                   <div className="hidden xl:block absolute left-[21px] top-[28px] bottom-[28px] w-[1px] bg-slate-200 z-0"></div>
@@ -297,6 +298,7 @@ const ServicesSection = () => {
                     );
                   })}
                 </div>
+              </div>
               </div>
             </div>
 
