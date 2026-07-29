@@ -148,7 +148,7 @@ const CloudApplications = () => {
       focus: "CRM • Sales • Service • Marketing",
       path: "/salesforce",
       color: "from-sky-500/10 to-sky-600/5",
-      btnColor: "bg-[#00A1E0 hover:bg-[#0089BF]"
+      btnColor: "bg-[#00A1E0] hover:bg-[#0089BF]"
     },
     {
       logo: "/ai_logos/workday.png",
@@ -157,7 +157,7 @@ const CloudApplications = () => {
       focus: "HCM • Financial Management",
       path: "/workday",
       color: "from-blue-600/10 to-blue-800/5",
-      btnColor: "bg-[#0071CE hover:bg-[#005A9E]"
+      btnColor: "bg-[#0071CE] hover:bg-[#005A9E]"
     }
   ];
 
@@ -279,7 +279,7 @@ const CloudApplications = () => {
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="h-12 flex items-center justify-start mb-8">
-                    <img src={platform.logo} alt={platform.title} className="h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 opacity-70 group-hover:opacity-100" />
+                    <img src={platform.logo} alt={platform.title} className="h-full object-contain transition-all duration-500" />
                   </div>
                   
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">{platform.title}</h3>
@@ -368,11 +368,11 @@ const CloudApplications = () => {
           <div className="text-center mb-10 partner-logo">
             <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">Trusted Technology Partners</h3>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-60">
-            <img src="/ai_logos/oracle.png" alt="Oracle" className="h-8 lg:h-10 object-contain grayscale hover:grayscale-0 transition-all partner-logo" />
-            <img src="/ai_logos/netsuite.png" alt="NetSuite" className="h-8 lg:h-10 object-contain grayscale hover:grayscale-0 transition-all partner-logo" />
-            <img src="/ai_logos/salesforce.png" alt="Salesforce" className="h-10 lg:h-14 object-contain grayscale hover:grayscale-0 transition-all partner-logo" />
-            <img src="/ai_logos/workday.png" alt="Workday" className="h-8 lg:h-10 object-contain grayscale hover:grayscale-0 transition-all partner-logo" />
+          <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-24">
+            <img src="/ai_logos/oracle.png" alt="Oracle" className="h-8 lg:h-10 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/ai_logos/netsuite.png" alt="NetSuite" className="h-8 lg:h-10 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/ai_logos/salesforce.png" alt="Salesforce" className="h-10 lg:h-14 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/ai_logos/workday.png" alt="Workday" className="h-8 lg:h-10 object-contain transition-all partner-logo hover:-translate-y-1" />
           </div>
         </SectionContent>
       </SectionWrapper>
