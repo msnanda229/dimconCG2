@@ -17,7 +17,7 @@ const servicesData = [{
   icon: <Sparkles size={24} strokeWidth={2} />,
   title: "AI-Powered ERP",
   description: "Bring intelligence into your everyday operations. We help you integrate AI with your ERP to automate repetitive tasks, uncover actionable insights, and enable faster, data-driven decisions across your business.",
-  description2: "By leveraging advanced machine learning algorithms and predictive analytics, our AI ERP solutions transform static data into strategic assets. We ensure your enterprise systems not only record transactions but actively forecast trends, optimize resource allocation, and drive continuous operational excellence.",
+  description2: "By leveraging machine learning and predictive analytics, our AI solutions transform static data into strategic assets. Your systems will actively forecast trends, optimize resources, and drive continuous operational excellence.",
   ctaText: "View AI ERP Case Study",
   capabilities: [
     "Enterprise AI Integration",
@@ -209,7 +209,7 @@ const ServicesSection = () => {
     );
 
     const backgrounds = panelRef.current?.querySelectorAll(".orb-bg");
-    if(backgrounds?.length) {
+    if (backgrounds?.length) {
       gsap.fromTo(backgrounds, {
         rotation: -15,
         scale: 0.95,
@@ -251,7 +251,7 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-stretch">
             {/* Left Column (33% on small laptop, ~41% on large desktop) */}
             <div className="w-full lg:col-span-4 flex flex-col h-full">
               <div className="anim-left-nav relative w-full overflow-x-auto lg:overflow-visible hide-scrollbar">
@@ -305,73 +305,72 @@ const ServicesSection = () => {
               className="w-full lg:col-span-8 flex flex-col h-full"
               ref={panelRef}
             >
-              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-auto lg:min-h-[620px] flex flex-col relative overflow-hidden">
-                
+              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-full flex flex-col relative overflow-hidden">
+
                 {/* Abstract Brand Graphics Backgrounds */}
                 <div className="absolute inset-0 pointer-events-none z-0 rounded-[24px] overflow-hidden">
                   {/* Soft Blue Tint Glow */}
                   <div className="absolute bottom-0 translate-y-1/4 right-[-10%] w-[500px] h-[500px] bg-[#1565D8] opacity-[0.08] rounded-full blur-[100px] orb-bg"></div>
-                  
+
                   {/* Technical Dot Grid */}
                   <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#1565D8 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
-                  
+
                   {/* Glass Highlight */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#1565D8]/5 via-white/40 to-white/10 opacity-60"></div>
                 </div>
 
                 {/* Wrapper to keep content above backgrounds */}
                 <div className="relative z-10 flex flex-col h-full">
-                {/* Title & Description */}
-                <div className="anim-right-main shrink-0">
-                  <div className="tab-content-elements">
-                    <h3 className="mt-0 text-2xl sm:text-3xl xl:text-4xl font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#0F172A] to-[#1e293b]">
-                      {activeData.title}
-                    </h3>
-                    <div className="space-y-4">
-                      <p className="text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light">
-                        {activeData.description}
-                      </p>
-                    </div>
-                    <p className="text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light mt-4">{activeData.description2}</p>
-                  </div>
-                </div>
-
-                {/* Bottom Section: Logos and Buttons */}
-                <div className="mt-8 pt-8 md:mt-10 md:pt-10 border-t border-slate-100/60 flex flex-col gap-2 relative z-20 flex-grow">
-                  <h4 className="text-[10px] xl:text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Technology Partner</h4>
-
-                  {/* Partner Logos */}
-                  <div className="anim-right-main flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar mb-4 md:mb-6">
-                    <div className="tab-content-elements flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar">
-                      {activeData.technologies.map((tech) => (
-                        <div
-                          key={tech.name}
-                          className="flex-shrink-0 flex items-center justify-center h-9 xl:h-10 min-w-[90px] xl:min-w-[100px] px-3 xl:px-4 rounded-full border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
-                        >
-                          <img
-                            src={tech.logo}
-                            alt={tech.name}
-                            loading="lazy"
-                            decoding="async"
-                            className="max-h-5 xl:max-h-6 max-w-[80px] xl:max-w-[90px] object-contain"
-                          />
-                        </div>
-                      ))}
+                  {/* Title & Description */}
+                  <div className="anim-right-main shrink-0">
+                    <div className="tab-content-elements">
+                      <h3 className="mt-0 text-2xl sm:text-3xl xl:text-4xl font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#0F172A] to-[#1e293b]">
+                        {activeData.title}
+                      </h3>
+                      <div className="space-y-4">
+                        <p className="text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light">
+                          {activeData.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
 
-                  {/* CTA Buttons */}
-                  <div className="anim-buttons flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
-                    <div className="tab-content-elements flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
-                      <Link to={`/services/${activeData.id}`} className="w-full md:w-auto bg-gradient-to-r from-[#1565D8] to-[#0F4CC9] hover:from-[#0F4CC9] hover:to-[#0d40a8] text-white px-7 xl:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 shadow-[0_4px_14px_rgba(21,101,216,0.25)] hover:shadow-[0_6px_20px_rgba(21,101,216,0.4)]">
-                        Book Discovery Call <ArrowRight size={16} />
-                      </Link>
-                      <Link to="/case-studies" className="w-full md:w-auto text-center bg-white border border-slate-200/80 text-[#0F172A] px-7 xl:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:bg-[#F8FAFC] hover:border-slate-300">
-                        {activeData.ctaText}
-                      </Link>
+                  {/* Bottom Section: Logos and Buttons */}
+                  <div className="mt-5 pt-5 md:mt-6 md:pt-6 border-t border-slate-100/60 flex flex-col gap-2 relative z-20 flex-grow">
+                    <h4 className="text-[10px] xl:text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Technology Partner</h4>
+
+                    {/* Partner Logos */}
+                    <div className="anim-right-main flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar mb-4 md:mb-6">
+                      <div className="tab-content-elements flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar">
+                        {activeData.technologies.map((tech) => (
+                          <div
+                            key={tech.name}
+                            className="flex-shrink-0 flex items-center justify-center h-9 xl:h-10 min-w-[90px] xl:min-w-[100px] px-3 xl:px-4 rounded-full border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+                          >
+                            <img
+                              src={tech.logo}
+                              alt={tech.name}
+                              loading="lazy"
+                              decoding="async"
+                              className="max-h-5 xl:max-h-6 max-w-[80px] xl:max-w-[90px] object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className="anim-buttons flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+                      <div className="tab-content-elements flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+                        <Link to={`/services/${activeData.id}`} className="w-full md:w-auto bg-gradient-to-r from-[#1565D8] to-[#0F4CC9] hover:from-[#0F4CC9] hover:to-[#0d40a8] text-white px-7 xl:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 shadow-[0_4px_14px_rgba(21,101,216,0.25)] hover:shadow-[0_6px_20px_rgba(21,101,216,0.4)]">
+                          Book Discovery Call <ArrowRight size={16} />
+                        </Link>
+                        <Link to="/case-studies" className="w-full md:w-auto text-center bg-white border border-slate-200/80 text-[#0F172A] px-7 xl:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:bg-[#F8FAFC] hover:border-slate-300">
+                          {activeData.ctaText}
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
             </div>
