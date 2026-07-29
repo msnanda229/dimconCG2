@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 import { Settings, Database, Sparkles, Shield, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -141,291 +144,200 @@ const ServicesSection = () => {
   const parallaxRef = useRef(null);
   const [activeTab, setActiveTab] = useState(0);
   const animatedMetrics = useRef(new Set());
-  const previousTab = useRef(0);
-  const targetTabRef = useRef(0);
   const panelRef = useRef(null);
-  const transitionTimeoutRef = useRef(null);
-  const isTransitioningRef = useRef(false);
-  const pendingTabRef = useRef(null);
-  const handleTabChangeRef = useRef(null);
 
   useEffect(() => {
-    const panel = panelRef.current;
-    let ctx = gsap.context(() => {
-      let mm = gsap.matchMedia();
+    let mm = gsap.matchMedia();
 
-      // Scroll storytelling pin only on desktop
-     
+    mm.add("(min-width:768px)", () => {
+      const elements = gsap.utils.toArray(
+        ".anim-heading,.anim-desc,.anim-left-nav,.anim-right-main,.anim-buttons",
+        containerRef.current
+      );
 
-      mm.add("(min-width: 768px)", () => {
-
-        // 2. Section Entrance Animation
-        const elementSelectors = [
-          ".anim-heading",
-          ".anim-desc",
-          ".anim-left-nav",
-          ".anim-right-main",
-          ".anim-buttons"
-        ].join(",");
-
-        const elements = gsap.utils.toArray(elementSelectors, containerRef.current);
-
-        if (elements.length > 0) {
-          gsap.fromTo(elements,
-            { opacity: 0, y: 20 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.7,
-              ease: "power2.out",
-              stagger: 0.1,
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 80%",
-                once: true
-              }
-            }
-          );
+      gsap.fromTo(
+        elements,
+        {
+          opacity: 0,
+          y: 20
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
+            once: true
+          }
         }
-      });
+      );
+    });
 
-      mm.add("(min-width: 768px) and (prefers-reduced-motion: reduce)", () => {
-        const elementSelectors = [
-          ".anim-heading",
-          ".anim-desc",
-          ".anim-left-nav",
-          ".anim-right-main",
-          ".anim-buttons"
-        ].join(",");
-
-        const elements = gsap.utils.toArray(elementSelectors, containerRef.current);
-
-        if (elements.length > 0) {
-          gsap.fromTo(elements,
-            { opacity: 0 },
-            {
-              opacity: 1,
-              duration: 0.5,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 80%",
-                once: true
-              }
-            }
-          );
-        }
-      });
-
-    }, containerRef);
-
-    return () => {
-      if (transitionTimeoutRef.current) {
-        window.clearTimeout(transitionTimeoutRef.current);
-      }
-      pendingTabRef.current = null;
-      isTransitioningRef.current = false;
-      if (panel) {
-        gsap.killTweensOf(panel.querySelectorAll('.tab-content-elements'));
-      }
-      ctx.revert();
-    };
+    return () => mm.revert();
   }, []);
 
+  const handleTabChange = (index) => {
+    if (index === activeTab) return;
 
-  const handleTabChange = (index, scrollingDown = true) => {
-    if (index === targetTabRef.current) return;
-    targetTabRef.current = index;
-    pendingTabRef.current = null;
-    isTransitioningRef.current = true;
+    setActiveTab(index);
 
-    const contentElements = panelRef.current?.querySelectorAll('.tab-content-elements');
-    if (!contentElements?.length) {
-      setActiveTab(index);
-      previousTab.current = index;
-      animateMetrics(index);
-      isTransitioningRef.current = false;
-      return;
-    }
+    const elements = panelRef.current?.querySelectorAll(".tab-content-elements");
 
-    gsap.killTweensOf(contentElements);
+    if (!elements?.length) return;
 
-    // Staggered out animation
-    gsap.to(contentElements, {
-      opacity: 0,
-      y: (i) => (scrollingDown ? -10 - (i * 2) : 10 + (i * 2)),
-      duration: 0.2,
-      stagger: 0.05,
-      ease: "power2.in",
-      onComplete: () => {
-        // Update state to render new content
-        setActiveTab(targetTabRef.current);
-
-        // Allow React to re-render, then animate in
-        transitionTimeoutRef.current = window.setTimeout(() => {
-          const isDown = targetTabRef.current > previousTab.current;
-          previousTab.current = targetTabRef.current;
-          const yOffset = isDown ? 20 : -20;
-          const nextContentElements = panelRef.current?.querySelectorAll('.tab-content-elements');
-
-          if (!nextContentElements?.length) return;
-          const elementsArray = Array.from(nextContentElements).filter(el => el != null);
-          if (elementsArray.length === 0) return;
-
-          // Staggered in animation
-          gsap.fromTo(elementsArray,
-            { opacity: 0, y: yOffset },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.4,
-              stagger: 0.08,
-              ease: "power2.out"
-            }
-          );
-
-          isTransitioningRef.current = false;
-
-          const pendingIndex = pendingTabRef.current;
-          pendingTabRef.current = null;
-          if (pendingIndex !== null && pendingIndex !== targetTabRef.current) {
-            handleTabChange(pendingIndex, pendingIndex > targetTabRef.current);
-          }
-        }, 20);
+    gsap.fromTo(
+      elements,
+      {
+        opacity: 0,
+        y: 20
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        stagger: 0.08,
+        ease: "power2.out"
       }
-    });
+    );
   };
-
-  handleTabChangeRef.current = handleTabChange;
 
   const activeData = servicesData[activeTab];
 
   return (
     <div
-  ref={containerRef}
-  className="bg-[#F8FAFC] w-full relative"
->
+      ref={containerRef}
+      className="bg-[#F8FAFC] w-full relative"
+    >
       <SectionWrapper
         id="services-section"
-        className="relative pt-16 lg:pt-20 pb-2"
+        className="relative pt-16 md:pt-20 lg:pt-24 pb-0"
         spacing="none"
       >
-        <SectionContent className="max-w-7xl mx-auto grid grid-cols-1 min-[1000px]:grid-cols-12 gap-8 min-[1000px]:gap-12 xl:gap-16 items-start px-6 md:px-8 lg:px-10 2xl:px-0 py-12">
+        <SectionContent className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 xl:px-10 2xl:px-0 py-8 lg:py-10">
 
-          {/* Left Column (33% on small laptop, ~41% on large desktop) */}
-          <div className="w-full min-[1000px]:col-span-4 flex flex-col gap-8">
+          {/* Centered Heading */}
+          <div className="text-center mb-8 md:mb-10 lg:mb-14 shrink-0 mt-0 max-w-3xl mx-auto flex flex-col items-center">
+            <span className="text-primary font-bold tracking-widest text-xs md:text-sm uppercase mb-2 xl:mb-3 block">Expertise</span>
+            <h2 className="anim-heading font-heading font-extrabold text-[clamp(28px,4vw,36px)] xl:text-[clamp(32px,5vw,48px)] text-[#0F172A] leading-[1.1] tracking-[-0.04em] mb-3 xl:mb-4">
+              Enterprise Services Tailored to Your Business
+            </h2>
+            <p className="anim-desc text-sm xl:text-lg text-slate-600 max-w-[650px] leading-relaxed font-light mx-auto">
+              Consulting, implementation, and managed services to modernize operations and simplify complex workflows.
+            </p>
+          </div>
 
-            <div className="mb-4 lg:mb-4 xl:mb-6 shrink-0 mt-0">
-              <span className="text-primary font-bold tracking-widest text-xs md:text-sm uppercase mb-2 xl:mb-3 block">Expertise</span>
-              <h2 className="anim-heading font-heading font-extrabold text-[clamp(28px,4vw,36px)] xl:text-[clamp(32px,5vw,48px)] text-[#0F172A] leading-[1.1] tracking-[-0.04em] mb-3 xl:mb-4">
-                Enterprise Services
-              </h2>
-              <p className="anim-desc text-sm xl:text-lg text-slate-600 max-w-[450px] leading-relaxed font-light">
-                Consulting, implementation, and managed services to modernize operations and simplify complex workflows.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 xl:gap-16 items-start">
+            {/* Left Column (33% on small laptop, ~41% on large desktop) */}
+            <div className="w-full lg:col-span-4 flex flex-col h-full">
+              <div className="anim-left-nav relative w-full overflow-x-auto lg:overflow-visible hide-scrollbar">
+                <div className="flex lg:flex-col gap-3 lg:gap-4 w-max lg:w-full pb-2 relative z-20">
+                  {/* Timeline Background Line */}
+                  <div className="hidden xl:block absolute left-[21px] top-[28px] bottom-[28px] w-[1px] bg-slate-200 z-0"></div>
 
-            <div className="anim-left-nav flex relative w-full flex-col lg:pl-0 shrink-0 h-full">
-              <div className="flex flex-col w-full relative z-20 gap-1 lg:gap-2 py-1 xl:py-1">
-                {/* Timeline Background Line */}
-                <div className="hidden lg:block absolute left-[19.5px] top-[24px] bottom-[24px] w-[1px] bg-slate-200 z-0"></div>
+                  {/* Animated Active Line */}
+                  <div
+                    className="hidden xl:block absolute left-[21px] top-[28px] w-[1px] bg-blue-600 transition-all duration-500 ease-out z-10"
+                    style={{ height: `calc(${activeTab / (servicesData.length - 1)} * (100% - 56px))` }}
+                  ></div>
+                  {servicesData.map((service, index) => {
+                    const isActive = activeTab === index;
+                    return (
+                      <div key={service.id} className="relative flex items-center group cursor-pointer flex-shrink-0 w-[230px] sm:w-[250px] lg:w-full" onClick={() => handleTabChange(index)}>
+                        {/* Timeline Node Column */}
+                        <div className="hidden xl:flex shrink-0 w-11 items-center justify-center relative">
+                          <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2.5 h-2.5 bg-blue-600' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-blue-400 opacity-60'}`}></div>
+                        </div>
 
-                {/* Animated Active Line */}
-                <div
-                  className="hidden lg:block absolute left-[19.5px] top-[24px] w-[1px] bg-blue-600 transition-all duration-500 ease-out z-10"
-                  style={{ height: `calc(${activeTab / (servicesData.length - 1)} * (100% - 48px))` }}
-                ></div>
-                {servicesData.map((service, index) => {
-                  const isActive = activeTab === index;
-                  return (
-                    <div key={service.id} className="relative flex items-center group cursor-pointer" onClick={() => handleTabChange(index)}>
-                      {/* Timeline Node Column */}
-                      <div className="hidden lg:flex shrink-0 w-10 items-center justify-center relative">
-                        <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2 h-2 bg-blue-600' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-blue-400 opacity-60'}`}></div>
-                      </div>
-
-                      {/* Card */}
-                      <div className={`flex-1 flex items-center gap-1 px-2 py-0.5 lg:px-2 lg:py-0.5 xl:px-2 xl:py-0.5 rounded-lg transition-all duration-300 relative overflow-hidden
-                        ${isActive ? 'bg-white shadow-sm border border-slate-100 scale-[1.01]' : 'bg-transparent hover:bg-white/50 border border-transparent'}
-                      `}>
-                        <div className={`w-6 h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 rounded-md flex items-center justify-center transition-all duration-300 shrink-0
-                            ${isActive ? 'bg-blue-50 text-blue-600' : 'bg-transparent text-slate-400 group-hover:text-blue-500'}
-                         `}>
-                          <div className="transition-transform duration-300 group-hover:scale-110">
-                            {React.cloneElement(service.icon, { size: 14 })}
+                        {/* Card */}
+                        <div className={`flex-1 flex items-center gap-3 px-4 py-2.5 lg:py-3 rounded-xl transition-all duration-300 relative overflow-hidden h-full
+                          ${isActive ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 scale-[1.02]' : 'bg-transparent hover:bg-white/60 border border-transparent'}
+                        `}>
+                          <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0
+                              ${isActive ? 'bg-blue-50 text-blue-600 shadow-sm' : 'bg-transparent text-slate-400 group-hover:text-blue-500'}
+                           `}>
+                            <div className="transition-transform duration-300 group-hover:scale-110">
+                              {React.cloneElement(service.icon, { size: 16 })}
+                            </div>
+                          </div>
+                          <div className="flex flex-col justify-center">
+                            <span className={`text-[10px] xl:text-[11px] font-bold tracking-widest uppercase mb-1 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
+                              {service.category}
+                            </span>
+                            <span className={`text-[16px] lg:text-[18px] xl:text-[19px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
+                              {service.tab}
+                            </span>
                           </div>
                         </div>
-                        <div className="flex flex-col">
-                          <span className={`text-[10px] xl:text-[11px] font-semi-bold tracking-widest uppercase mb-0 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
-                            {service.category}
-                          </span>
-                          <span className={`text-[18px] lg:text-[20px] xl:text-[17px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
-                            {service.tab}
-                          </span>
-                        </div>
                       </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column (67% on small laptop) */}
+            <div
+              className="w-full lg:col-span-8 flex flex-col h-full"
+              ref={panelRef}
+            >
+              <div className="bg-white rounded-[20px] border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] p-5 sm:p-6 lg:p-8 xl:p-10 h-auto lg:min-h-[620px] flex flex-col justify-between relative overflow-hidden">
+                {/* Title & Description */}
+                <div className="anim-right-main shrink-0">
+                  <div className="tab-content-elements">
+                    <h3 className="mt-0 text-2xl sm:text-3xl xl:text-4xl font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-4">
+                      {activeData.title}
+                    </h3>
+                    <div className="space-y-4">
+                      <p className="text-sm sm:text-base xl:text-lg text-[#475569] leading-7 max-w-[650px] font-light">
+                        {activeData.description}
+                      </p>
                     </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column (67% on small laptop) */}
-          <div
-            className="w-full min-[1000px]:col-span-8 flex flex-col gap-8"
-            ref={panelRef}
-          >
-            {/* Title & Description */}
-            <div className="anim-right-main tab-content-elements shrink-0 mb-3 lg:mb-4 xl:mb-5">
-              <h3 className="mt-0 text-2xl lg:text-[28px] xl:text-[36px] font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-2 xl:mb-3">
-                {activeData.title}
-              </h3>
-              <p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-[1.6] xl:leading-[1.7] max-w-[650px] font-light mb-3 xl:mb-5">
-                {activeData.description}
-              </p>
-              <p className="text-sm lg:text-[15px] xl:text-[17px] text-[#475569] leading-relaxed max-w-[650px] font-light line-clamp-2 lg:line-clamp-2 xl:line-clamp-none">
-  Leverage our industry-leading frameworks to transform your enterprise operations. We specialize in developing tailored, scalable architectures that integrate seamlessly with your existing infrastructure, ensuring maximum efficiency, security, and long-term sustainable growth in rapidly evolving global markets.
-</p>
-
-            </div>
-
-
-
-            {/* Bottom Section: Logos and Buttons */}
-            <div className="flex flex-col gap-5">
-              <h4 className="text-[10px] xl:text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2 xl:mb-4">Technology Partner</h4>
-
-              {/* Partner Logos */}
-              <div className="anim-right-main tab-content-elements flex flex-wrap items-center gap-3 mb-3">
-                {activeData.technologies.map((tech) => (
-                  <div
-                    key={tech.name}
-                    className="flex items-center justify-center h-8 lg:h-10 xl:h-12 min-w-[80px] xl:min-w-[100px] px-2 xl:px-3 rounded-md border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
-                  >
-                    <img
-                      src={tech.logo}
-                      alt={tech.name}
-                      loading="lazy"
-                      decoding="async"
-                      className="max-h-5 lg:max-h-6 xl:max-h-7 max-w-[80px] xl:max-w-[90px] object-contain"
-                    />
+                    <p className="text-sm sm:text-base xl:text-lg text-[#475569] leading-7 max-w-[650px] font-light mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, eligendi officiis ipsam vitae aspernatur sequi. Nobis reiciendis odit, expedita saepe placeat officia mollitia dolore est aperiam fuga! Quo, quidem voluptas.</p>
                   </div>
-                ))}
-              </div>
+                </div>
 
-              {/* CTA Buttons */}
-              <div className="anim-buttons tab-content-elements flex flex-col sm:flex-row items-center gap-3 xl:gap-5 w-full sm:w-auto">
-                <Link to={`/services/${activeData.id}`} className="w-full sm:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-5 xl:px-8 h-10 xl:h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[13px] xl:text-[14px] transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                  Book Discovery Call <ArrowRight size={16} />
-                </Link>
-                <Link to="/case-studies" className="w-full sm:w-auto text-center bg-white border-2 border-slate-200 text-slate-800 px-6 lg:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:-translate-y-1 hover:bg-slate-50 hover:border-slate-300">
-                  {activeData.ctaText}
-                </Link>
+                {/* Bottom Section: Logos and Buttons */}
+                <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col gap-4">
+                  <h4 className="text-[10px] xl:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Technology Partner</h4>
+
+                  {/* Partner Logos */}
+                  {/* Partner Logos */}
+                  <div className="anim-right-main flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar mb-2">
+                    <div className="tab-content-elements flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar">
+                      {activeData.technologies.map((tech) => (
+                        <div
+                          key={tech.name}
+                          className="flex-shrink-0 flex items-center justify-center h-9 xl:h-10 min-w-[90px] xl:min-w-[100px] px-3 xl:px-4 rounded-full border border-slate-200 bg-white shadow-sm transition-shadow duration-300 hover:shadow-md"
+                        >
+                          <img
+                            src={tech.logo}
+                            alt={tech.name}
+                            loading="lazy"
+                            decoding="async"
+                            className="max-h-5 xl:max-h-6 max-w-[80px] xl:max-w-[90px] object-contain"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="anim-buttons flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+                    <div className="tab-content-elements flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
+                      <Link to={`/services/${activeData.id}`} className="w-full md:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-7 xl:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 shadow-sm">
+                        Book Discovery Call <ArrowRight size={16} />
+                      </Link>
+                      <Link to="/case-studies" className="w-full md:w-auto text-center bg-white border border-slate-200 text-slate-700 px-7 xl:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:bg-slate-50">
+                        {activeData.ctaText}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-
         </SectionContent>
       </SectionWrapper>
     </div>
