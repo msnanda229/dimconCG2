@@ -130,7 +130,7 @@ const CloudApplications = () => {
       focus: "Infrastructure • ERP • SCM • HCM",
       path: "/oracle-cloud",
       color: "from-red-500/10 to-red-600/5",
-      btnColor: "bg-red-600 hover:bg-red-700"
+      btnColor: "bg-blue-600 hover:bg-blue-700"
     },
     {
       logo: "/ai_logos/netsuite.png",
@@ -139,7 +139,7 @@ const CloudApplications = () => {
       focus: "Cloud ERP • Financials • CRM",
       path: "/netsuite",
       color: "from-[#0066CC]/10 to-[#004C99]/5",
-      btnColor: "bg-[#0066CC] hover:bg-[#0052A3]"
+      btnColor: "bg-blue-600 hover:bg-blue-700"
     },
     {
       logo: "/ai_logos/salesforce.png",
@@ -148,7 +148,7 @@ const CloudApplications = () => {
       focus: "CRM • Sales • Service • Marketing",
       path: "/salesforce",
       color: "from-[#00A1E0]/10 to-[#0077B6]/5",
-      btnColor: "bg-[#00A1E0] hover:bg-[#0089BF]"
+      btnColor: "bg-blue-600 hover:bg-blue-700"
     },
     {
       logo: "/ai_logos/workday.png",
@@ -157,7 +157,7 @@ const CloudApplications = () => {
       focus: "HCM • Financial Management",
       path: "/workday",
       color: "from-[#F58220]/10 to-[#F26722]/5",
-      btnColor: "bg-[#F58220] hover:bg-[#E56A17]"
+      btnColor: "bg-blue-600 hover:bg-blue-700"
     }
   ];
 
