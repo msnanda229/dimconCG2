@@ -256,49 +256,49 @@ const ServicesSection = () => {
             <div className="w-full lg:col-span-4 flex flex-col h-full">
               <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-full flex flex-col relative overflow-hidden">
                 <div className="anim-left-nav relative w-full overflow-x-auto lg:overflow-visible hide-scrollbar">
-                <div className="flex lg:flex-col gap-3 lg:gap-4 w-max lg:w-full pb-2 relative z-20">
-                  {/* Timeline Background Line */}
-                  <div className="hidden xl:block absolute left-[21px] top-[28px] bottom-[28px] w-[1px] bg-slate-200 z-0"></div>
+                  <div className="flex lg:flex-col gap-3 lg:gap-4 w-max lg:w-full pb-2 relative z-20">
+                    {/* Timeline Background Line */}
+                    <div className="hidden xl:block absolute left-[21px] top-[28px] bottom-[28px] w-[1px] bg-slate-200 z-0"></div>
 
-                  {/* Animated Active Line */}
-                  <div
-                    className="hidden xl:block absolute left-[21px] top-[28px] w-[1px] bg-gradient-to-b from-[#1565D8] to-transparent transition-all duration-500 ease-out z-10"
-                    style={{ height: `calc(${activeTab / (servicesData.length - 1)} * (100% - 56px))` }}
-                  ></div>
-                  {servicesData.map((service, index) => {
-                    const isActive = activeTab === index;
-                    return (
-                      <div key={service.id} className="relative flex items-center group cursor-pointer flex-shrink-0 w-[230px] sm:w-[250px] lg:w-full" onClick={() => handleTabChange(index)}>
-                        {/* Timeline Node Column */}
-                        <div className="hidden xl:flex shrink-0 w-11 items-center justify-center relative">
-                          <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2.5 h-2.5 bg-[#1565D8] shadow-[0_0_12px_rgba(21,101,216,0.5)] ring-4 ring-blue-50' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-[#1565D8] opacity-60'}`}></div>
-                        </div>
+                    {/* Animated Active Line */}
+                    <div
+                      className="hidden xl:block absolute left-[21px] top-[28px] w-[1px] bg-gradient-to-b from-[#1565D8] to-transparent transition-all duration-500 ease-out z-10"
+                      style={{ height: `calc(${activeTab / (servicesData.length - 1)} * (100% - 56px))` }}
+                    ></div>
+                    {servicesData.map((service, index) => {
+                      const isActive = activeTab === index;
+                      return (
+                        <div key={service.id} className="relative flex items-center group cursor-pointer flex-shrink-0 w-[230px] sm:w-[250px] lg:w-full" onClick={() => handleTabChange(index)}>
+                          {/* Timeline Node Column */}
+                          <div className="hidden xl:flex shrink-0 w-11 items-center justify-center relative">
+                            <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2.5 h-2.5 bg-[#1565D8] shadow-[0_0_12px_rgba(21,101,216,0.5)] ring-4 ring-blue-50' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-[#1565D8] opacity-60'}`}></div>
+                          </div>
 
-                        {/* Card */}
-                        <div className={`flex-1 flex items-center gap-3 px-4 py-2.5 lg:py-3 rounded-xl transition-all duration-300 relative overflow-hidden h-full
+                          {/* Card */}
+                          <div className={`flex-1 flex items-center gap-3 px-4 py-2.5 lg:py-3 rounded-xl transition-all duration-300 relative overflow-hidden h-full
                           ${isActive ? 'bg-white/95 backdrop-blur-sm shadow-[0_8px_30px_rgba(21,101,216,0.08)] border-l-[3px] border-[#1565D8] scale-[1.02] border-y border-r border-white/60' : 'bg-transparent hover:bg-[#1565D8]/5 hover:text-[#1565D8] border-l-[3px] border-transparent'}
                         `}>
-                          <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0
+                            <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0
                               ${isActive ? 'bg-gradient-to-br from-blue-50 to-blue-100/50 text-[#1565D8] shadow-sm' : 'bg-transparent text-slate-400 group-hover:text-[#1565D8]'}
                            `}>
-                            <div className="transition-transform duration-300 group-hover:scale-110">
-                              {React.cloneElement(service.icon, { size: 16 })}
+                              <div className="transition-transform duration-300 group-hover:scale-110">
+                                {React.cloneElement(service.icon, { size: 16 })}
+                              </div>
+                            </div>
+                            <div className="flex flex-col justify-center">
+                              <span className={`text-[10px] xl:text-[11px] font-bold tracking-widest uppercase mb-1 transition-colors ${isActive ? 'text-[#E68A00]' : 'text-slate-400 group-hover:text-[#1565D8]/70'}`}>
+                                {service.category}
+                              </span>
+                              <span className={`text-[16px] lg:text-[18px] xl:text-[19px] font-semibold tracking-tight transition-colors ${isActive ? 'text-[#0F172A]' : 'text-slate-500 group-hover:text-[#1565D8]'}`}>
+                                {service.tab}
+                              </span>
                             </div>
                           </div>
-                          <div className="flex flex-col justify-center">
-                            <span className={`text-[10px] xl:text-[11px] font-bold tracking-widest uppercase mb-1 transition-colors ${isActive ? 'text-[#E68A00]' : 'text-slate-400 group-hover:text-[#1565D8]/70'}`}>
-                              {service.category}
-                            </span>
-                            <span className={`text-[16px] lg:text-[18px] xl:text-[19px] font-semibold tracking-tight transition-colors ${isActive ? 'text-[#0F172A]' : 'text-slate-500 group-hover:text-[#1565D8]'}`}>
-                              {service.tab}
-                            </span>
-                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
 
@@ -334,6 +334,10 @@ const ServicesSection = () => {
                           {activeData.description}
                         </p>
                       </div>
+                      <br />
+                      <p className='text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit sed ea error esse deleniti aliquam optio facere, pariatur fugit incidunt molestiae exercitationem excepturi itaque laboriosam modi, vitae libero, in quas!</p>
+                      <p className='text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit sed ea error esse deleniti aliquam optio facere, pariatur fugit incidunt molestiae exercitationem excepturi itaque laboriosam modi, vitae libero, in quas!</p>
+
                     </div>
                   </div>
 
