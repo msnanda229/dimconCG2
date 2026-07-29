@@ -17,6 +17,7 @@ const servicesData = [{
   icon: <Sparkles size={24} strokeWidth={2} />,
   title: "AI-Powered ERP",
   description: "Bring intelligence into your everyday operations. We help you integrate AI with your ERP to automate repetitive tasks, uncover actionable insights, and enable faster, data-driven decisions across your business.",
+  description2: "By leveraging advanced machine learning algorithms and predictive analytics, our AI ERP solutions transform static data into strategic assets. We ensure your enterprise systems not only record transactions but actively forecast trends, optimize resource allocation, and drive continuous operational excellence.",
   ctaText: "View AI ERP Case Study",
   capabilities: [
     "Enterprise AI Integration",
@@ -38,6 +39,7 @@ const servicesData = [{
   title: "Cloud Applications",
   description:
     "Move your business to the cloud with confidence. We help organizations implement, integrate, and optimize enterprise cloud applications that improve agility, simplify operations, and support long-term growth.",
+  description2: "Our comprehensive cloud transformation methodology ensures a seamless transition with zero disruption to your daily operations. We architect resilient, scalable environments that empower your workforce to collaborate globally, scale on demand, and rapidly deploy new innovations in a highly secure ecosystem.",
   ctaText: "View Cloud Case Study",
   capabilities: [
     "Cloud Migration Strategy",
@@ -59,6 +61,7 @@ const servicesData = [{
   icon: <Settings size={24} strokeWidth={2} />,
   title: "Enterprise ERP Implementation",
   description: "From planning to go-live and beyond, we implement Oracle, NetSuite, Salesforce, and Workday solutions with a structured approach that minimizes risk, accelerates adoption, and delivers measurable business outcomes.",
+  description2: "We employ a rigorous, milestone-driven deployment framework designed to align complex software capabilities with your unique business processes. Through comprehensive stakeholder engagement and meticulous testing, we guarantee an implementation that drives immediate user adoption and accelerated return on investment.",
   ctaText: "View ERP Case Study",
   capabilities: [
     "Full-Cycle Implementation",
@@ -82,6 +85,7 @@ const servicesData = [{
   icon: <Database size={24} strokeWidth={2} />,
   title: "Intelligent Data Migration",
   description: "Move your data with confidence. We help you migrate enterprise data securely, preserve its accuracy, and ensure every record reaches its destination with minimal disruption to your business.",
+  description2: "Our data engineering experts utilize advanced mapping and cleansing protocols to guarantee absolute data integrity during complex system transitions. We eliminate historical redundancies and establish robust governance frameworks, ensuring your new enterprise systems are fueled by clean, reliable, and perfectly structured data.",
   ctaText: "View Migration Case Study",
   capabilities: [
     "Data Cleansing & Mapping",
@@ -102,6 +106,7 @@ const servicesData = [{
   icon: <Shield size={24} strokeWidth={2} />,
   title: "Application Managed Services",
   description: "Keep your enterprise applications running at their best. From proactive monitoring and performance optimization to issue resolution and platform enhancements, we ensure your systems remain secure, reliable, and ready for business.",
+  description2: "Acting as an extension of your internal IT team, our managed services provide unparalleled platform stability and strategic guidance. We continuously monitor system health, rapidly deploy critical updates, and architect ongoing enhancements to ensure your enterprise applications evolve in lockstep with your business objectives.",
   ctaText: "View Managed Services Case Study",
   capabilities: [
     "24/7 Proactive Monitoring",
@@ -123,6 +128,7 @@ const servicesData = [{
   title: "CRM Implementation",
   description:
     "Build stronger customer relationships with CRM solutions designed to unify sales, marketing, and service. Create connected customer experiences, streamline workflows, and empower teams with actionable insights.",
+  description2: "By breaking down operational silos, our tailored CRM implementations provide a unified, 360-degree view of your customer lifecycle. We architect intuitive digital workspaces that empower your sales and support teams to deliver hyper-personalized experiences, accelerating deal velocity and maximizing long-term customer retention.",
   ctaText: "View CRM Case Study",
   capabilities: [
     "Customer Journey Mapping",
@@ -201,6 +207,21 @@ const ServicesSection = () => {
         ease: "power2.out"
       }
     );
+
+    const backgrounds = panelRef.current?.querySelectorAll(".orb-bg, .logo-bg");
+    if(backgrounds?.length) {
+      gsap.fromTo(backgrounds, {
+        rotation: (i) => i === 0 ? -15 : 5,
+        scale: 0.95,
+        opacity: 0,
+      }, {
+        rotation: 0,
+        scale: 1,
+        opacity: (i) => i === 0 ? 0.08 : 0.07,
+        duration: 1,
+        ease: "power2.out"
+      });
+    }
   };
 
   const activeData = servicesData[activeTab];
@@ -208,8 +229,10 @@ const ServicesSection = () => {
   return (
     <div
       ref={containerRef}
-      className="bg-[#F8FAFC] w-full relative"
+      className="bg-gradient-to-b from-[#F8FAFC] to-[#F1F5F9] w-full relative overflow-hidden"
     >
+      {/* Subtle background orb */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-100/30 rounded-full blur-[100px] pointer-events-none z-0"></div>
       <SectionWrapper
         id="services-section"
         className="relative pt-16 md:pt-20 lg:pt-24 pb-0"
@@ -238,7 +261,7 @@ const ServicesSection = () => {
 
                   {/* Animated Active Line */}
                   <div
-                    className="hidden xl:block absolute left-[21px] top-[28px] w-[1px] bg-blue-600 transition-all duration-500 ease-out z-10"
+                    className="hidden xl:block absolute left-[21px] top-[28px] w-[1px] bg-gradient-to-b from-[#1565D8] to-transparent transition-all duration-500 ease-out z-10"
                     style={{ height: `calc(${activeTab / (servicesData.length - 1)} * (100% - 56px))` }}
                   ></div>
                   {servicesData.map((service, index) => {
@@ -247,25 +270,25 @@ const ServicesSection = () => {
                       <div key={service.id} className="relative flex items-center group cursor-pointer flex-shrink-0 w-[230px] sm:w-[250px] lg:w-full" onClick={() => handleTabChange(index)}>
                         {/* Timeline Node Column */}
                         <div className="hidden xl:flex shrink-0 w-11 items-center justify-center relative">
-                          <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2.5 h-2.5 bg-blue-600' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-blue-400 opacity-60'}`}></div>
+                          <div className={`rounded-full z-20 transition-all duration-300 ${isActive ? 'w-2.5 h-2.5 bg-[#1565D8] shadow-[0_0_12px_rgba(21,101,216,0.5)] ring-4 ring-blue-50' : 'w-1.5 h-1.5 bg-slate-300 group-hover:bg-[#1565D8] opacity-60'}`}></div>
                         </div>
 
                         {/* Card */}
                         <div className={`flex-1 flex items-center gap-3 px-4 py-2.5 lg:py-3 rounded-xl transition-all duration-300 relative overflow-hidden h-full
-                          ${isActive ? 'bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100 scale-[1.02]' : 'bg-transparent hover:bg-white/60 border border-transparent'}
+                          ${isActive ? 'bg-white/95 backdrop-blur-sm shadow-[0_8px_30px_rgba(21,101,216,0.08)] border-l-[3px] border-[#1565D8] scale-[1.02] border-y border-r border-white/60' : 'bg-transparent hover:bg-[#1565D8]/5 hover:text-[#1565D8] border-l-[3px] border-transparent'}
                         `}>
                           <div className={`w-8 h-8 lg:w-10 lg:h-10 rounded-lg flex items-center justify-center transition-all duration-300 shrink-0
-                              ${isActive ? 'bg-blue-50 text-blue-600 shadow-sm' : 'bg-transparent text-slate-400 group-hover:text-blue-500'}
+                              ${isActive ? 'bg-gradient-to-br from-blue-50 to-blue-100/50 text-[#1565D8] shadow-sm' : 'bg-transparent text-slate-400 group-hover:text-[#1565D8]'}
                            `}>
                             <div className="transition-transform duration-300 group-hover:scale-110">
                               {React.cloneElement(service.icon, { size: 16 })}
                             </div>
                           </div>
                           <div className="flex flex-col justify-center">
-                            <span className={`text-[10px] xl:text-[11px] font-bold tracking-widest uppercase mb-1 transition-colors ${isActive ? 'text-blue-600' : 'text-slate-400'}`}>
+                            <span className={`text-[10px] xl:text-[11px] font-bold tracking-widest uppercase mb-1 transition-colors ${isActive ? 'text-[#E68A00]' : 'text-slate-400 group-hover:text-[#1565D8]/70'}`}>
                               {service.category}
                             </span>
-                            <span className={`text-[16px] lg:text-[18px] xl:text-[19px] font-semibold tracking-tight transition-colors ${isActive ? 'text-slate-900' : 'text-slate-500'}`}>
+                            <span className={`text-[16px] lg:text-[18px] xl:text-[19px] font-semibold tracking-tight transition-colors ${isActive ? 'text-[#0F172A]' : 'text-slate-500 group-hover:text-[#1565D8]'}`}>
                               {service.tab}
                             </span>
                           </div>
@@ -282,29 +305,50 @@ const ServicesSection = () => {
               className="w-full lg:col-span-8 flex flex-col h-full"
               ref={panelRef}
             >
-              <div className="bg-white rounded-[20px] border border-slate-100 shadow-[0_10px_40px_rgba(0,0,0,0.03)] p-5 sm:p-6 lg:p-8 xl:p-10 h-auto lg:min-h-[620px] flex flex-col justify-between relative overflow-hidden">
+              <div className="bg-white/90 backdrop-blur-xl rounded-[24px] border border-white/60 shadow-[0_20px_60px_-15px_rgba(21,101,216,0.08)] p-5 sm:p-6 lg:p-8 xl:p-10 h-auto lg:min-h-[620px] flex flex-col relative overflow-hidden">
+                
+                {/* Abstract Brand Graphics Backgrounds */}
+                <div className="absolute inset-0 pointer-events-none z-0 rounded-[24px] overflow-hidden">
+                  {/* Soft Blue Tint Glow (behind logo) */}
+                  <div className="absolute bottom-0 translate-y-1/4 right-[-10%] w-[500px] h-[500px] bg-[#1565D8] opacity-[0.08] rounded-full blur-[100px] orb-bg"></div>
+                  
+                  {/* The Dimension Logo Overlay */}
+                  <img 
+                    src="/dimconLogoIcon.png" 
+                    alt="" 
+                    className="absolute bottom-0 translate-y-[10%] -right-[5%] md:-right-[10%] lg:-right-[5%] w-[350px] lg:w-[450px] xl:w-[500px] opacity-[0.08] logo-bg mix-blend-multiply object-contain"
+                  />
+                  
+                  {/* Technical Dot Grid */}
+                  <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#1565D8 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+                  
+                  {/* Glass Highlight */}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#1565D8]/5 via-white/40 to-white/10 opacity-60"></div>
+                </div>
+
+                {/* Wrapper to keep content above backgrounds */}
+                <div className="relative z-10 flex flex-col h-full">
                 {/* Title & Description */}
                 <div className="anim-right-main shrink-0">
                   <div className="tab-content-elements">
-                    <h3 className="mt-0 text-2xl sm:text-3xl xl:text-4xl font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-4">
+                    <h3 className="mt-0 text-2xl sm:text-3xl xl:text-4xl font-heading font-bold text-[#0F172A] leading-[1.2] tracking-[-0.03em] mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#0F172A] to-[#1e293b]">
                       {activeData.title}
                     </h3>
                     <div className="space-y-4">
-                      <p className="text-sm sm:text-base xl:text-lg text-[#475569] leading-7 max-w-[650px] font-light">
+                      <p className="text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light">
                         {activeData.description}
                       </p>
                     </div>
-                    <p className="text-sm sm:text-base xl:text-lg text-[#475569] leading-7 max-w-[650px] font-light mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, eligendi officiis ipsam vitae aspernatur sequi. Nobis reiciendis odit, expedita saepe placeat officia mollitia dolore est aperiam fuga! Quo, quidem voluptas.</p>
+                    <p className="text-sm sm:text-base xl:text-lg text-[#334155] leading-7 max-w-[650px] font-light mt-4">{activeData.description2}</p>
                   </div>
                 </div>
 
                 {/* Bottom Section: Logos and Buttons */}
-                <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col gap-4">
-                  <h4 className="text-[10px] xl:text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Technology Partner</h4>
+                <div className="mt-8 pt-8 md:mt-10 md:pt-10 border-t border-slate-100/60 flex flex-col gap-2 relative z-20 flex-grow">
+                  <h4 className="text-[10px] xl:text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Technology Partner</h4>
 
                   {/* Partner Logos */}
-                  {/* Partner Logos */}
-                  <div className="anim-right-main flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar mb-2">
+                  <div className="anim-right-main flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar mb-4 md:mb-6">
                     <div className="tab-content-elements flex overflow-x-auto lg:flex-wrap flex-nowrap gap-3 pb-2 hide-scrollbar">
                       {activeData.technologies.map((tech) => (
                         <div
@@ -326,14 +370,15 @@ const ServicesSection = () => {
                   {/* CTA Buttons */}
                   <div className="anim-buttons flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
                     <div className="tab-content-elements flex flex-col md:flex-row items-center gap-3 w-full md:w-auto">
-                      <Link to={`/services/${activeData.id}`} className="w-full md:w-auto bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-7 xl:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 shadow-sm">
+                      <Link to={`/services/${activeData.id}`} className="w-full md:w-auto bg-gradient-to-r from-[#1565D8] to-[#0F4CC9] hover:from-[#0F4CC9] hover:to-[#0d40a8] text-white px-7 xl:px-8 h-11 flex items-center justify-center gap-2 rounded-full font-semibold text-[14px] transition-all duration-300 shadow-[0_4px_14px_rgba(21,101,216,0.25)] hover:shadow-[0_6px_20px_rgba(21,101,216,0.4)]">
                         Book Discovery Call <ArrowRight size={16} />
                       </Link>
-                      <Link to="/case-studies" className="w-full md:w-auto text-center bg-white border border-slate-200 text-slate-700 px-7 xl:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:bg-slate-50">
+                      <Link to="/case-studies" className="w-full md:w-auto text-center bg-white border border-slate-200/80 text-[#0F172A] px-7 xl:px-8 h-11 flex items-center justify-center rounded-full font-semibold text-[14px] transition-all duration-300 hover:bg-[#F8FAFC] hover:border-slate-300">
                         {activeData.ctaText}
                       </Link>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
