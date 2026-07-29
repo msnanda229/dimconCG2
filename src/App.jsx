@@ -8,6 +8,7 @@ import InitialLoader from './components/layout/InitialLoader';
 const Home = lazy(() => import('./pages/Home'));
 const Industries = lazy(() => import('./pages/Industries'));
 const OracleCloud = lazy(() => import('./components/innerPages/oracleCloud/oracleCloud'));
+const CloudApplications = lazy(() => import('./pages/CloudApplications'));
 
 // Simple loading fallback component for route navigation
 const PageLoader = () => (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="industries" element={<Industries />} />
+            <Route path="cloud-applications" element={<CloudApplications />} />
 
             {/* Catch-all to seamlessly redirect any old/unused paths back to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
