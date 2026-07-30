@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-  Cpu, BarChart3, MessageSquare, Zap, Target, RefreshCw, 
-  Search, Lightbulb, PenTool, Rocket, ShieldCheck, 
+import {
+  Cpu, BarChart3, MessageSquare, Zap, Target, RefreshCw,
+  Search, Lightbulb, PenTool, Rocket, ShieldCheck,
   ArrowRight, Users, Briefcase, Database, Server
 } from 'lucide-react';
 
@@ -95,25 +95,25 @@ export const timelineSteps = [
 
 export const platforms = [
   {
-    logo: "/partners/oracle.png",
+    logo: "/ai_logos/oracle.png",
     name: "Oracle Cloud",
     desc: "Leverage Oracle's embedded AI and machine learning capabilities to automate finance, supply chain, and HR.",
     link: "/oracle-cloud"
   },
   {
-    logo: "/partners/netsuite.png",
+    logo: "/ai_logos/netsuite.png",
     name: "Oracle NetSuite",
     desc: "Supercharge your growing business with intelligent insights, automated planning, and predictive forecasting.",
     link: "/innerpages/netsuite"
   },
   {
-    logo: "/partners/salesforce.png",
+    logo: "/ai_logos/salesforce.png",
     name: "Salesforce",
     desc: "Deploy Salesforce Einstein to bring predictive intelligence and generative AI to your CRM and ERP data.",
     link: "/innerpages/salesforce"
   },
   {
-    logo: "/ai_logos/RTS_Logo_Colored.svg",
+    logo: "/ai_logos/workday.png",
     name: "Workday",
     desc: "Transform HR and finance with Workday's AI-driven skills intelligence, anomaly detection, and smart automation.",
     link: "/innerpages/workday"
