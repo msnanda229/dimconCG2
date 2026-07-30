@@ -9,10 +9,10 @@ const WhyDimension = () => {
       <SectionContent>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-blue-100/50 text-[#1565D8] text-xs font-bold uppercase tracking-wider mb-4">
-            WHY DIMENSION CONSULTING
+            Why Enterprises Choose Dimension Consulting
           </div>
           <h2 className="text-3xl lg:text-4xl font-heading font-black text-slate-900 mb-6 tracking-tight">
-            Enterprise AI Expertise You Can Trust
+            Trusted AI ERP Experts Delivering Intelligent Enterprise Transformation
           </h2>
           <p className="text-lg text-slate-600">
             Choose a partner with the deep technical knowledge and business acumen required to execute complex AI ERP transformations successfully.
@@ -21,8 +21,8 @@ const WhyDimension = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
           {whyDimension.map((item, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="bg-white rounded-3xl p-8 border border-slate-200 hover:shadow-[0_10px_30px_rgba(21,101,216,0.08)] transition-all duration-300 flex items-start gap-5"
             >
               <div className="w-12 h-12 shrink-0 bg-blue-50 rounded-full flex items-center justify-center">
