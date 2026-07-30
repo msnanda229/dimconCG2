@@ -9,7 +9,8 @@ import {
   ArrowRight, Layers, Cpu, Cloud, Server, Database,
   Users, Zap, Shield, BarChart3, TrendingUp, CheckCircle2,
   Settings, Truck, Heart, DollarSign, Building2, BookOpen,
-  Map, ChevronDown, Activity, Lightbulb
+  Map, ChevronDown, Activity, Lightbulb,
+  Sparkles, UsersRound, ShieldCheck, Gauge
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -108,73 +109,74 @@ const Services = () => {
     {
       title: "AI-Powered ERP",
       desc: "Modernize core operations with intelligent enterprise resource planning systems.",
-      icon: <Cpu size={28} />,
+      icon: <Sparkles size={24} strokeWidth={2} />,
       caps: ["Enterprise AI Integration", "Process Automation", "Predictive Analytics"],
-      logos: ["/ai_logos/oracle.png", "/ai_logos/netsuite.png"]
+      logos: ["/partners/oracle.png", "/partners/netsuite.png"]
     },
     {
       title: "Cloud Applications",
       desc: "Implement scalable, secure, and highly available cloud applications.",
-      icon: <Cloud size={28} />,
+      icon: <Cloud size={24} strokeWidth={2} />,
       caps: ["Cloud Migration", "Platform Integration", "Cloud Optimization"],
-      logos: ["/ai_logos/oracle.png", "/ai_logos/salesforce.png", "/ai_logos/workday.png"]
+      logos: ["/partners/oracle.png", "/partners/salesforce.png", "/ai_logos/RTS_Logo_Colored.svg"]
     },
     {
       title: "ERP Implementation",
       desc: "End-to-end deployment of enterprise systems configured to your specific needs.",
-      icon: <Server size={28} />,
+      icon: <Server size={24} strokeWidth={2} />,
       caps: ["Full ERP Deployment", "Configuration", "User Adoption"],
-      logos: ["/ai_logos/oracle.png", "/ai_logos/netsuite.png"]
+      logos: ["/partners/oracle.png", "/partners/netsuite.png"]
     },
     {
       title: "Data Migration",
       desc: "Securely move critical enterprise data with guaranteed accuracy and minimal downtime.",
-      icon: <Database size={28} />,
+      icon: <Database size={24} strokeWidth={2} />,
       caps: ["Secure Migration", "Data Validation", "Zero Downtime"],
       logos: []
     },
     {
       title: "CRM Implementation",
       desc: "Transform customer relationships with intelligent sales and service platforms.",
-      icon: <Users size={28} />,
+      icon: <Users size={24} strokeWidth={2} />,
       caps: ["Sales Automation", "Customer Engagement", "Marketing Integration"],
-      logos: ["/ai_logos/salesforce.png"]
+      logos: ["/partners/salesforce.png"]
     },
     {
       title: "HCM Implementation",
       desc: "Modernize human resources with powerful workforce management solutions.",
-      icon: <Heart size={28} />,
+      icon: <UsersRound size={24} strokeWidth={2} />,
       caps: ["HR Transformation", "Workforce Management", "Payroll Integration"],
-      logos: ["/ai_logos/workday.png", "/ai_logos/oracle.png"]
+      logos: ["/ai_logos/RTS_Logo_Colored.svg", "/partners/oracle.png"]
     },
     {
       title: "Application Managed Services",
       desc: "Ensure continuous peak performance with dedicated ongoing support.",
-      icon: <Shield size={28} />,
+      icon: <ShieldCheck size={24} strokeWidth={2} />,
       caps: ["24/7 Monitoring", "Issue Resolution", "Continuous Support"],
       logos: []
     },
     {
       title: "Monitoring Services",
       desc: "Proactive system monitoring to identify and resolve issues before they impact business.",
-      icon: <Activity size={28} />,
+      icon: <Activity size={24} strokeWidth={2} />,
       caps: ["Application Health", "Alerts", "System Monitoring"],
       logos: []
     },
     {
       title: "Performance Optimization",
       desc: "Tune and optimize your enterprise applications for maximum speed and efficiency.",
-      icon: <Zap size={28} />,
+      icon: <Gauge size={24} strokeWidth={2} />,
       caps: ["System Tuning", "Performance Analytics", "Resource Optimization"],
       logos: []
     }
   ];
 
   const timelineSteps = [
-    { num: "01", title: "Consult", desc: "Understand business goals and define the right technology strategy." },
-    { num: "02", title: "Implement", desc: "Deploy enterprise solutions using a structured and proven methodology." },
-    { num: "03", title: "Optimize", desc: "Improve performance, automate processes, and maximize user adoption." },
-    { num: "04", title: "Support", desc: "Provide continuous monitoring, enhancements, and long-term managed services." }
+    { num: "01", title: "ERP requirements gathering", desc: "We evaluate your business to recommend specific enhancements. " },
+    { num: "02", title: "Assessment & selection", desc: "We find the ideal ERP solution and guide you through the process. " },
+    { num: "03", title: "Implementation", desc: "Our experts oversee implementation, ensuring timely and efficient delivery. " },
+    { num: "04", title: "Training", desc: "We provide training and ongoing assistance to maximize system use." },
+    { num: "05", title: "Ongoing ERP Support", desc: "We ensure system performance through regular monitoring and 24/7 assistance. " },
   ];
 
   const faqs = [
@@ -295,11 +297,7 @@ const Services = () => {
 
 
                 <div className="mt-auto pt-6 border-t border-slate-100 flex items-center justify-between">
-                  <div className="flex gap-2">
-                    {srv.logos.map((logo, i) => (
-                      <img key={i} src={logo} alt="Technology Logo" className="h-5 object-contain  group-hover:opacity-100 transition-all duration-300" />
-                    ))}
-                  </div>
+
                   <span className="text-sm font-bold text-[#1565D8] flex items-center gap-1 group-hover:text-[#1D4ED8]">
                     Explore Service <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                   </span>
@@ -315,33 +313,52 @@ const Services = () => {
       <SectionWrapper ref={timelineRef} className="bg-white py-24 border-b border-slate-100">
         <SectionContent>
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#1565D8] text-xs font-bold uppercase tracking-wider mb-4">OUR APPROACH</div>
+            <div className="inline-flex items-center justify-center px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#1565D8] text-xs font-bold uppercase tracking-wider mb-4">
+              OUR APPROACH
+            </div>
+
             <h2 className="text-3xl lg:text-4xl font-heading font-black text-slate-900 mb-6 tracking-tight">
               One Partner. Every Stage of Your Transformation.
             </h2>
+
             <p className="text-lg text-slate-600">
-              Technology transformation isn't a single project. It's a continuous journey. Our end-to-end consulting services help organizations plan, implement, optimize, and support enterprise solutions that continue delivering value long after go-live.
+              Technology transformation isn't a single project. It's a continuous
+              journey. Our end-to-end consulting services help organizations plan,
+              implement, optimize, and support enterprise solutions that continue
+              delivering value long after go-live.
             </p>
           </div>
 
           {/* Timeline */}
-          <div className="relative max-w-5xl mx-auto">
-            {/* Connection Line Desktop */}
-            <div className="hidden lg:block absolute top-[40px] left-[10%] right-[10%] h-1 bg-gradient-to-r from-blue-100 via-blue-500 to-blue-100 rounded-full opacity-30"></div>
-            {/* Connection Line Mobile */}
-            <div className="lg:hidden absolute top-10 bottom-10 left-[24px] w-1 bg-gradient-to-b from-blue-100 via-blue-500 to-blue-100 rounded-full opacity-30"></div>
+          <div className="relative max-w-7xl mx-auto">
+            {/* Desktop Line */}
+            <div className="hidden lg:block absolute top-10 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-blue-100 via-[#1565D8] to-blue-100 opacity-30 rounded-full"></div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
+            {/* Mobile Line */}
+            <div className="lg:hidden absolute top-10 bottom-10 left-7 w-[2px] bg-gradient-to-b from-blue-100 via-[#1565D8] to-blue-100 opacity-30 rounded-full"></div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6">
               {timelineSteps.map((step, idx) => (
-                <div key={idx} className="timeline-step relative flex flex-row lg:flex-col items-start lg:items-center gap-6 lg:gap-6 z-10 group">
-                  {/* Number Badge */}
-                  <div className="w-12 h-12 lg:w-20 lg:h-20 shrink-0 bg-white border-[4px] border-blue-50 rounded-full flex items-center justify-center shadow-[0_8px_16px_rgba(21,101,216,0.1)] group-hover:border-[#1565D8] transition-all duration-300">
-                    <span className="font-heading font-black text-lg lg:text-2xl text-slate-400 group-hover:text-[#1565D8] transition-colors">{step.num}</span>
+                <div
+                  key={idx}
+                  className="timeline-step relative flex flex-row lg:flex-col items-start lg:items-center gap-5 lg:gap-6 z-10 group"
+                >
+                  {/* Number */}
+                  <div className="w-14 h-14 lg:w-20 lg:h-20 shrink-0 bg-white border-4 border-blue-50 rounded-full flex items-center justify-center shadow-[0_10px_24px_rgba(21,101,216,0.12)] transition-all duration-300 group-hover:border-[#1565D8]">
+                    <span className="font-heading font-black text-xl lg:text-3xl text-slate-400 group-hover:text-[#1565D8] transition-colors">
+                      {step.num}
+                    </span>
                   </div>
+
                   {/* Content */}
-                  <div className="flex-1 lg:text-center pt-1 lg:pt-0">
-                    <h3 className="text-xl lg:text-2xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                    <p className="text-slate-600 text-sm lg:text-base leading-relaxed">{step.desc}</p>
+                  <div className="flex-1 lg:flex-none lg:text-center">
+                    <h3 className="text-lg lg:text-xl font-bold text-slate-900 mb-2">
+                      {step.title}
+                    </h3>
+
+                    <p className="text-sm lg:text-[15px] text-slate-600 leading-relaxed max-w-[220px] lg:mx-auto">
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
               ))}
