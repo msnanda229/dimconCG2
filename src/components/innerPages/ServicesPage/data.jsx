@@ -68,28 +68,28 @@ export const aiServices = [
 export const timelineSteps = [
   {
     num: "01",
-    title: "Discover",
-    desc: "Deep dive into your business processes, data landscape, and strategic objectives."
+    title: "Initializing the Implementation",
+    desc: "Define project goals to set the stage for a successful ERP implementation. "
   },
   {
     num: "02",
-    title: "Identify AI Opportunities",
-    desc: "Pinpoint specific areas where AI can drive the most significant efficiency and ROI."
+    title: "Onsite Analysis and Project Planning",
+    desc: "Conduct an onsite assessment to create a customized project roadmap. "
   },
   {
     num: "03",
-    title: "Design Solution",
-    desc: "Architect a scalable AI ERP solution tailored to your unique enterprise requirements."
+    title: "Solution Architecture and Mapping",
+    desc: "Design a tailored solution architecture that integrates with your operations. "
   },
   {
     num: "04",
-    title: "Deploy AI Capabilities",
-    desc: "Implement, train, and integrate AI models into your workflows with minimal disruption."
+    title: "Validate",
+    desc: "Ensure the system's reliability through comprehensive testing and validation."
   },
   {
     num: "05",
-    title: "Optimize & Improve",
-    desc: "Continuously refine AI performance based on real-world usage and evolving data."
+    title: "Closure & Go-Live",
+    desc: "Execute a smooth go-live with full training and ongoing support for users."
   }
 ];
 
