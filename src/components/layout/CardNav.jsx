@@ -183,7 +183,7 @@ const CardNav = () => {
   };
 
   const isMobile = windowWidth < 1024;
-  const isLightBg = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/oracle-cloud' || location.pathname === '/cloud-applications';
+  const isLightBg = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/oracle-cloud' || location.pathname === '/cloud-applications' || location.pathname === '/services';
   const effectiveIsScrolled = isScrolled || activeMenu !== null;
 
   // 3. SCROLL BEHAVIOR:
