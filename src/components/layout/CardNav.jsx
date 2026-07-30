@@ -183,7 +183,7 @@ const CardNav = () => {
   };
 
   const isMobile = windowWidth < 1024;
-  const isLightBg = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/oracle-cloud' || location.pathname === '/cloud-applications' || location.pathname === '/services';
+  const isLightBg = location.pathname === '/' || location.pathname === '/contact' || location.pathname === '/oracle-cloud' || location.pathname === '/cloud-applications' || location.pathname === '/services' || location.pathname === '/services/ai-powered-erp';
   const effectiveIsScrolled = isScrolled || activeMenu !== null;
 
   // 3. SCROLL BEHAVIOR:
@@ -468,17 +468,6 @@ const CardNav = () => {
                 return (
                   <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4 relative overflow-hidden">
 
-                    {/* Decorative Image for Cloud Applications */}
-                    {category.slug === "cloud-applications" && (
-                      <div className="absolute inset-y-0 right-0 w-[45%] flex items-center justify-end pointer-events-none z-0">
-                        <img
-                          src="/cloud-applications-pattern.png"
-                          alt="Cloud Applications Illustration"
-                          className="max-w-full max-h-full object-contain object-right opacity-50 select-none"
-                          draggable={false}
-                        />
-                      </div>
-                    )}
 
                     {/* COLUMN 1: Overview */}
                     <div className="w-[28%] flex flex-col border-r border-[#E8ECF5] pr-6 shrink-0 relative z-10">
