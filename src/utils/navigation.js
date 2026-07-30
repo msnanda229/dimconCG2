@@ -10,8 +10,8 @@ export const generateNavigationData = () => {
         {
           heading: "Platforms",
           items: [
-            { title: "Oracle Cloud", description: "Enterprise cloud infrastructure", icon: "Database", path: "/oracle-cloud" },
-            { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Server", path: "..innerpages/netsuite" },
+            { title: "Oracle Cloud", description: "Enterprise cloud infrastructure", icon: "Cloud", path: "/oracle-cloud" },
+            { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Building2", path: "..innerpages/netsuite" },
             { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "..innerpages/salesforce" }
           ]
         },
@@ -19,7 +19,7 @@ export const generateNavigationData = () => {
           heading: "\u00A0",
           items: [
             { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "..innerpages/workday" },
-            { title: "Rootstock", description: "Manufacturing ERP solutions", icon: "Settings", path: "..innerpages/rootstock" }
+            { title: "Rootstock", description: "Manufacturing ERP solutions", icon: "Factory", path: "..innerpages/rootstock" }
           ]
         }
 
