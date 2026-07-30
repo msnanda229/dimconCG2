@@ -1,14 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionWrapper, SectionContent } from '../components/layout/SectionContainer';
-import { ArrowRight, Cloud, Shield, Zap, TrendingDown, Smartphone, BarChart3, Database, Server, Users, Briefcase, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Cloud, Shield, Zap, TrendingDown, Smartphone, BarChart3, Database, Server, Users, Briefcase, CheckCircle2, ChevronDown } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CloudApplications = () => {
+  const [active, setActive] = useState(1);
   const heroRef = useRef(null);
   const featuresRef = useRef(null);
   const platformsRef = useRef(null);
@@ -124,7 +125,7 @@ const CloudApplications = () => {
 
   const platforms = [
     {
-      logo: "/ai_logos/oracle.png",
+      logo: "/partners/oracle.png",
       title: "Oracle Cloud",
       desc: "Enterprise infrastructure and mission-critical business applications.",
       focus: "Infrastructure • ERP • SCM • HCM",
@@ -133,7 +134,7 @@ const CloudApplications = () => {
       btnColor: "bg-blue-600 hover:bg-blue-700"
     },
     {
-      logo: "/ai_logos/netsuite.png",
+      logo: "/partners/netsuite.png",
       title: "Oracle NetSuite",
       desc: "Unified cloud ERP for growing and mid-market businesses.",
       focus: "Cloud ERP • Financials • CRM",
@@ -142,7 +143,7 @@ const CloudApplications = () => {
       btnColor: "bg-blue-600 hover:bg-blue-700"
     },
     {
-      logo: "/ai_logos/salesforce.png",
+      logo: "/partners/salesforce.png",
       title: "Salesforce",
       desc: "Customer relationship management and engagement platform.",
       focus: "CRM • Sales • Service • Marketing",
@@ -158,6 +159,42 @@ const CloudApplications = () => {
       path: "/workday",
       color: "from-[#F58220]/10 to-[#F26722]/5",
       btnColor: "bg-blue-600 hover:bg-blue-700"
+    },
+    {
+      logo: "/ai_logos/RTS_Logo_Colored.svg",
+      title: "Rootstock",
+      desc: "Modern, flexible manufacturing ERP natively built on the Salesforce platform.",
+      focus: "Manufacturing ERP • Supply Chain",
+      path: "/rootstock",
+      color: "from-[#104C97]/10 to-[#0B3A78]/5",
+      btnColor: "bg-blue-600 hover:bg-blue-700"
+    }
+  ];
+  const faqData = [
+    {
+      id: 1,
+      qus: "What Oracle Cloud services does DimensionCG offer?",
+      ans: "DimensionCG provides end-to-end Oracle Cloud consulting, including implementation, cloud migration, system integration, optimization, managed services, upgrades, and ongoing support across Oracle ERP, SCM, HCM, EPM, CX, and OCI."
+    },
+    {
+      id: 2,
+      qus: "Can DimensionCG migrate our existing ERP system to Oracle Cloud?",
+      ans: "Yes. We help organizations migrate from legacy ERP platforms or on-premise Oracle systems to Oracle Cloud with a structured, low-risk approach that minimizes disruption and ensures business continuity."
+    },
+    {
+      id: 3,
+      qus: "How long does an Oracle Cloud implementation take?",
+      ans: "Project timelines depend on the complexity of your business, the number of Oracle modules, integrations, and data migration requirements. After an initial assessment, we provide a detailed implementation roadmap with realistic milestones."
+    },
+    {
+      id: 4,
+      qus: "Do you provide post-implementation support?",
+      ans: "Absolutely. Our engagement continues after go-live with application support, performance optimization, quarterly Oracle updates, user training, and continuous improvements."
+    },
+    {
+      id: 5,
+      qus: "Why choose DimensionCG as your Oracle Cloud implementation partner?",
+      ans: "Our certified Oracle consultants combine deep product expertise with proven delivery methodologies and industry best practices to deliver secure, scalable Oracle Cloud solutions."
     }
   ];
 
@@ -306,73 +343,118 @@ const CloudApplications = () => {
       </SectionWrapper>
 
       {/* 4. COMPARISON TABLE */}
-      <SectionWrapper ref={tableRef} className="bg-[#F8FAFC] py-24">
-        <SectionContent>
-          <div className="text-center max-w-3xl mx-auto mb-16 table-anim">
-            <h2 className="text-3xl lg:text-4xl font-heading font-black text-slate-900 mb-6 tracking-tight">
-              Which Platform Is Right for You?
-            </h2>
-          </div>
 
-          <div className="table-anim w-full overflow-x-auto bg-white rounded-2xl border border-slate-200 shadow-sm p-1">
-            <table className="w-full text-left border-collapse min-w-[800px]">
-              <thead>
-                <tr className="bg-slate-50 rounded-xl">
-                  <th className="py-5 px-6 font-bold text-slate-900 rounded-tl-xl">Platform</th>
-                  <th className="py-5 px-6 font-bold text-slate-900">Best For</th>
-                  <th className="py-5 px-6 font-bold text-slate-900 rounded-tr-xl">Primary Focus</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-100">
-                <tr className="hover:bg-slate-50/50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-slate-900 flex items-center gap-3">
-                    <img src="/ai_logos/oracle.png" alt="Oracle" className="h-6 object-contain" />
-                    Oracle Cloud
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">Large enterprises requiring complex, end-to-end infrastructure and applications</td>
-                  <td className="py-5 px-6 text-slate-600">ERP • SCM • HCM • Cloud Infrastructure</td>
-                </tr>
-                <tr className="hover:bg-slate-50/50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-slate-900 flex items-center gap-3">
-                    <img src="/ai_logos/netsuite.png" alt="NetSuite" className="h-6 object-contain" />
-                    Oracle NetSuite
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">Growing and mid-market businesses</td>
-                  <td className="py-5 px-6 text-slate-600">Unified Cloud ERP • Financials</td>
-                </tr>
-                <tr className="hover:bg-slate-50/50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-slate-900 flex items-center gap-3">
-                    <img src="/ai_logos/salesforce.png" alt="Salesforce" className="h-6 object-contain" />
-                    Salesforce
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">Customer-centric organizations prioritizing sales and engagement</td>
-                  <td className="py-5 px-6 text-slate-600">CRM • Customer Engagement</td>
-                </tr>
-                <tr className="hover:bg-slate-50/50 transition-colors">
-                  <td className="py-5 px-6 font-bold text-slate-900 flex items-center gap-3">
-                    <img src="/ai_logos/workday.png" alt="Workday" className="h-6 object-contain" />
-                    Workday
-                  </td>
-                  <td className="py-5 px-6 text-slate-600">Organizations looking to modernize HR and finance operations</td>
-                  <td className="py-5 px-6 text-slate-600">HCM • Financial Management</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </SectionContent>
-      </SectionWrapper>
 
       {/* 5. TRUSTED PARTNERS */}
       <SectionWrapper ref={partnersRef} className="bg-white py-20 border-b border-slate-100">
         <SectionContent>
           <div className="text-center mb-10 partner-logo">
-            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">Trusted Technology Partners</h3>
+            <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+              Trusted Technology Partners
+            </h3>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-24">
-            <img src="/ai_logos/oracle.png" alt="Oracle" className="h-8 lg:h-10 object-contain transition-all partner-logo hover:-translate-y-1" />
-            <img src="/ai_logos/netsuite.png" alt="NetSuite" className="h-8 lg:h-10 object-contain transition-all partner-logo hover:-translate-y-1" />
-            <img src="/ai_logos/salesforce.png" alt="Salesforce" className="h-10 lg:h-14 object-contain transition-all partner-logo hover:-translate-y-1" />
-            <img src="/ai_logos/workday.png" alt="Workday" className="h-8 lg:h-10 object-contain transition-all partner-logo hover:-translate-y-1" />
+
+          <div className="flex items-center justify-center gap-8 lg:gap-14 overflow-x-auto scrollbar-hide">
+            <img src="/partners/oracle.png" alt="Oracle" className="h-8 lg:h-10 flex-shrink-0 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/partners/netsuite.png" alt="NetSuite" className="h-8 lg:h-10 flex-shrink-0 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/partners/salesforce.png" alt="Salesforce" className="h-10 lg:h-12 flex-shrink-0 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/ai_logos/RTS_Logo_Colored.svg" alt="Rootstock" className="h-8 lg:h-10 flex-shrink-0 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/partners/celigo.png" alt="Celigo" className="h-8 lg:h-10 flex-shrink-0 object-contain transition-all partner-logo hover:-translate-y-1" />
+            <img src="/partners/opkey.png" alt="Opkey" className="h-8 lg:h-10 flex-shrink-0 object-contain transition-all partner-logo hover:-translate-y-1" />
+          </div>
+        </SectionContent>
+      </SectionWrapper>
+      {/* 5. FAQ SECTION */}
+      <SectionWrapper className="bg-white py-24 relative overflow-hidden">
+        <SectionContent>
+          <div className="max-w-5xl mx-auto px-6">
+            {/* Heading */}
+            <div className="text-center mb-12">
+              <span className="text-[#F15A24] uppercase tracking-[0.3em] text-sm font-semibold">
+                FAQ
+              </span>
+
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold text-slate-900">
+                Frequently Asked Questions
+              </h2>
+
+              <p className="mt-4 text-lg text-slate-500 max-w-2xl mx-auto">
+                Find answers to common questions about our Oracle Cloud services,
+                implementation approach, and ongoing support.
+              </p>
+            </div>
+
+            {/* FAQ */}
+            <div className="space-y-4">
+              {faqData.map((item) => {
+                const open = active === item.id;
+
+                return (
+                  <div
+                    key={item.id}
+                    className="rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-300"
+                  >
+                    <button
+                      onClick={() => setActive(open ? null : item.id)}
+                      className="w-full flex items-center justify-between px-6 py-5 text-left"
+                    >
+                      <div className="flex items-center gap-5 flex-1">
+
+                        {/* Logo Bullet */}
+                        <div className="w-12 h-12 rounded-full   flex items-center justify-center shrink-0">
+                          <img
+                            src="/dimconLogoIcon.png"
+                            alt="DimensionCG"
+                            className="w-7 h-7 object-contain"
+                          />
+                        </div>
+
+                        {/* Divider */}
+                        <div className="hidden sm:block h-8 w-px bg-slate-200"></div>
+
+                        {/* Question */}
+                        <h3 className="text-lg md:text-xl font-semibold text-slate-900 pr-4">
+                          {item.qus}
+                        </h3>
+                      </div>
+
+                      {/* Arrow */}
+                      <ChevronDown
+                        className={`w-6 h-6 shrink-0 transition-all duration-300 ${open
+                          ? "rotate-180 text-[#F15A24]"
+                          : "text-slate-400"
+                          }`}
+                      />
+                    </button>
+
+                    {/* Answer */}
+                    <div
+                      className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                        }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="pl-[92px] sm:pl-[104px] pr-8 pb-6 text-slate-600 leading-7">
+                          {item.ans}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Bottom CTA */}
+            <div className="text-center mt-12">
+              <p className="text-slate-500">
+                Still have questions?{" "}
+                <a
+                  href="/contact"
+                  className="text-[#F15A24] font-semibold hover:underline"
+                >
+                  Contact our experts →
+                </a>
+              </p>
+            </div>
           </div>
         </SectionContent>
       </SectionWrapper>
