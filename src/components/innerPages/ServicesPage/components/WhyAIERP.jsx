@@ -37,17 +37,20 @@ const WhyAIERP = () => {
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-4 relative">
           
           {/* Traditional ERP Card */}
-          <div className="flex-1 w-full bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative">
-            <h3 className="text-2xl font-bold text-slate-400 mb-8 pb-4 border-b border-slate-100">Traditional ERP</h3>
-            <div className="space-y-6">
-              {traditionalFeatures.map((feature, idx) => (
-                <div key={idx} className="flex items-center gap-4 text-slate-500">
-                  <XCircle size={24} className="text-slate-300 shrink-0" />
-                  <span className="text-lg font-medium">{feature}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <div className="flex-1 w-full bg-gradient-to-br from-red-50 to-rose-50 rounded-3xl p-8 shadow-xl relative">
+  <h3 className="text-2xl font-bold text-red-700 mb-8 pb-4 border-b border-red-200">
+    Traditional ERP
+  </h3>
+
+  <div className="space-y-6">
+    {traditionalFeatures.map((feature, idx) => (
+      <div key={idx} className="flex items-center gap-4 text-red-700">
+        <XCircle size={24} className="text-red-500 shrink-0" />
+        <span className="text-lg font-medium">{feature}</span>
+      </div>
+    ))}
+  </div>
+</div>
 
           {/* Arrow / VS Graphic */}
           <div className="shrink-0 flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 border-4 border-white shadow-md z-10 -my-4 md:my-0 md:-mx-4">
