@@ -339,7 +339,7 @@ const IndustriesSection = ({ featuredOnly = true }) => {
               onClick={() => navigate('/industries')}
               className="w-full md:w-auto px-8 h-[52px] rounded-full border border-slate-300 text-slate-700 bg-white hover:bg-slate-50 font-semibold text-[15px] transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
             >
-              View All Industries
+              Explore Industries
             </button>
           </div>
         )}
