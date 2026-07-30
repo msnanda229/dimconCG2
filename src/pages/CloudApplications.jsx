@@ -300,9 +300,7 @@ const CloudApplications = () => {
       <SectionWrapper ref={platformsRef} id="platforms" className="bg-white py-24">
         <SectionContent>
           <div className="mb-16">
-            <h2 className="text-3xl lg:text-4xl font-heading font-black text-slate-900 mb-6 tracking-tight">
-              Explore Our Cloud Platforms
-            </h2>
+
             <p className="text-lg text-slate-600 max-w-2xl">
               We partner with the world's leading technology providers to deliver tailored cloud solutions that meet your exact business requirements.
             </p>
