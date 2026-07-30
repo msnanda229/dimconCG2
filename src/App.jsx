@@ -10,6 +10,7 @@ const Industries = lazy(() => import('./pages/Industries'));
 const OracleCloud = lazy(() => import('./components/innerPages/oracleCloud/oracleCloud'));
 const CloudApplications = lazy(() => import('./pages/CloudApplications'));
 const Services = lazy(() => import('./pages/Services'));
+const AiPoweredERP = lazy(() => import('./components/innerPages/ServicesPage/AiPoweredERP'));
 
 // Simple loading fallback component for route navigation
 const PageLoader = () => (
@@ -37,6 +38,7 @@ function App() {
             <Route path="industries" element={<Industries />} />
             <Route path="cloud-applications" element={<CloudApplications />} />
             <Route path="services" element={<Services />} />
+            <Route path="services/ai-powered-erp" element={<AiPoweredERP />} />
 
             {/* Catch-all to seamlessly redirect any old/unused paths back to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
