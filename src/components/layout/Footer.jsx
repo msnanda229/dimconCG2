@@ -135,14 +135,15 @@ const Footer = () => {
             Trusted Platform Alliances
           </span>
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-10 lg:gap-16">
-            <img src="/ai_logos/oracle.png" alt="Oracle" className="h-5 md:h-6 object-contain" />
-            <img src="/ai_logos/netsuite.png" alt="NetSuite" className="h-5 md:h-6 object-contain" />
-            <img src="/ai_logos/salesforce.png" alt="Salesforce" className="h-6 md:h-8 object-contain" />
-            <img src="/ai_logos/workday.png" alt="Workday" className="h-5 md:h-6 object-contain" />
-            <img src="/ai_logos/celigo.png" alt="Celigo" className="h-5 md:h-6 object-contain" />
-            <img src="/ai_logos/opkey.png" alt="Opkey" className="h-5 md:h-6 object-contain" />
+            <img src="/partners/oracle.png" alt="Oracle" className="h-5 md:h-6 object-contain" />
+            <img src="/partners/netsuite.png" alt="NetSuite" className="h-5 md:h-6 object-contain" />
+            <img src="/partners/salesforce.png" alt="Salesforce" className="h-6 md:h-8 object-contain" />
+            <img src="/ai_logos/RTS_Logo_Colored.svg" alt="Workday" className="h-5 md:h-6 object-contain" />
+            <img src="/partners/celigo.png" alt="Celigo" className="h-5 md:h-6 object-contain" />
+            <img src="/partners/opkey.png" alt="Opkey" className="h-5 md:h-6 object-contain" />
           </div>
         </div>
+
 
         {/* SECTION 2: Massive Brand Statement */}
    
