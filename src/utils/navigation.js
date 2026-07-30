@@ -16,7 +16,7 @@ export const generateNavigationData = () => {
             { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "..innerpages/workday" }
           ]
         },
-        
+
       ]
     },
     {
@@ -27,27 +27,24 @@ export const generateNavigationData = () => {
       featuredCTA: "View All Services",
       columns: [
         {
-          heading: "Implementation Services",
           items: [
-            { title: "ERP Implementation", description: "End-to-end deployment", icon: "Server", path: "#" },
-            { title: "CRM Implementation", description: "Customer platform setup", icon: "Users", path: "#" },
-            { title: "HCM Implementation", description: "HR system integration", icon: "Briefcase", path: "#" }
+            { title: "AI-Powered ERP", description: "Intelligent enterprise planning", icon: "Cpu", path: "/services" },
+            { title: "Cloud Applications", description: "Scalable cloud solutions", icon: "Cloud", path: "/services" },
+            { title: "ERP Implementation", description: "End-to-end deployment", icon: "Server", path: "/services" }
           ]
         },
         {
-          heading: "Consulting",
           items: [
-            { title: "Digital Transformation", description: "Modernize your business", icon: "Zap", path: "#" },
-            { title: "Cloud Strategy", description: "Roadmap to the cloud", icon: "Map", path: "#" },
-            { title: "Technology Advisory", description: "Strategic IT guidance", icon: "Lightbulb", path: "#" }
+            { title: "Data Migration", description: "Secure data movement", icon: "Database", path: "/services" },
+            { title: "CRM Implementation", description: "Sales & service platforms", icon: "Users", path: "/services" },
+            { title: "HCM Implementation", description: "Workforce management", icon: "Heart", path: "/services" }
           ]
         },
         {
-          heading: "Managed Services",
           items: [
-            { title: "AMS Support", description: "Application management", icon: "Settings", path: "#" },
-            { title: "Monitoring", description: "24/7 system tracking", icon: "Activity", path: "#" },
-            { title: "Performance Optimization", description: "Enhance system speed", icon: "TrendingUp", path: "#" }
+            { title: "Managed Services", description: "Continuous support", icon: "Shield", path: "/services" },
+            { title: "Monitoring Services", description: "Proactive health checks", icon: "Activity", path: "/services" },
+            { title: "Performance Optimization", description: "System speed & efficiency", icon: "Zap", path: "/services" }
           ]
         }
       ]
@@ -109,72 +106,72 @@ export const generateNavigationData = () => {
       ]
     },
     {
-  slug: "products-accelerators",
-  name: "Products & Accelerators",
-  description:
-    "Enterprise products accelerating digital transformation.",
-  icon: "Database",
-  featuredCTA: "Explore Products",
-  columns: [
-    {
-      heading: "Products",
-      items: [
+      slug: "products-accelerators",
+      name: "Products & Accelerators",
+      description:
+        "Enterprise products accelerating digital transformation.",
+      icon: "Database",
+      featuredCTA: "Explore Products",
+      columns: [
         {
-          title: "AECCAR",
-          description: "Cloud migration accelerator",
-          icon: "Database",
-          path: "#"
+          heading: "Products",
+          items: [
+            {
+              title: "AECCAR",
+              description: "Cloud migration accelerator",
+              icon: "Database",
+              path: "#"
+            },
+            {
+              title: "Synthera",
+              description: "AI-powered enterprise platform",
+              icon: "Cpu",
+              path: "#"
+            },
+            {
+              title: "RightlyHR",
+              description: "Modern HR platform",
+              icon: "Users",
+              path: "#"
+            }
+          ]
         },
         {
-          title: "Synthera",
-          description: "AI-powered enterprise platform",
-          icon: "Cpu",
-          path: "#"
+          heading: "Accelerators",
+          items: [
+            {
+              title: "ERP Accelerators",
+              description: "Rapid implementation toolkit",
+              icon: "Server",
+              path: "#"
+            },
+            {
+              title: "AI Accelerators",
+              description: "Pre-built AI solutions",
+              icon: "Zap",
+              path: "#"
+            },
+            {
+              title: "Integration Accelerators",
+              description: "Enterprise connectors",
+              icon: "RefreshCw",
+              path: "#"
+            }
+          ]
         },
         {
-          title: "RightlyHR",
-          description: "Modern HR platform",
-          icon: "Users",
-          path: "#"
+          heading: "Why Products",
+          items: [
+            {
+              title: "Innovation",
+              description: "Built from real enterprise experience",
+              icon: "Lightbulb",
+              path: "#"
+            }
+          ]
         }
       ]
     },
-    {
-      heading: "Accelerators",
-      items: [
-        {
-          title: "ERP Accelerators",
-          description: "Rapid implementation toolkit",
-          icon: "Server",
-          path: "#"
-        },
-        {
-          title: "AI Accelerators",
-          description: "Pre-built AI solutions",
-          icon: "Zap",
-          path: "#"
-        },
-        {
-          title: "Integration Accelerators",
-          description: "Enterprise connectors",
-          icon: "RefreshCw",
-          path: "#"
-        }
-      ]
-    },
-    {
-      heading: "Why Products",
-      items: [
-        {
-          title: "Innovation",
-          description: "Built from real enterprise experience",
-          icon: "Lightbulb",
-          path: "#"
-        }
-      ]
-    }
-  ]
-},
     {
       slug: "company",
       name: "Company",
@@ -233,6 +230,6 @@ export const generateNavigationData = () => {
         }
       ]
     },
-    
+
   ];
 };
