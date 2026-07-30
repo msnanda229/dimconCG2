@@ -5,7 +5,7 @@ import {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { generateNavigationData } from '../../utils/navigation';
@@ -15,7 +15,7 @@ const iconMap = {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download,
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory,
   CloudUpload: Cloud // alias
 };
 
@@ -503,16 +503,24 @@ const CardNav = () => {
                             <Link
                               key={idx}
                               to={item.path}
-                              className="group/item flex gap-3 p-3 rounded-xl hover:bg-blue-50/50 border border-transparent hover:border-blue-100/50 transition-all duration-micro min-h-12 relative overflow-hidden"
+                              className={`group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden ${
+                                category.slug === 'cloud-applications'
+                                  ? 'hover:bg-blue-50/50 hover:border-blue-100/50 hover:-translate-y-[2px] duration-300'
+                                  : 'hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro'
+                              }`}
                               onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
                             >
-                              <div className="w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden">
+                              <div className={
+                                category.slug === 'cloud-applications'
+                                  ? "w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover/item:bg-blue-100 group-hover/item:text-blue-700 transition-colors duration-300 shrink-0"
+                                  : "w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
+                              }>
                                 {item.image ? (
                                   <img src={item.image} alt={item.title} className="w-[70%] h-[70%] object-contain" />
                                 ) : (
                                   (() => {
                                     const IconComponent = iconMap[item.icon] || Cloud;
-                                    return <IconComponent size={16} />;
+                                    return <IconComponent size={category.slug === 'cloud-applications' ? 20 : 16} />;
                                   })()
                                 )}
                               </div>
