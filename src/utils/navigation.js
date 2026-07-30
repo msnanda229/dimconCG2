@@ -12,10 +12,16 @@ export const generateNavigationData = () => {
           items: [
             { title: "Oracle Cloud", description: "Enterprise cloud infrastructure", icon: "Database", path: "/oracle-cloud" },
             { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Server", path: "..innerpages/netsuite" },
-            { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "..innerpages/salesforce" },
-            { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "..innerpages/workday" }
+            { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "..innerpages/salesforce" }
           ]
         },
+        {
+          heading: "\u00A0",
+          items: [
+            { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "..innerpages/workday" },
+            { title: "Rootstock", description: "Manufacturing ERP solutions", icon: "Settings", path: "..innerpages/rootstock" }
+          ]
+        }
 
       ]
     },
@@ -28,7 +34,7 @@ export const generateNavigationData = () => {
       columns: [
         {
           items: [
-            { title: "AI-Powered ERP", description: "Intelligent enterprise planning", icon: "Cpu", path: "/services" },
+            { title: "AI-Powered ERP", description: "Intelligent enterprise planning", icon: "Cpu", path: "/services/ai-powered-erp" },
             { title: "Cloud Applications", description: "Scalable cloud solutions", icon: "Cloud", path: "/services" },
             { title: "ERP Implementation", description: "End-to-end deployment", icon: "Server", path: "/services" }
           ]
@@ -87,20 +93,20 @@ export const generateNavigationData = () => {
       columns: [
         {
           items: [
-            { title: "Oracle", description: "Platinum Partner", image: "/ai_logos/oracle.png", path: "#" },
-            { title: "Salesforce", description: "Consulting Partner", image: "/ai_logos/salesforce.png", path: "#" }
+            { title: "Oracle", description: "Platinum Partner", image: "/partners/oracle.png", path: "#" },
+            { title: "Salesforce", description: "Consulting Partner", image: "/partners/salesforce.png", path: "#" }
           ]
         },
         {
           items: [
-            { title: "Workday", description: "Services Partner", image: "/ai_logos/workday.png", path: "#" },
-            { title: "NetSuite", description: "Alliance Partner", image: "/ai_logos/netsuite.png", path: "#" }
+            { title: "Rootstock", description: "Cloud ERP Partner", image: "/ai_logos/RTS_Logo_Colored.svg", path: "#" },
+            { title: "NetSuite", description: "Alliance Partner", image: "/partners/netsuite.png", path: "#" }
           ]
         },
         {
           items: [
-            { title: "Celigo", description: "Integration Partner", image: "/ai_logos/celigo.png", path: "#" },
-            { title: "Opkey", description: "Testing Partner", image: "/ai_logos/opkey.png", path: "#" }
+            { title: "Celigo", description: "Integration Partner", image: "/partners/celigo.png", path: "#" },
+            { title: "Opkey", description: "Testing Partner", image: "/partners/opkey.png", path: "#" }
           ]
         }
       ]
