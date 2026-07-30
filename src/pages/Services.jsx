@@ -10,7 +10,7 @@ import {
   Users, Zap, Shield, BarChart3, TrendingUp, CheckCircle2,
   Settings, Truck, Heart, DollarSign, Building2, BookOpen,
   Map, ChevronDown, Activity, Lightbulb,
-  Sparkles, UsersRound, ShieldCheck, Gauge
+  Sparkles, UserCheck, Contact, Eye, UsersRound, ShieldCheck, Gauge
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -144,7 +144,7 @@ const Services = () => {
     {
       title: "HCM Implementation",
       desc: "Modernize human resources with powerful workforce management solutions.",
-      icon: <UsersRound size={24} strokeWidth={2} />,
+      icon: < Contact k size={24} strokeWidth={2} />,
       caps: ["HR Transformation", "Workforce Management", "Payroll Integration"],
       logos: ["/ai_logos/RTS_Logo_Colored.svg", "/partners/oracle.png"]
     },
@@ -158,7 +158,7 @@ const Services = () => {
     {
       title: "Monitoring Services",
       desc: "Proactive system monitoring to identify and resolve issues before they impact business.",
-      icon: <Activity size={24} strokeWidth={2} />,
+      icon: <Eye size={24} strokeWidth={2} />,
       caps: ["Application Health", "Alerts", "System Monitoring"],
       logos: []
     },
