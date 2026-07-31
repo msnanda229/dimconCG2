@@ -314,9 +314,7 @@ const NetSuitePage = () => {
                 <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#0e4d9e] text-white font-semibold shadow-lg shadow-blue-900/20 hover:bg-[#072b58] hover:shadow-blue-900/40 hover:-translate-y-0.5 transition-all duration-300">
                   Schedule Consultation
                 </Link>
-                <a href="#solutions" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-white text-slate-700 font-semibold border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all duration-300">
-                  Explore NetSuite Solutions
-                </a>
+                
               </motion.div>
             </motion.div>
 
