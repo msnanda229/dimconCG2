@@ -122,9 +122,9 @@ const NotFoundPage = () => {
           >
             <Link
               to="/"
-              className="px-10 py-3.5 bg-[#0e4d9e] text-white text-[15px] font-bold tracking-widest uppercase rounded-full hover:bg-[#072b58] hover:scale-105 transition-all duration-300 shadow-[0_4px_14px_0_rgba(56,216,156,0.39)] inline-block"
+              className="inline-flex items-center justify-center px-10 py-3.5 rounded-full border border-[#0e4d9e] bg-[#0e4d9e] text-white text-[15px] font-bold tracking-widest uppercase transition-all duration-300 shadow-[0_8px_24px_rgba(14,77,158,0.35)] hover:bg-[#072b58] hover:border-[#072b58] hover:shadow-[0_12px_30px_rgba(7,43,88,0.45)] hover:scale-105 active:scale-95"
             >
-              Go Home
+              Back to Homepage
             </Link>
           </motion.div>
 
