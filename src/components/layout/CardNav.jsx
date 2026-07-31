@@ -313,9 +313,7 @@ const CardNav = () => {
                         }`}
                       aria-expanded={activeMenu === category.slug}
                     >
-                      {/* Top Dot */}
-                      <div className={`absolute top-0 w-[5px] h-[5px] rounded-full transition-all duration-300 ${isHovered ? 'bg-[#2563EB] shadow-[0_0_8px_rgba(37,99,235,0.8)] opacity-100 scale-100' : 'bg-transparent opacity-0 scale-0'
-                        }`}></div>
+                      
 
                       <span className={`text-sm font-semibold relative whitespace-nowrap transition-all duration-200 ${isHovered ? "text-[#2563EB]" : ""}`}>
                         {category.name}
