@@ -5,7 +5,7 @@ import {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { generateNavigationData } from '../../utils/navigation';
@@ -15,7 +15,7 @@ const iconMap = {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory,
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus,
   CloudUpload: Cloud // alias
 };
 
@@ -392,10 +392,10 @@ const CardNav = () => {
               {(() => {
                 if (activeMenu === 'ai-solutions') {
                   return (
-                    <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-8 mt-4">
+                    <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-8 mt-4 h-fit">
 
                       {/* Left: AI Solutions Sub-navigation grid */}
-                      <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-1 content-start border-r border-[#E8ECF5] pr-6">
+                      <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-4 border-r border-[#E8ECF5] pr-6">
                         {aiSolutionsData.map((col, colIdx) => (
                           <div key={colIdx} className="flex flex-col gap-2">
                             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">
@@ -464,7 +464,7 @@ const CardNav = () => {
                 const category = navData.find(c => c.slug === activeMenu);
                 if (!category) return null;
                 return (
-                  <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4 relative overflow-hidden">
+                  <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4 relative h-fit">
 
 
                     {/* COLUMN 1: Overview */}
@@ -489,7 +489,7 @@ const CardNav = () => {
                     </div>
 
                     {/* COLUMN 2: Sub-navigation grid */}
-                    <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-1 content-start relative z-10">
+                    <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-4 relative z-10">
                       {category.columns?.map((col, colIdx) => (
                         <div key={colIdx} className="flex flex-col gap-2">
                           {col.heading && (
