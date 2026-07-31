@@ -149,7 +149,7 @@ const CardNav = () => {
 
   // Close menus on route change or resize to desktop
   useEffect(() => {
-    if (windowWidth >= 1024) {
+    if (windowWidth >= 1130) {
       setIsMobileMenuOpen(false);
     }
   }, [windowWidth]);
@@ -182,7 +182,7 @@ const CardNav = () => {
     return "64px";
   };
 
-  const isMobile = windowWidth < 1024;
+  const isMobile = windowWidth < 1130;
   const isLightBg = !['/industries'].includes(location.pathname);
   const effectiveIsScrolled = isScrolled || activeMenu !== null;
 
@@ -291,7 +291,7 @@ const CardNav = () => {
 
             {/* Center: Navigation Links */}
             <div
-              className="hidden lg:flex min-w-0 items-center justify-center gap-1 xl:gap-2 2xl:gap-3 h-full z-20"
+              className="hidden min-[1130px]:flex min-w-0 items-center justify-center gap-1 xl:gap-2 2xl:gap-3 h-full z-20"
               onMouseLeave={() => setHoverIntent(null)}
             >
               {navData.map((category) => {
@@ -333,10 +333,21 @@ const CardNav = () => {
             </div>
 
             {/* Right: CTA & Hamburger */}
-            <div className="flex-1 min-w-0 flex items-center justify-end gap-2 lg:gap-3">
+            <div className="flex-1 min-w-0 flex items-center justify-end gap-2 min-[1130px]:gap-3">
+              
+              {/* Mobile Hamburger (Now before CTA on <1130px) */}
+              <button
+                className={`min-[1130px]:hidden flex items-center justify-center w-[44px] h-[44px] focus:outline-none rounded-md transition-colors ${(effectiveIsScrolled || isLightBg) ? 'text-black' : 'text-white'}`}
+                aria-label="Open Mobile Menu"
+                aria-expanded={isMobileMenuOpen}
+                onClick={() => setIsMobileMenuOpen(true)}
+              >
+                <Menu size={26} />
+              </button>
+
               {/* Desktop CTA */}
               <div
-                className="hidden lg:flex items-center h-full relative"
+                className="hidden min-[1130px]:flex items-center h-full relative"
                 onMouseEnter={() => setHoverIntent('ai-solutions')}
                 onMouseLeave={() => setHoverIntent(null)}
               >
@@ -351,24 +362,6 @@ const CardNav = () => {
                   <ChevronDown className={`w-4 h-4 ml-1.5 transition-transform duration-300 ${activeMenu === 'ai-solutions' ? 'rotate-180' : ''}`} />
                 </button>
               </div>
-
-              {/* Mobile/Tablet CTA */}
-              <div className="block lg:hidden">
-                <button onClick={() => setIsMobileMenuOpen(true)} className="inline-flex items-center justify-center h-9 sm:h-10 px-4 sm:px-5 rounded-full bg-gradient-to-r from-[#D9872A] to-[#BF6206] hover:from-[#C7781C] hover:to-[#A75404] text-white text-xs sm:text-sm font-semibold transition-all duration-300 shadow-[0_8px_20px_rgba(191,98,6,0.2)]">
-                  <span className="hidden sm:inline">AI Solutions</span>
-                  <span className="sm:hidden">AI</span>
-                </button>
-              </div>
-
-              {/* Mobile Hamburger */}
-              <button
-                className={`lg:hidden flex items-center justify-center w-[44px] h-[44px] focus:outline-none rounded-md transition-colors ${(effectiveIsScrolled || isLightBg) ? 'text-black' : 'text-white'}`}
-                aria-label="Open Mobile Menu"
-                aria-expanded={isMobileMenuOpen}
-                onClick={() => setIsMobileMenuOpen(true)}
-              >
-                <Menu size={26} />
-              </button>
             </div>
 
           </div>
@@ -501,19 +494,14 @@ const CardNav = () => {
                             <Link
                               key={idx}
                               to={item.path}
-                              className={`group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden ${category.slug === 'cloud-applications'
-                                ? 'hover:bg-blue-50/50 hover:border-blue-100/50 hover:-translate-y-[2px] duration-300'
-                                : 'hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro'
-                                }`}
+                              className="group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro"
                               onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
                             >
                               <div
                                 className={
                                   category.slug === "partnerships"
                                     ? "w-20 h-10 flex items-center justify-center shrink-0 overflow-hidden"
-                                    : category.slug === "cloud-applications"
-                                      ? "w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover/item:bg-blue-100 group-hover/item:text-blue-700 transition-colors duration-300 shrink-0"
-                                      : "w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
+                                    : "w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
                                 }
                               >
                                 {item.image ? (
@@ -529,9 +517,7 @@ const CardNav = () => {
                                   (() => {
                                     const IconComponent = iconMap[item.icon] || Cloud;
                                     return (
-                                      <IconComponent
-                                        size={category.slug === "cloud-applications" ? 20 : 16}
-                                      />
+                                      <IconComponent size={16} />
                                     );
                                   })()
                                 )}
@@ -612,72 +598,11 @@ const CardNav = () => {
               </div>
 
               <div className="flex-1 overflow-y-auto py-2 px-6 flex flex-col gap-1">
-                {/* AI Solutions Mobile Accordion */}
-                <div className="border-b border-[#E2E8F0] py-2">
-                  <button
-                    className={`flex items-center justify-between w-full py-4 text-left font-heading text-lg font-bold focus:outline-none transition-colors ${activeAccordion === 'ai-solutions' ? 'text-[#D9872A]' : 'text-[#0F172A]'}`}
-                    onClick={() => toggleAccordion('ai-solutions')}
-                    aria-expanded={activeAccordion === 'ai-solutions'}
-                  >
-                    AI Solutions
-                    <ChevronDown
-                      size={18}
-                      className={`text-[#94A3B8] transition-transform duration-300 ${activeAccordion === 'ai-solutions' ? 'rotate-180 text-[#D9872A]' : ''}`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {activeAccordion === 'ai-solutions' && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <ul className="flex flex-col gap-2 pb-6 pt-2">
-                          {aiSolutionsData.flatMap(c => c.items).map((item, idx) => (
-                            <motion.li
-                              key={idx}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: idx * 0.05 }}
-                            >
-                              <Link
-                                to={item.path}
-                                className="flex items-center gap-3 text-base font-medium text-[#64748B] hover:text-[#D9872A] transition-colors py-3 px-4 min-h-[44px] rounded-lg hover:bg-orange-50"
-                              >
-                                {(() => {
-                                  const IconComponent = iconMap[item.icon] || Cloud;
-                                  return <IconComponent size={16} />;
-                                })()}
-                                {item.title}
-                              </Link>
-                            </motion.li>
-                          ))}
-                          <motion.li
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: aiSolutionsData.flatMap(c => c.items).length * 0.05 }}
-                            className="mt-4 px-3"
-                          >
-                            <Link
-                              to="/contact"
-                              className="inline-flex items-center justify-center w-full gap-2 text-sm font-bold text-white bg-gradient-to-r from-[#D9872A] to-[#BF6206] px-4 py-3 rounded-full transition-colors shadow-sm"
-                            >
-                              Talk to an AI Expert
-                              <ArrowRight size={14} />
-                            </Link>
-                          </motion.li>
-                        </ul>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-
+                
                 {navData.map((category) => {
                   const isActive = activeAccordion === category.slug;
                   return (
-                    <div key={category.slug} className="border-b border-[#E2E8F0] last:border-0 py-2">
+                    <div key={category.slug} className="border-b border-[#E2E8F0] py-2">
                       <button
                         className={`flex items-center justify-between w-full py-4 text-left font-heading text-lg font-bold focus:outline-none transition-colors ${isActive ? 'text-[#2563EB]' : 'text-[#0F172A]'} min-h-[56px]`}
                         onClick={() => toggleAccordion(category.slug)}
@@ -743,6 +668,68 @@ const CardNav = () => {
                     </div>
                   );
                 })}
+
+                {/* AI Solutions Mobile Accordion (Moved to end) */}
+                <div className="border-b border-[#E2E8F0] last:border-0 py-2">
+                  <button
+                    className={`flex items-center justify-between w-full py-4 text-left font-heading text-lg font-bold focus:outline-none transition-colors ${activeAccordion === 'ai-solutions' ? 'text-[#D9872A]' : 'text-[#0F172A]'}`}
+                    onClick={() => toggleAccordion('ai-solutions')}
+                    aria-expanded={activeAccordion === 'ai-solutions'}
+                  >
+                    AI Solutions
+                    <ChevronDown
+                      size={18}
+                      className={`text-[#94A3B8] transition-transform duration-300 ${activeAccordion === 'ai-solutions' ? 'rotate-180 text-[#D9872A]' : ''}`}
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {activeAccordion === 'ai-solutions' && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <ul className="flex flex-col gap-2 pb-6 pt-2">
+                          {aiSolutionsData.flatMap(c => c.items).map((item, idx) => (
+                            <motion.li
+                              key={idx}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.05 }}
+                            >
+                              <Link
+                                to={item.path}
+                                className="flex items-center gap-3 text-base font-medium text-[#64748B] hover:text-[#D9872A] transition-colors py-3 px-4 min-h-[44px] rounded-lg hover:bg-orange-50"
+                              >
+                                {(() => {
+                                  const IconComponent = iconMap[item.icon] || Cloud;
+                                  return <IconComponent size={16} />;
+                                })()}
+                                {item.title}
+                              </Link>
+                            </motion.li>
+                          ))}
+                          <motion.li
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: aiSolutionsData.flatMap(c => c.items).length * 0.05 }}
+                            className="mt-4 px-3"
+                          >
+                            <Link
+                              to="/contact"
+                              className="inline-flex items-center justify-center w-full gap-2 text-sm font-bold text-white bg-gradient-to-r from-[#D9872A] to-[#BF6206] px-4 py-3 rounded-full transition-colors shadow-sm"
+                            >
+                              Talk to an AI Expert
+                              <ArrowRight size={14} />
+                            </Link>
+                          </motion.li>
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
               <div className="p-8 border-t border-[#E2E8F0] bg-slate-50 mt-auto">
                 <div className="flex flex-col gap-4">
