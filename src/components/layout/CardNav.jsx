@@ -313,7 +313,7 @@ const CardNav = () => {
                         }`}
                       aria-expanded={activeMenu === category.slug}
                     >
-                      
+
 
                       <span className={`text-sm font-semibold relative whitespace-nowrap transition-all duration-200 ${isHovered ? "text-[#2563EB]" : ""}`}>
                         {category.name}
@@ -501,24 +501,38 @@ const CardNav = () => {
                             <Link
                               key={idx}
                               to={item.path}
-                              className={`group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden ${
-                                category.slug === 'cloud-applications'
-                                  ? 'hover:bg-blue-50/50 hover:border-blue-100/50 hover:-translate-y-[2px] duration-300'
-                                  : 'hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro'
-                              }`}
+                              className={`group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden ${category.slug === 'cloud-applications'
+                                ? 'hover:bg-blue-50/50 hover:border-blue-100/50 hover:-translate-y-[2px] duration-300'
+                                : 'hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro'
+                                }`}
                               onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
                             >
-                              <div className={
-                                category.slug === 'cloud-applications'
-                                  ? "w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover/item:bg-blue-100 group-hover/item:text-blue-700 transition-colors duration-300 shrink-0"
-                                  : "w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
-                              }>
+                              <div
+                                className={
+                                  category.slug === "partnerships"
+                                    ? "w-20 h-10 flex items-center justify-center shrink-0 overflow-hidden"
+                                    : category.slug === "cloud-applications"
+                                      ? "w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center text-[#2563EB] group-hover/item:bg-blue-100 group-hover/item:text-blue-700 transition-colors duration-300 shrink-0"
+                                      : "w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
+                                }
+                              >
                                 {item.image ? (
-                                  <img src={item.image} alt={item.title} className="w-[70%] h-[70%] object-contain" />
+                                  <img
+                                    src={item.image}
+                                    alt={item.title}
+                                    className={`object-contain ${["Celigo", "Opkey"].includes(item.title)
+                                      ? "w-[70%] h-[70%]"
+                                      : "w-[200%] h-[200%]"
+                                      }`}
+                                  />
                                 ) : (
                                   (() => {
                                     const IconComponent = iconMap[item.icon] || Cloud;
-                                    return <IconComponent size={category.slug === 'cloud-applications' ? 20 : 16} />;
+                                    return (
+                                      <IconComponent
+                                        size={category.slug === "cloud-applications" ? 20 : 16}
+                                      />
+                                    );
                                   })()
                                 )}
                               </div>
