@@ -80,7 +80,7 @@ const Hero = () => {
               >
 
                 {/* Left Column (Illustration on Desktop, Top on Mobile) */}
-                <div className="w-full lg:w-[50%] flex items-center justify-center lg:justify-start order-1 mb-8 lg:mb-0">
+                <div className="w-full lg:w-[45%] min-[1130px]:w-[50%] flex items-center justify-center lg:justify-start order-1 mb-8 lg:mb-0">
                   <div className="relative w-full aspect-[4/3] max-h-[35vh] lg:max-h-none lg:aspect-auto h-full flex items-center justify-center">
                     <img
                       src={slide.image}
@@ -88,21 +88,21 @@ const Hero = () => {
                       loading={index === 0 ? "eager" : "lazy"}
                       fetchPriority={index === 0 ? "high" : "auto"}
                       decoding="async"
-                      className="w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[700px] xl:max-w-[850px] h-full lg:h-auto object-contain drop-shadow-2xl will-change-transform"
+                      className="w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[700px] xl:max-w-[850px] h-full lg:h-auto object-contain drop-shadow-2xl will-change-transform lg:scale-90 min-[1130px]:scale-100 origin-center lg:origin-right transition-transform"
                     />
                   </div>
                 </div>
 
                 {/* Right Column (Content on Desktop, Bottom on Mobile) */}
-                <div className="w-full lg:w-[50%] max-w-[650px] order-2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left mt-0 lg:mt-0">
+                <div className="w-full lg:w-[55%] min-[1130px]:w-[50%] max-w-[650px] order-2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left mt-0 lg:mt-0 lg:pl-4 min-[1130px]:pl-0">
                   <h1 className="flex flex-col m-0 p-0 w-full">
-                    <span className="text-[10px] sm:text-xs md:text-sm lg:text-lg font-semibold tracking-[0.18em] text-[#64748B] uppercase mb-2 lg:mb-3">
+                    <span className="text-[10px] sm:text-xs md:text-sm lg:text-base min-[1130px]:text-lg font-semibold tracking-[0.18em] text-[#64748B] uppercase mb-2 lg:mb-3">
                       {slide.title}
                     </span>
                     <span
                       className="font-semibold text-[#0F172A]"
                       style={{
-                        fontSize: "clamp(2rem, 5vw, 4.75rem)",
+                        fontSize: "clamp(2rem, 4.5vw, 4.75rem)",
                         fontWeight: 600,
                         lineHeight: 1.05,
                         letterSpacing: "-0.045em",
@@ -114,22 +114,22 @@ const Hero = () => {
                   </h1>
 
                   <p
-                    className="mt-4 lg:mt-6 max-w-[560px] text-sm sm:text-base lg:text-xl leading-relaxed text-[#475569]"
+                    className="mt-4 lg:mt-5 min-[1130px]:mt-6 max-w-[500px] min-[1130px]:max-w-[560px] text-sm sm:text-base lg:text-lg min-[1130px]:text-xl leading-relaxed text-[#475569]"
                   >
                     {slide.desc}
                   </p>
 
                   <div
-                    className="mt-6 lg:mt-10 flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto px-4 sm:px-0"
+                    className="mt-6 lg:mt-8 min-[1130px]:mt-10 flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto px-4 sm:px-0 sm:flex-nowrap"
                   >
-                    <button className="group relative flex items-center justify-center gap-2 h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base bg-[#FF9D4D] text-white font-semibold rounded-full transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0_10px_40px_rgba(23,116,195,0.3)] active:translate-y-0 w-full sm:w-auto">
+                    <button className="group relative flex items-center justify-center gap-2 h-12 lg:h-[46px] min-[1130px]:h-14 px-6 text-sm sm:text-base bg-[#FF9D4D] text-white font-semibold rounded-full transition-all duration-300 hover:bg-[#E88C41] shadow-lg hover:shadow-[0_10px_40px_rgba(255,157,77,0.3)] w-full sm:w-auto flex-shrink-0 whitespace-nowrap">
                       <span className="relative z-10">{slide.PrimaryCTA}</span>
                       <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                       </svg>
                     </button>
 
-                    <button className="group relative flex items-center justify-center h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base bg-transparent text-[#000000] border border-[#000000] font-semibold rounded-full transition-all duration-300 hover:bg-[#FF9D4D] hover:text-white hover:border-[#FF9D4D] w-full sm:w-auto">
+                    <button className="group relative flex items-center justify-center h-12 lg:h-[46px] min-[1130px]:h-14 px-6 text-sm sm:text-base bg-white text-[#000000] border border-[#000000] font-semibold rounded-full transition-all duration-300 hover:bg-slate-50 w-full sm:w-auto flex-shrink-0 whitespace-nowrap">
                       {slide.SecondaryCTA}
                     </button>
                   </div>
