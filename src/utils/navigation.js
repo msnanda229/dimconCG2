@@ -1,3 +1,4 @@
+
 export const generateNavigationData = () => {
   return [
     {
@@ -66,20 +67,26 @@ export const generateNavigationData = () => {
           items: [
             { title: "Healthcare", description: "Patient-centric solutions", icon: "Heart", path: "#" },
             { title: "Manufacturing", description: "Production optimization", icon: "Settings", path: "#" },
-            { title: "Finance", description: "Secure financial systems", icon: "DollarSign", path: "#" }
+            { title: "Finance", description: "Secure financial systems", icon: "DollarSign", path: "#" },
+            {title: "E-Commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "#"},
+            {title:"Construction", description: "Building the future with smart solutions", icon: "Factory", path: "#"}
           ]
         },
         {
           items: [
             { title: "Retail", description: "Omnichannel commerce", icon: "Truck", path: "#" },
             { title: "Energy", description: "Resource management", icon: "Zap", path: "#" },
-            { title: "Government", description: "Public sector modernization", icon: "Building2", path: "#" }
+            { title: "Government & NPO", description: "Public sector modernization", icon: "Building2", path: "#" },
+            {title:"HI-Tech", description: "Innovative technology solutions", icon: "Cpu", path: "#"},
+            {title:"WholeSale & Distribution", description: "Streamlined supply chain solutions", icon: "Layers", path: "#"}
           ]
         },
         {
           items: [
             { title: "Supply Chain", description: "Logistics visibility", icon: "Truck", path: "#" },
-            { title: "Hospitality", description: "Guest experience enhancement", icon: "Heart", path: "#" }
+            { title: "Hospitality", description: "Guest experience enhancement", icon: "ShieldPlus", path: "#" },
+            { title: "IT", description: "backbone of every modern enterprise", icon: "Cloud", path: "#" }
+            
           ]
         }
       ]
