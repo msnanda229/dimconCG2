@@ -12,15 +12,15 @@ export const generateNavigationData = () => {
           heading: "Platforms",
           items: [
             { title: "Oracle Cloud", description: "Enterprise cloud infrastructure", icon: "Cloud", path: "/oracle-cloud" },
-            { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Building2", path: "..innerpages/netsuite" },
-            { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "..innerpages/salesforce" }
+            { title: "Oracle NetSuite", description: "Cloud ERP & business software", icon: "Building2", path: "/cloud-applications/netsuite" },
+            { title: "Salesforce", description: "Customer relationship management", icon: "Users", path: "/cloud-applications/salesforce" }
           ]
         },
         {
           heading: "\u00A0",
           items: [
-            { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "..innerpages/workday" },
-            { title: "Rootstock", description: "Manufacturing ERP solutions", icon: "Factory", path: "..innerpages/rootstock" }
+            { title: "Workday", description: "Finance and HR management", icon: "Briefcase", path: "/cloud-applications/workday" },
+            { title: "Rootstock", description: "Manufacturing ERP solutions", icon: "Factory", path: "/cloud-applications/rootstock" }
           ]
         }
 
@@ -36,22 +36,22 @@ export const generateNavigationData = () => {
         {
           items: [
             { title: "AI-Powered ERP", description: "Intelligent enterprise planning", icon: "Cpu", path: "/services/ai-powered-erp" },
-            { title: "Cloud Applications", description: "Scalable cloud solutions", icon: "Cloud", path: "/services" },
-            { title: "ERP Implementation", description: "End-to-end deployment", icon: "Server", path: "/services" }
+            { title: "Cloud Applications", description: "Scalable cloud solutions", icon: "Cloud", path: "/services/cloud-applications" },
+            { title: "ERP Implementation", description: "End-to-end deployment", icon: "Server", path: "/services/erp-implementation" }
           ]
         },
         {
           items: [
-            { title: "Data Migration", description: "Secure data movement", icon: "Database", path: "/services" },
-            { title: "CRM Implementation", description: "Sales & service platforms", icon: "Users", path: "/services" },
-            { title: "HCM Implementation", description: "Workforce management", icon: "Heart", path: "/services" }
+            { title: "Data Migration", description: "Secure data movement", icon: "Database", path: "/services/data-migration" },
+            { title: "CRM Implementation", description: "Sales & service platforms", icon: "Users", path: "/services/crm-implementation" },
+            { title: "HCM Implementation", description: "Workforce management", icon: "Heart", path: "/services/hcm-implementation" }
           ]
         },
         {
           items: [
-            { title: "Managed Services", description: "Continuous support", icon: "Shield", path: "/services" },
-            { title: "Monitoring Services", description: "Proactive health checks", icon: "Activity", path: "/services" },
-            { title: "Performance Optimization", description: "System speed & efficiency", icon: "Zap", path: "/services" }
+            { title: "Managed Services", description: "Continuous support", icon: "Shield", path: "/services/managed-services" },
+            { title: "Monitoring Services", description: "Proactive health checks", icon: "Activity", path: "/services/monitoring-services" },
+            { title: "Performance Optimization", description: "System speed & efficiency", icon: "Zap", path: "/services/performance-optimization" }
           ]
         }
       ]
@@ -65,27 +65,27 @@ export const generateNavigationData = () => {
       columns: [
         {
           items: [
-            { title: "Healthcare", description: "Patient-centric solutions", icon: "Heart", path: "#" },
-            { title: "Manufacturing", description: "Production optimization", icon: "Settings", path: "#" },
-            { title: "Finance", description: "Secure financial systems", icon: "DollarSign", path: "#" },
-            {title: "E-Commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "#"},
-            {title:"Construction", description: "Building the future with smart solutions", icon: "Factory", path: "#"}
+            { title: "Healthcare", description: "Patient-centric solutions", icon: "Heart", path: "/industries/healthcare" },
+            { title: "Manufacturing", description: "Production optimization", icon: "Settings", path: "/industries/manufacturing" },
+            { title: "Finance", description: "Secure financial systems", icon: "DollarSign", path: "/industries/finance" },
+            {title: "E-Commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/industries/e-commerce"},
+            {title:"Construction", description: "Building the future with smart solutions", icon: "Factory", path: "/industries/construction"}
           ]
         },
         {
           items: [
-            { title: "Retail", description: "Omnichannel commerce", icon: "Truck", path: "#" },
-            { title: "Energy", description: "Resource management", icon: "Zap", path: "#" },
-            { title: "Government & NPO", description: "Public sector modernization", icon: "Building2", path: "#" },
-            {title:"HI-Tech", description: "Innovative technology solutions", icon: "Cpu", path: "#"},
-            {title:"WholeSale & Distribution", description: "Streamlined supply chain solutions", icon: "Layers", path: "#"}
+            { title: "Retail", description: "Omnichannel commerce", icon: "Truck", path: "/industries/retail" },
+            { title: "Energy", description: "Resource management", icon: "Zap", path: "/industries/energy" },
+            { title: "Government & NPO", description: "Public sector modernization", icon: "Building2", path: "/industries/government-npo" },
+            {title:"HI-Tech", description: "Innovative technology solutions", icon: "Cpu", path: "/industries/hi-tech"},
+            {title:"WholeSale & Distribution", description: "Streamlined supply chain solutions", icon: "Layers", path: "/industries/wholesale-distribution"}
           ]
         },
         {
           items: [
-            { title: "Supply Chain", description: "Logistics visibility", icon: "Truck", path: "#" },
-            { title: "Hospitality", description: "Guest experience enhancement", icon: "ShieldPlus", path: "#" },
-            { title: "IT", description: "backbone of every modern enterprise", icon: "Cloud", path: "#" }
+            { title: "Supply Chain", description: "Logistics visibility", icon: "Truck", path: "/industries/supply-chain" },
+            { title: "Hospitality", description: "Guest experience enhancement", icon: "ShieldPlus", path: "/industries/hospitality" },
+            { title: "IT", description: "backbone of every modern enterprise", icon: "Cloud", path: "/industries/it" }
             
           ]
         }
@@ -100,20 +100,20 @@ export const generateNavigationData = () => {
       columns: [
         {
           items: [
-            { title: "Oracle", description: "Platinum Partner", image: "/partners/oracle.png", path: "#" },
-            { title: "Salesforce", description: "Consulting Partner", image: "/partners/salesforce.png", path: "#" }
+            { title: "Oracle", description: "Platinum Partner", image: "/partners/oracle.png", path: "/partnerships/oracle" },
+            { title: "Salesforce", description: "Consulting Partner", image: "/partners/salesforce.png", path: "/partnerships/salesforce" }
           ]
         },
         {
           items: [
-            { title: "Rootstock", description: "Cloud ERP Partner", image: "/ai_logos/RTS_Logo_Colored.svg", path: "#" },
-            { title: "NetSuite", description: "Alliance Partner", image: "/partners/netsuite.png", path: "#" }
+            { title: "Rootstock", description: "Cloud ERP Partner", image: "/ai_logos/RTS_Logo_Colored.svg", path: "/partnerships/rootstock" },
+            { title: "NetSuite", description: "Alliance Partner", image: "/partners/netsuite.png", path: "/partnerships/netsuite" }
           ]
         },
         {
           items: [
-            { title: "Celigo", description: "Integration Partner", image: "/partners/celigo.png", path: "#" },
-            { title: "Opkey", description: "Testing Partner", image: "/partners/opkey.png", path: "#" }
+            { title: "Celigo", description: "Integration Partner", image: "/partners/celigo.png", path: "/partnerships/celigo" },
+            { title: "Opkey", description: "Testing Partner", image: "/partners/opkey.png", path: "/partnerships/opkey" }
           ]
         }
       ]
@@ -194,22 +194,22 @@ export const generateNavigationData = () => {
       columns: [
         {
           items: [
-            { title: "About Us", description: "Our mission and values", icon: "Users", path: "#" },
-            { title: "Leadership", description: "Meet our executive team", icon: "Users", path: "#" },
-            { title: "Careers", description: "Join our growing team", icon: "Briefcase", path: "#" }
+            { title: "About Us", description: "Our mission and values", icon: "Users", path: "/company/about-us" },
+            { title: "Leadership", description: "Meet our executive team", icon: "Users", path: "/company/leadership" },
+            { title: "Careers", description: "Join our growing team", icon: "Briefcase", path: "/company/careers" }
           ]
         },
         {
           items: [
-            { title: "Case Studies", description: "Client success stories", icon: "BookOpen", path: "#" },
-            { title: "Insights", description: "Industry perspectives", icon: "Lightbulb", path: "#" },
-            { title: "News", description: "Latest company updates", icon: "Activity", path: "#" }
+            { title: "Case Studies", description: "Client success stories", icon: "BookOpen", path: "/company/case-studies" },
+            { title: "Insights", description: "Industry perspectives", icon: "Lightbulb", path: "/company/insights" },
+            { title: "News", description: "Latest company updates", icon: "Activity", path: "/company/news" }
           ]
         },
         {
           items: [
-            { title: "Events", description: "Upcoming webinars & events", icon: "Map", path: "#" },
-            { title: "Contact", description: "Get in touch with us", icon: "Heart", path: "#" }
+            { title: "Events", description: "Upcoming webinars & events", icon: "Map", path: "/company/events" },
+            { title: "Contact", description: "Get in touch with us", icon: "Heart", path: "/company/contact" }
           ]
         }
       ]
@@ -223,22 +223,22 @@ export const generateNavigationData = () => {
       columns: [
         {
           items: [
-            { title: "Blog", description: "Latest insights & articles", icon: "BookOpen", path: "#" },
-            { title: "Whitepapers", description: "In-depth industry reports", icon: "FileText", path: "#" },
-            { title: "Success Stories", description: "How we help clients win", icon: "Heart", path: "#" }
+            { title: "Blog", description: "Latest insights & articles", icon: "BookOpen", path: "/resources/blog" },
+            { title: "Whitepapers", description: "In-depth industry reports", icon: "FileText", path: "/resources/whitepapers" },
+            { title: "Success Stories", description: "How we help clients win", icon: "Heart", path: "/resources/success-stories" }
           ]
         },
         {
           items: [
-            { title: "Guides", description: "Step-by-step tutorials", icon: "Map", path: "#" },
-            { title: "Documentation", description: "Technical resources", icon: "FileText", path: "#" },
-            { title: "FAQs", description: "Frequently asked questions", icon: "HelpCircle", path: "#" }
+            { title: "Guides", description: "Step-by-step tutorials", icon: "Map", path: "/resources/guides" },
+            { title: "Documentation", description: "Technical resources", icon: "FileText", path: "/resources/documentation" },
+            { title: "FAQs", description: "Frequently asked questions", icon: "HelpCircle", path: "/resources/faqs" }
           ]
         },
         {
           items: [
-            { title: "Support Center", description: "Get help from our team", icon: "LifeBuoy", path: "#" },
-            { title: "Downloads", description: "Assets and templates", icon: "Download", path: "#" }
+            { title: "Support Center", description: "Get help from our team", icon: "LifeBuoy", path: "/resources/support-center" },
+            { title: "Downloads", description: "Assets and templates", icon: "Download", path: "/resources/downloads" }
           ]
         }
       ]
