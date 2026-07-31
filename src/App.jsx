@@ -11,6 +11,7 @@ const OracleCloud = lazy(() => import('./components/innerPages/oracleCloud/oracl
 const CloudApplications = lazy(() => import('./pages/CloudApplications'));
 const Services = lazy(() => import('./pages/Services'));
 const AiPoweredERP = lazy(() => import('./components/innerPages/ServicesPage/AiPoweredERP'));
+const NetSuitePage = lazy(() => import('./components/innerPages/netsuite/NetSuitePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Simple loading fallback component for route navigation
@@ -40,6 +41,7 @@ function App() {
             <Route path="cloud-applications" element={<CloudApplications />} />
             <Route path="services" element={<Services />} />
             <Route path="services/ai-powered-erp" element={<AiPoweredERP />} />
+            <Route path="cloud-applications/netsuite" element={<NetSuitePage />} />
 
             {/* 404 Catch-all */}
             <Route path="*" element={<NotFoundPage />} />
