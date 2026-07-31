@@ -11,6 +11,7 @@ const OracleCloud = lazy(() => import('./components/innerPages/oracleCloud/oracl
 const CloudApplications = lazy(() => import('./pages/CloudApplications'));
 const Services = lazy(() => import('./pages/Services'));
 const AiPoweredERP = lazy(() => import('./components/innerPages/ServicesPage/AiPoweredERP'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Simple loading fallback component for route navigation
 const PageLoader = () => (
@@ -40,8 +41,8 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="services/ai-powered-erp" element={<AiPoweredERP />} />
 
-            {/* Catch-all to seamlessly redirect any old/unused paths back to home */}
-            <Route path="*" element={<Navigate to="/" replace />} />
+            {/* 404 Catch-all */}
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
       </Suspense>
