@@ -294,27 +294,30 @@ const NetSuitePage = () => {
           {/* Breadcrumb */}
 
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] min-[1130px]:grid-cols-2 gap-12 min-[1130px]:gap-16 items-center">
             {/* Text Content */}
-            <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-2xl">
-              <motion.div variants={fadeUpVariants} className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold mb-6">
+            <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-xl min-[1130px]:max-w-2xl mx-auto lg:mx-0 text-center lg:text-left">
+              <motion.div variants={fadeUpVariants} className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-semibold mb-5 min-[1130px]:mb-6 mx-auto lg:mx-0">
                 <Award className="w-4 h-4" />
                 <span>Oracle NetSuite Alliance Partner</span>
               </motion.div>
 
-              <motion.h1 variants={fadeUpVariants} className="text-4xl md:text-5xl lg:text-[56px] font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-6">
+              <motion.h1 variants={fadeUpVariants} className="text-4xl md:text-5xl lg:text-[48px] min-[1130px]:text-[56px] font-extrabold text-slate-900 leading-[1.1] tracking-tight mb-5 min-[1130px]:mb-6">
                 Optimize Operations with <span className="text-[#0e4d9e]">Oracle NetSuite</span>
               </motion.h1>
 
-              <motion.p variants={fadeUpVariants} className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10">
+              <motion.p variants={fadeUpVariants} className="text-lg md:text-xl text-slate-600 leading-relaxed mb-8 min-[1130px]:mb-10 max-w-xl mx-auto lg:mx-0">
                 Empower your business with Oracle NetSuite, the world's leading cloud ERP platform. From financial management and CRM to inventory, planning, and analytics, we help organizations implement, optimize, and scale NetSuite for long-term business growth.
               </motion.p>
 
-              <motion.div variants={fadeUpVariants} className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#0e4d9e] text-white font-semibold shadow-lg shadow-blue-900/20 hover:bg-[#072b58] hover:shadow-blue-900/40 hover:-translate-y-0.5 transition-all duration-300">
-                  Schedule Consultation
+              <motion.div variants={fadeUpVariants} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="#solutions" className="group inline-flex items-center justify-center h-12 px-6 rounded-full bg-[#D9872A] text-white font-semibold hover:bg-[#C7781C] transition-colors duration-300 w-full sm:w-auto flex-shrink-0">
+                  Explore Services
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </a>
+                <Link to="/contact" className="inline-flex items-center justify-center h-12 px-6 rounded-full bg-white text-slate-900 font-semibold border border-slate-900 hover:bg-slate-50 transition-colors duration-300 w-full sm:w-auto flex-shrink-0">
+                  Schedule a Consultation
                 </Link>
-                
               </motion.div>
             </motion.div>
 
@@ -323,7 +326,7 @@ const NetSuitePage = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative hidden lg:block"
+              className="relative hidden lg:block scale-90 min-[1130px]:scale-100 transform origin-right"
             >
               <div className="relative w-full aspect-square md:aspect-[4/3] rounded-2xl bg-gradient-to-br from-slate-100 to-white border border-slate-200 shadow-2xl overflow-hidden flex items-center justify-center">
                 {/* Abstract Dashboard UI Elements */}
@@ -351,33 +354,33 @@ const NetSuitePage = () => {
               </div>
 
               {/* Floating Cards */}
-                <motion.div
-                  animate={{ y: [-10, 10, -10] }}
-                  transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                  className="absolute -right-8 top-1/4 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 z-10"
-                >
-                  <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                    <TrendingUp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500 font-medium mb-1">Revenue Growth</div>
-                    <div className="text-lg font-bold text-slate-900">+42.8%</div>
-                  </div>
-                </motion.div>
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                className="absolute -right-8 top-1/4 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 z-10"
+              >
+                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                  <TrendingUp className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-slate-500 font-medium mb-1">Revenue Growth</div>
+                  <div className="text-lg font-bold text-slate-900">+42.8%</div>
+                </div>
+              </motion.div>
 
-                <motion.div
-                  animate={{ y: [10, -10, 10] }}
-                  transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
-                  className="absolute -left-8 bottom-1/4 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 z-10"
-                >
-                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
-                    <Database className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs text-slate-500 font-medium mb-1">Data Synced</div>
-                    <div className="text-lg font-bold text-slate-900">Real-time</div>
-                  </div>
-                </motion.div>
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{ repeat: Infinity, duration: 7, ease: "easeInOut" }}
+                className="absolute -left-8 bottom-1/4 bg-white p-4 rounded-xl shadow-xl border border-slate-100 flex items-center gap-4 z-10"
+              >
+                <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                  <Database className="w-5 h-5" />
+                </div>
+                <div>
+                  <div className="text-xs text-slate-500 font-medium mb-1">Data Synced</div>
+                  <div className="text-lg font-bold text-slate-900">Real-time</div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -426,13 +429,13 @@ const NetSuitePage = () => {
       <section id="solutions" className="py-24 bg-white border-t border-slate-200">
         <div className="max-w-[1440px] mx-auto px-[24px] md:px-[40px] lg:px-[48px]">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <motion.h2 
+            <motion.h2
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
               className="text-3xl md:text-4xl font-bold text-[#000000] mb-6"
             >
               Enterprise Solutions Powered by Oracle NetSuite
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUpVariants}
               className="text-lg text-slate-600"
             >
@@ -591,16 +594,16 @@ const NetSuitePage = () => {
         {/* Decorative SVG Pattern */}
         <div className="absolute bottom-0 right-0 opacity-[0.03] pointer-events-none">
           <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="200" cy="200" r="199.5" stroke="#0e4d9e" strokeDasharray="4 4"/>
-            <path d="M400 400L200 200L0 400H400Z" fill="#0e4d9e"/>
+            <circle cx="200" cy="200" r="199.5" stroke="#0e4d9e" strokeDasharray="4 4" />
+            <path d="M400 400L200 200L0 400H400Z" fill="#0e4d9e" />
           </svg>
         </div>
 
         <div className="max-w-[1440px] mx-auto px-[24px] md:px-[40px] lg:px-[48px] relative z-10">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-            
+
             {/* Left Content */}
-            <motion.div 
+            <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
               className="w-full lg:w-5/12"
             >
@@ -619,16 +622,16 @@ const NetSuitePage = () => {
                 <br />
                 Oracle NetSuite?
               </motion.h2>
-              
+
               <motion.div variants={fadeUpVariants} className="mt-5 w-14 h-[3px] bg-[#0e4d9e] rounded-full" />
 
               <motion.p variants={fadeUpVariants} className="mt-5 text-lg leading-7 text-slate-600 max-w-xl">
                 Oracle NetSuite is powerful. Maximizing its value requires the right strategy, implementation approach and long-term expertise. We partner with you beyond the go-live date to ensure true digital transformation.
               </motion.p>
-              
+
               <motion.div variants={fadeUpVariants} className="mt-8 bg-white rounded-3xl p-5 shadow-xl shadow-[0_30px_80px_rgba(14,77,158,0.08)] border border-blue-100 w-fit">
                 <img src="/partners/netsuite.png" alt="Oracle NetSuite Partner" className="w-full max-w-xs object-contain" />
-                
+
                 <div className="flex items-center mt-6">
                   <div className="flex -space-x-3">
                     <img src="/avatars/1.jpg" alt="User 1" className="w-10 h-10 rounded-full border-2 border-white object-cover bg-slate-100" onError={(e) => e.target.src = 'https://i.pravatar.cc/100?img=1'} />
@@ -647,7 +650,7 @@ const NetSuitePage = () => {
 
             {/* Right Content - Cards */}
             <div className="w-full lg:w-7/12 relative z-10">
-              <motion.div 
+              <motion.div
                 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
                 className="grid grid-cols-1 sm:grid-cols-2 gap-6"
               >
@@ -673,9 +676,9 @@ const NetSuitePage = () => {
                     description: 'Continuous support, training, and update management to maximize your long-term ROI.',
                   }
                 ].map((feature, idx) => (
-                  <motion.div 
+                  <motion.div
                     variants={fadeUpVariants}
-                    key={idx} 
+                    key={idx}
                     className="group relative rounded-3xl bg-white p-8 border border-blue-100 shadow-lg hover:shadow-[0_30px_70px_rgba(14,77,158,0.12)] hover:-translate-y-2 transition-all duration-500 overflow-hidden"
                     style={{ marginTop: (idx === 1 || idx === 3) ? '24px' : '0' }}
                   >
@@ -686,7 +689,7 @@ const NetSuitePage = () => {
                     <p className="text-slate-600 text-sm leading-relaxed relative z-10">
                       {feature.description}
                     </p>
-                    
+
                     {/* Hover Glow inside card */}
                     <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#0e4d9e]/5 rounded-full blur-[30px] group-hover:bg-[#0e4d9e]/10 transition-colors duration-500 pointer-events-none" />
                   </motion.div>
@@ -706,7 +709,7 @@ const NetSuitePage = () => {
             <p className="text-lg text-slate-600">See how we've helped leading organizations transform their operations with Oracle NetSuite.</p>
           </div>
 
-          <motion.div 
+          <motion.div
             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={staggerContainer}
             className="grid md:grid-cols-3 gap-6"
           >
