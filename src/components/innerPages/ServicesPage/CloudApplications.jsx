@@ -396,7 +396,7 @@ const CloudPlatforms = () => {
     { name: "Oracle Cloud", logo: "/partners/oracle.png", desc: "Comprehensive cloud suite for enterprise financials, supply chain, and HCM.", link: "/oracle-cloud" },
     { name: "Oracle NetSuite", logo: "/partners/netsuite.png", desc: "The #1 cloud ERP for fast-growing mid-market and enterprise organizations.", link: "/cloud-applications/netsuite" },
     { name: "Salesforce", logo: "/partners/salesforce.png", desc: "The world's leading CRM platform for sales, service, and marketing automation.", link: "/cloud-applications/salesforce" },
-    { name: "Workday", logo: "/partners/workday.png", desc: "Enterprise cloud applications for finance and human resources.", link: "/cloud-applications/workday" }
+    { name: "Workday", logo: "/ai_logos/workday.png", desc: "Enterprise cloud applications for finance and human resources.", link: "/cloud-applications/workday" }
   ];
 
   return (
@@ -416,8 +416,8 @@ const CloudPlatforms = () => {
                 <img
                   src={plat.logo}
                   alt={`${plat.name} Logo`}
-                  className="h-8 object-contain"
-                  onError={(e) => { e.target.src = '/dimconLogoIcon.png'; e.target.className = "h-8 object-contain opacity-50" }}
+                  className="h-8 object-contain opacity-100"
+                  onError={(e) => { e.target.src = '/dimconLogoIcon.png'; e.target.className = "h-8 object-contain opacity-100" }}
                 />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{plat.name}</h3>
@@ -575,9 +575,9 @@ const CloudApplications = () => {
       // Animate section headers instead of hiding the entire section background
       const headers = gsap.utils.toArray('section:not(:first-child) h2');
       headers.forEach(header => {
-        gsap.fromTo(header, 
-          { opacity: 0, y: 30 }, 
-          { 
+        gsap.fromTo(header,
+          { opacity: 0, y: 30 },
+          {
             opacity: 1, y: 0, duration: 0.8, ease: "power3.out",
             scrollTrigger: { trigger: header, start: "top 85%" }
           }
@@ -586,9 +586,9 @@ const CloudApplications = () => {
 
       const descriptions = gsap.utils.toArray('section:not(:first-child) p.text-lg, section:not(:first-child) p.text-xl');
       descriptions.forEach(desc => {
-        gsap.fromTo(desc, 
-          { opacity: 0, y: 20 }, 
-          { 
+        gsap.fromTo(desc,
+          { opacity: 0, y: 20 },
+          {
             opacity: 1, y: 0, duration: 0.8, ease: "power3.out", delay: 0.1,
             scrollTrigger: { trigger: desc, start: "top 85%" }
           }
