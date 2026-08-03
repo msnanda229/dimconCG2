@@ -42,7 +42,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-5xl lg:text-[4.5rem] font-extrabold text-slate-900 leading-[1.05] tracking-tight mb-8"
             >
-              Cloud Applications That Keep <br className="hidden lg:block" /> Business <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">Moving</span>
+              Your Applications <br className="hidden lg:block" />  Can Do More in <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600"> the Cloud.</span>
             </motion.h1>
 
             <motion.p
@@ -51,7 +51,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl"
             >
-              Move beyond disconnected systems and legacy applications with cloud solutions built around your business. From implementation and migration to integration and ongoing support, DimensionCG brings your enterprise applications together for better visibility, flexibility, and performance.
+              Already using cloud applications? Planning a migration? Or still deciding which platform fits your business? Start with where you are, and we'll help you figure out what comes next.
             </motion.p>
 
             <motion.div
@@ -65,16 +65,10 @@ const HeroSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-blue-600 text-white rounded-xl font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-colors flex items-center gap-2 group"
               >
-                Explore Cloud Applications
+                Explore Your Cloud Options
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-slate-700 rounded-xl font-bold shadow-sm border border-slate-200 hover:border-blue-200 hover:bg-slate-50 transition-colors"
-              >
-                Talk to an Expert
-              </motion.button>
+             
             </motion.div>
           </div>
 
