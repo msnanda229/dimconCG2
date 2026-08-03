@@ -39,7 +39,8 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6 leading-[1.1] tracking-tight"
             >
-              Aligning Technology With <br className="hidden md:block" /> Business <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Objectives.</span>
+               A Successful <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">ERP Projects</span> Starts Before the System Goes Live.
+            </motion.h1>
             </motion.h1>
 
             <motion.p
@@ -48,7 +49,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl leading-relaxed"
             >
-              A successful ERP implementation isn't just about installing software—it's about aligning technology with your business processes and your people. We plan, execute, and deliver enterprise platforms that are built to perform from day one.
+             Get the planning, architecture, integration, testing, and user readiness right from the beginning.
             </motion.p>
 
             <motion.div
