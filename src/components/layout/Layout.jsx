@@ -16,6 +16,7 @@ const Layout = () => {
   const { pathname } = useLocation();
   const lenisRafRef = useRef(null);
   const progressBarRef = useRef(null);
+  const lenisInstanceRef = useRef(null);
 
   // Initialize Lenis for smooth scrolling
   useEffect(() => {
@@ -39,12 +40,14 @@ const Layout = () => {
     };
     gsap.ticker.add(lenisRafRef.current);
     gsap.ticker.lagSmoothing(0);
+    lenisInstanceRef.current = lenis;
 
     return () => {
       if (lenisRafRef.current) {
         gsap.ticker.remove(lenisRafRef.current);
       }
       lenis.destroy();
+      lenisInstanceRef.current = null;
     };
   }, []);
 
@@ -52,7 +55,12 @@ const Layout = () => {
 
   // Scroll to top on route change & animate page transition
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (lenisInstanceRef.current) {
+      lenisInstanceRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+
     if (mainRef.current) {
       let mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
@@ -88,7 +96,7 @@ const Layout = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col font-body">
+    <div className="min-h-screen bg-background text-[#000000] flex flex-col font-body">
       {/* Global Scroll Progress Bar */}
       <div ref={progressBarRef} className="scroll-progress fixed top-0 left-0 h-1 bg-primary z-[100] origin-left w-full" style={{ transform: 'scaleX(0)' }} />
 
