@@ -1,0 +1,66 @@
+/* Rootstock Theme Variables (Indigo/Manufacturing Theme) */
+:root {
+  --rootstock-primary: #4f46e5;     /* Indigo-600 */
+  --rootstock-primary-hover: #4338ca; /* Indigo-700 */
+  --rootstock-light: #e0e7ff;       /* Indigo-100 */
+  --rootstock-dark: #312e81;        /* Indigo-900 */
+  --rootstock-bg: #f8fafc;
+}
+
+/* Glassmorphism Utilities */
+.rs-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.rs-glass-dark {
+  background: rgba(49, 46, 129, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradients */
+.rs-gradient-text {
+  background: linear-gradient(135deg, var(--rootstock-primary) 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.rs-bg-gradient {
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+
+/* Floating Animations */
+@keyframes rsFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.rs-float {
+  animation: rsFloat 6s ease-in-out infinite;
+}
+
+.rs-float-delayed {
+  animation: rsFloat 6s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Tab Active State for Solutions */
+.rs-tab-active {
+  background-color: var(--rootstock-light) !important;
+  border-color: #c7d2fe !important;
+}
+
+.rs-tab-active span {
+  color: var(--rootstock-primary) !important;
+}
+
+.rs-tab-active .icon-container {
+  background-color: var(--rootstock-primary) !important;
+  color: white !important;
+}
