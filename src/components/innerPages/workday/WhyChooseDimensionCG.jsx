@@ -108,7 +108,7 @@ const WhyChooseDimensionCG = () => {
             </p>
 
             <div className="mt-8 bg-white rounded-3xl p-5 shadow-xl shadow-[0_30px_80px_rgba(0,92,185,0.08)] border border-blue-100 w-fit">
-              <img src="/partners/workday.png" alt="Workday Services Partner" className="w-full max-w-xs object-contain" />
+             
 
               <div className="flex items-center mt-6">
                 <div className="flex -space-x-3">
