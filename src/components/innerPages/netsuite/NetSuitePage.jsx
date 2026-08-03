@@ -25,7 +25,7 @@ const NetSuitePage = () => {
   }, []);
 
   return (
-    <div className="netsuite-page bg-background text-[#000000] font-body w-full overflow-x-hidden pt-[92px]">
+    <div className="netsuite-page bg-background text-[#000000] font-body w-full overflow-x-hidden">
       <CardNav />
 
       <main>
