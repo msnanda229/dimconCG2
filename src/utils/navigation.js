@@ -68,8 +68,8 @@ export const generateNavigationData = () => {
             { title: "Healthcare", description: "Patient-centric solutions", icon: "Heart", path: "/industries/healthcare" },
             { title: "Manufacturing", description: "Production optimization", icon: "Settings", path: "/industries/manufacturing" },
             { title: "Finance", description: "Secure financial systems", icon: "DollarSign", path: "/industries/finance" },
-            {title: "E-Commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/industries/e-commerce"},
-            {title:"Construction", description: "Building the future with smart solutions", icon: "Factory", path: "/industries/construction"}
+            { title: "E-Commerce", description: "Online retail solutions", icon: "ShoppingCart", path: "/industries/e-commerce" },
+            { title: "Construction", description: "Building the future with smart solutions", icon: "Factory", path: "/industries/construction" }
           ]
         },
         {
@@ -77,8 +77,8 @@ export const generateNavigationData = () => {
             { title: "Retail", description: "Omnichannel commerce", icon: "Truck", path: "/industries/retail" },
             { title: "Energy", description: "Resource management", icon: "Zap", path: "/industries/energy" },
             { title: "Government & NPO", description: "Public sector modernization", icon: "Building2", path: "/industries/government-npo" },
-            {title:"HI-Tech", description: "Innovative technology solutions", icon: "Cpu", path: "/industries/hi-tech"},
-            {title:"WholeSale & Distribution", description: "Streamlined supply chain solutions", icon: "Layers", path: "/industries/wholesale-distribution"}
+            { title: "HI-Tech", description: "Innovative technology solutions", icon: "Cpu", path: "/industries/hi-tech" },
+            { title: "WholeSale & Distribution", description: "Streamlined supply chain solutions", icon: "Layers", path: "/industries/wholesale-distribution" }
           ]
         },
         {
@@ -86,7 +86,7 @@ export const generateNavigationData = () => {
             { title: "Supply Chain", description: "Logistics visibility", icon: "Truck", path: "/industries/supply-chain" },
             { title: "Hospitality", description: "Guest experience enhancement", icon: "ShieldPlus", path: "/industries/hospitality" },
             { title: "IT", description: "backbone of every modern enterprise", icon: "Cloud", path: "/industries/it" }
-            
+
           ]
         }
       ]
@@ -201,13 +201,6 @@ export const generateNavigationData = () => {
         },
         {
           items: [
-            { title: "Case Studies", description: "Client success stories", icon: "BookOpen", path: "/company/case-studies" },
-            { title: "Insights", description: "Industry perspectives", icon: "Lightbulb", path: "/company/insights" },
-            { title: "News", description: "Latest company updates", icon: "Activity", path: "/company/news" }
-          ]
-        },
-        {
-          items: [
             { title: "Events", description: "Upcoming webinars & events", icon: "Map", path: "/company/events" },
             { title: "Contact", description: "Get in touch with us", icon: "Heart", path: "/company/contact" }
           ]
@@ -225,20 +218,13 @@ export const generateNavigationData = () => {
           items: [
             { title: "Blog", description: "Latest insights & articles", icon: "BookOpen", path: "/resources/blog" },
             { title: "Whitepapers", description: "In-depth industry reports", icon: "FileText", path: "/resources/whitepapers" },
-            { title: "Success Stories", description: "How we help clients win", icon: "Heart", path: "/resources/success-stories" }
-          ]
-        },
-        {
-          items: [
-            { title: "Guides", description: "Step-by-step tutorials", icon: "Map", path: "/resources/guides" },
-            { title: "Documentation", description: "Technical resources", icon: "FileText", path: "/resources/documentation" },
-            { title: "FAQs", description: "Frequently asked questions", icon: "HelpCircle", path: "/resources/faqs" }
+            { title: "Case Studies", description: "Success Stories", icon: "Heart", path: "resources/case-studies" }
           ]
         },
         {
           items: [
             { title: "Support Center", description: "Get help from our team", icon: "LifeBuoy", path: "/resources/support-center" },
-            { title: "Downloads", description: "Assets and templates", icon: "Download", path: "/resources/downloads" }
+            { title: "FAQs", description: "Frequently asked questions", icon: "HelpCircle", path: "/resources/faqs" }
           ]
         }
       ]
