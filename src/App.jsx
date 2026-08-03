@@ -8,7 +8,7 @@ import InitialLoader from './components/layout/InitialLoader';
 const Home = lazy(() => import('./pages/Home'));
 const Industries = lazy(() => import('./pages/Industries'));
 const OracleCloud = lazy(() => import('./components/innerPages/oracleCloud/oracleCloud'));
-const CloudApplications = lazy(() => import('./pages/CloudApplications'));
+const CloudApplications = lazy(() => import('./components/innerPages/ServicesPage/CloudApplications'));
 const Services = lazy(() => import('./pages/Services'));
 const AiPoweredERP = lazy(() => import('./components/innerPages/ServicesPage/AiPoweredERP'));
 const NetSuitePage = lazy(() => import('./components/innerPages/netsuite/NetSuitePage'));
@@ -41,7 +41,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="industries" element={<Industries />} />
-            <Route path="cloud-applications" element={<CloudApplications />} />
+            <Route path="services/cloud-applications" element={<CloudApplications />} />
             <Route path="services" element={<Services />} />
             <Route path="services/ai-powered-erp" element={<AiPoweredERP />} />
             <Route path="cloud-applications/netsuite" element={<NetSuitePage />} />
