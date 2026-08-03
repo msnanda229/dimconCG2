@@ -14,6 +14,7 @@ const AiPoweredERP = lazy(() => import('./components/innerPages/ServicesPage/AiP
 const NetSuitePage = lazy(() => import('./components/innerPages/netsuite/NetSuitePage'));
 const SalesforcePage = lazy(() => import('./components/innerPages/salesforce/SalesforcePage'));
 const WorkdayPage = lazy(() => import('./components/innerPages/workday/WorkdayPage'));
+const RootstockPage = lazy(() => import('./components/innerPages/rootstock/RootstockPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 // Simple loading fallback component for route navigation
@@ -46,7 +47,7 @@ function App() {
             <Route path="cloud-applications/netsuite" element={<NetSuitePage />} />
             <Route path="cloud-applications/salesforce" element={<SalesforcePage />} />
             <Route path="cloud-applications/workday" element={<WorkdayPage />} />
-
+            <Route path="cloud-applications/rootstock" element={<RootstockPage />} />
             {/* 404 Catch-all */}
             <Route path="*" element={<NotFoundPage />} />
           </Route>
