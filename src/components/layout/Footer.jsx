@@ -83,6 +83,7 @@ const Footer = () => {
                 <li><Link to="/cloud-applications/netsuite" className="hover:text-blue-600 transition-colors inline-flex items-center min-h-[44px] lg:min-h-0 relative group py-2 lg:py-0"><span>Oracle NetSuite</span><span className="absolute bottom-1 lg:-bottom-1 left-0 w-0 h-[1px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span></Link></li>
                 <li><Link to="/cloud-applications/salesforce" className="hover:text-blue-600 transition-colors inline-flex items-center min-h-[44px] lg:min-h-0 relative group py-2 lg:py-0"><span>Salesforce</span><span className="absolute bottom-1 lg:-bottom-1 left-0 w-0 h-[1px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span></Link></li>
                 <li><Link to="/cloud-applications/workday" className="hover:text-blue-600 transition-colors inline-flex items-center min-h-[44px] lg:min-h-0 relative group py-2 lg:py-0"><span>Workday</span><span className="absolute bottom-1 lg:-bottom-1 left-0 w-0 h-[1px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span></Link></li>
+                <li><Link to="/cloud-applications/rootstock" className="hover:text-blue-600 transition-colors inline-flex items-center min-h-[44px] lg:min-h-0 relative group py-2 lg:py-0"><span>Rootstock</span><span className="absolute bottom-1 lg:-bottom-1 left-0 w-0 h-[1px] bg-blue-600 transition-all duration-300 group-hover:w-full"></span></Link></li>
               </ul>
             </div>
 
