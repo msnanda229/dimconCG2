@@ -386,44 +386,6 @@ const NetSuitePage = () => {
         </div>
       </section>
 
-      {/* 2. WHY ORACLE NETSUITE */}
-      <section className="py-20 lg:py-32 relative bg-[#F8FAFC]">
-        <div className="max-w-[1440px] mx-auto px-[24px] md:px-[40px] lg:px-[48px]">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Businesses Choose Oracle NetSuite</h2>
-            <p className="text-lg text-slate-600">A unified cloud architecture that scales with your growth, providing deep visibility and control across your entire organization.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: Cloud, title: "Cloud-Native ERP", desc: "Born in the cloud. Seamless updates, zero hardware footprint, and continuous innovation." },
-              { icon: Layers, title: "Unified Business Management", desc: "Break down silos with a single data source connecting financials, CRM, and ecommerce." },
-              { icon: LineChart, title: "Real-Time Visibility", desc: "Instant insights with customizable role-based dashboards and powerful analytics." },
-              { icon: Globe, title: "Anywhere Access", desc: "Securely run your business from any device, anywhere in the world, 24/7." },
-              { icon: TrendingUp, title: "Enterprise Scalability", desc: "Easily add new subsidiaries, currencies, and languages as your global footprint expands." },
-              { icon: Shield, title: "Intelligent Financial Management", desc: "Automate financial close, ensure compliance, and streamline revenue recognition." }
-            ].map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={i}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-50px" }}
-                  variants={fadeUpVariants}
-                  className="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0e4d9e] flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* 3. SOLUTIONS WE DELIVER (Tabbed Version) */}
       <section id="solutions" className="py-24 bg-white border-t border-slate-200">
@@ -529,6 +491,45 @@ const NetSuitePage = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. WHY ORACLE NETSUITE */}
+      <section className="py-20 lg:py-32 relative bg-[#F8FAFC]">
+        <div className="max-w-[1440px] mx-auto px-[24px] md:px-[40px] lg:px-[48px]">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Why Businesses Choose Oracle NetSuite</h2>
+            <p className="text-lg text-slate-600">A unified cloud architecture that scales with your growth, providing deep visibility and control across your entire organization.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: Cloud, title: "Cloud-Native ERP", desc: "Born in the cloud. Seamless updates, zero hardware footprint, and continuous innovation." },
+              { icon: Layers, title: "Unified Business Management", desc: "Break down silos with a single data source connecting financials, CRM, and ecommerce." },
+              { icon: LineChart, title: "Real-Time Visibility", desc: "Instant insights with customizable role-based dashboards and powerful analytics." },
+              { icon: Globe, title: "Anywhere Access", desc: "Securely run your business from any device, anywhere in the world, 24/7." },
+              { icon: TrendingUp, title: "Enterprise Scalability", desc: "Easily add new subsidiaries, currencies, and languages as your global footprint expands." },
+              { icon: Shield, title: "Intelligent Financial Management", desc: "Automate financial close, ensure compliance, and streamline revenue recognition." }
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-50px" }}
+                  variants={fadeUpVariants}
+                  className="bg-white p-8 rounded-2xl border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#0e4d9e] flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
