@@ -97,7 +97,7 @@ const netsuiteSolutions = [
     description: 'Deliver true customer lifecycle management, from marketing and opportunity management, to order management, customer upsell, cross-sell, renewal, and customer service.',
     capabilities: ['Sales Force Automation', 'Marketing Automation', 'Customer Service Management', 'Partner Relationship Management'],
     outcomes: 'Increase sales productivity and boost customer satisfaction.',
-    color: '#9333ea'
+    color: '#0e4d9e'
   },
   {
     id: 'im',
@@ -107,7 +107,7 @@ const netsuiteSolutions = [
     description: 'Automate inventory tracking across multiple locations. Keep inventory costs low while exceeding customer expectations with real-time visibility into inventory across all locations.',
     capabilities: ['Inventory Tracking', 'Warehouse Management', 'Procurement', 'Order Fulfillment'],
     outcomes: 'Reduce carrying costs by 20% and eliminate stockouts.',
-    color: '#10b981'
+    color: '#0e4d9e'
   },
   {
     id: 'pb',
@@ -117,7 +117,7 @@ const netsuiteSolutions = [
     description: 'Facilitate company-wide and departmental planning with modeling capabilities, approval workflows and reporting within one collaborative scalable solution.',
     capabilities: ['Forecasting & Modeling', 'Budget Planning', 'Cash Flow Projection', 'Scenario Modeling'],
     outcomes: 'Shorten cycle times and improve forecast accuracy.',
-    color: '#f97316'
+    color: '#0e4d9e'
   },
   {
     id: 'ana',
@@ -127,7 +127,7 @@ const netsuiteSolutions = [
     description: 'Real-time visibility into company performance across all business functions—from summary level to transaction level.',
     capabilities: ['Executive Dashboards', 'Real-Time Reporting', 'KPI Tracking', 'Predictive Insights'],
     outcomes: 'Drive better decision-making with actionable real-time data.',
-    color: '#06b6d4'
+    color: '#0e4d9e'
   }
 ];
 
