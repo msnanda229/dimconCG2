@@ -5,7 +5,7 @@ import {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus, Bot
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { generateNavigationData } from '../../utils/navigation';
@@ -15,7 +15,7 @@ const iconMap = {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus,
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus, Bot,
   CloudUpload: Cloud // alias
 };
 
@@ -36,23 +36,24 @@ const aiSolutionsData = [
   {
     heading: "AI Strategy",
     items: [
-      { title: "AI Assessment", description: "Evaluate enterprise AI maturity and opportunities.", icon: "Activity", path: "#" },
-      { title: "AI Readiness", description: "Prepare people, processes, and technology for AI adoption.", icon: "Database", path: "#" },
-      { title: "AI Advisory", description: "Define an enterprise AI roadmap aligned with business goals.", icon: "Lightbulb", path: "#" }
+      { title: "AI Assessment", description: "Evaluate enterprise AI maturity and opportunities.", icon: "Activity", path: "/ai-solutions/assessment" },
+      { title: "AI Readiness", description: "Prepare people, processes, and technology for AI adoption.", icon: "Database", path: "/ai-solutions/readiness" },
+      { title: "AI Advisory", description: "Define an enterprise AI roadmap aligned with business goals.", icon: "Lightbulb", path: "/ai-solutions/advisory" }
     ]
   },
   {
     heading: "Enterprise AI",
     items: [
-      { title: "Generative AI", description: "LLM-powered enterprise applications and copilots.", icon: "RefreshCw", path: "#" },
-      { title: "Agentic AI", description: "Autonomous AI agents for intelligent business workflows.", icon: "Cpu", path: "#" },
-      { title: "AI Automation", description: "AI-powered business process automation.", icon: "Zap", path: "#" }
+      { title: "Generative AI", description: "LLM-powered enterprise applications and copilots.", icon: "RefreshCw", path: "/ai-solutions/generative-ai" },
+      { title: "Agentic AI", description: "Autonomous AI agents for intelligent business workflows.", icon: "Cpu", path: "/ai-solutions/agentic-ai" },
+      { title: "AI Assistants", description: "Intelligent virtual assistants to augment human productivity.", icon: "Bot", path: "/ai-solutions/assistants" },
+      { title: "AI Automation", description: "AI-powered business process automation.", icon: "Zap", path: "/ai-solutions/automation" }
     ]
   },
   {
     heading: "Responsible AI",
     items: [
-      { title: "AI Governance", description: "Secure, compliant, ethical, and scalable AI frameworks.", icon: "Shield", path: "#" }
+      { title: "AI Governance", description: "Secure, compliant, ethical, and scalable AI frameworks.", icon: "Shield", path: "/ai-solutions/governance" }
     ]
   }
 ];
@@ -334,7 +335,7 @@ const CardNav = () => {
 
             {/* Right: CTA & Hamburger */}
             <div className="flex-1 min-w-0 flex items-center justify-end gap-2 min-[1130px]:gap-3">
-              
+
               {/* Mobile Hamburger (Now before CTA on <1130px) */}
               <button
                 className={`min-[1130px]:hidden flex items-center justify-center w-[44px] h-[44px] focus:outline-none rounded-md transition-colors ${(effectiveIsScrolled || isLightBg) ? 'text-black' : 'text-white'}`}
@@ -598,7 +599,7 @@ const CardNav = () => {
               </div>
 
               <div className="flex-1 overflow-y-auto py-2 px-6 flex flex-col gap-1">
-                
+
                 {navData.map((category) => {
                   const isActive = activeAccordion === category.slug;
                   return (
