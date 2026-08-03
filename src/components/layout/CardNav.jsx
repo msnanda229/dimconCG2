@@ -58,6 +58,15 @@ const aiSolutionsData = [
   }
 ];
 
+const logoSizes = {
+  Oracle: "max-w-[75%] max-h-[70%]",
+  Salesforce: "max-w-[75%] max-h-[70%]",
+  Rootstock: "max-w-[80%] max-h-[70%]",
+  NetSuite: "max-w-[78%] max-h-[68%]",
+  Celigo: "max-w-[65%] max-h-[60%]",
+  Opkey: "max-w-[65%] max-h-[60%]",
+};
+
 const CardNav = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -483,63 +492,78 @@ const CardNav = () => {
                     </div>
 
                     {/* COLUMN 2: Sub-navigation grid */}
-                    <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-4 relative z-10">
-                      {category.columns?.map((col, colIdx) => (
-                        <div key={colIdx} className="flex flex-col gap-2">
-                          {col.heading && (
-                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">
-                              {col.heading}
-                            </h4>
-                          )}
-                          {col.items.map((item, idx) => (
-                            <Link
-                              key={idx}
-                              to={item.path}
-                              className="group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro"
-                              onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
-                            >
-                              <div
-                                className={
-                                  category.slug === "partnerships"
-                                    ? "w-20 h-10 flex items-center justify-center shrink-0 overflow-hidden"
-                                    : "w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
-                                }
+                    <div className={
+                      category.slug === "partnerships"
+                        ? "w-[72%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
+                        : "w-[72%] grid grid-cols-3 gap-x-5 gap-y-4 relative z-10"
+                    }>
+                      {category.slug === "partnerships" ? (
+                        category.columns.flatMap(col => col.items).map((item, idx) => (
+                          <Link
+                            key={idx}
+                            to={item.path}
+                            className="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm flex items-center justify-center h-[90px] xl:h-[100px] hover:-translate-y-1 hover:border-[#2563EB] hover:shadow-[0_8px_20px_rgba(37,99,235,0.12)] hover:bg-[#F8FBFF] transition-all duration-300 group/partner relative overflow-hidden"
+                            onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
+                          >
+                            <img
+                              src={item.image}
+                              alt={item.title}
+                              className={`object-contain transition-transform duration-300 group-hover/partner:scale-105 ${logoSizes[item.title] || "max-w-[75%] max-h-[70%]"}`}
+                            />
+                          </Link>
+                        ))
+                      ) : (
+                        category.columns?.map((col, colIdx) => (
+                          <div key={colIdx} className="flex flex-col gap-2">
+                            {col.heading && (
+                              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">
+                                {col.heading}
+                              </h4>
+                            )}
+                            {col.items.map((item, idx) => (
+                              <Link
+                                key={idx}
+                                to={item.path}
+                                className="group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro"
+                                onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
                               >
-                                {item.image ? (
-                                  <img
-                                    src={item.image}
-                                    alt={item.title}
-                                    className={`object-contain ${["Celigo", "Opkey"].includes(item.title)
-                                      ? "w-[70%] h-[70%]"
-                                      : "w-[200%] h-[200%]"
-                                      }`}
-                                  />
-                                ) : (
-                                  (() => {
-                                    const IconComponent = iconMap[item.icon] || Cloud;
-                                    return (
-                                      <IconComponent size={16} />
-                                    );
-                                  })()
-                                )}
-                              </div>
-                              <div className="flex-1 min-w-0 pr-4">
-                                <h4 className="font-semibold text-sm text-[#0F172A] mb-0.5 group-hover/item:text-[#2563EB] transition-colors duration-micro truncate">
-                                  {item.title}
-                                </h4>
-                                <p className="text-xs text-[#64748B] leading-snug truncate">
-                                  {item.description}
-                                </p>
-                              </div>
+                                <div
+                                  className="w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
+                                >
+                                  {item.image ? (
+                                    <img
+                                      src={item.image}
+                                      alt={item.title}
+                                      className="object-contain w-full h-full scale-[1.8] transition-transform duration-300"
+                                    />
+                                  ) : (
+                                    (() => {
+                                      const IconComponent = iconMap[item.icon] || Cloud;
+                                      return (
+                                        <IconComponent size={16} />
+                                      );
+                                    })()
+                                  )}
+                                </div>
 
-                              {/* Hover Arrow */}
-                              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-[#2563EB]">
-                                <ArrowRight size={14} />
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      ))}
+                                <div className="flex-1 min-w-0 pr-4">
+                                  <h4 className="font-semibold text-sm text-[#0F172A] mb-0.5 group-hover/item:text-[#2563EB] transition-colors duration-micro truncate">
+                                    {item.title}
+                                  </h4>
+                                  <p className="text-xs text-[#64748B] leading-snug truncate">
+                                    {item.description}
+                                  </p>
+                                </div>
+
+                                {/* Hover Arrow */}
+                                <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-[#2563EB]">
+                                  <ArrowRight size={14} />
+                                </div>
+                              </Link>
+                            ))}
+                          </div>
+                        ))
+                      )}
                     </div>
 
                   </div>
