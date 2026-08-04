@@ -13,6 +13,7 @@ const Services = lazy(() => import('./pages/Services'));
 const ErpImplementation = lazy(() => import('./components/innerPages/ServicesPage/ErpImplementation'));
 const AiPoweredERP = lazy(() => import('./components/innerPages/ServicesPage/AiPoweredERP'));
 const DataMigration = lazy(() => import('./components/innerPages/ServicesPage/DataMigration'));
+const CrmImplementation = lazy(() => import('./components/innerPages/ServicesPage/CrmImplementation'));
 const NetSuitePage = lazy(() => import('./components/innerPages/netsuite/NetSuitePage'));
 const SalesforcePage = lazy(() => import('./components/innerPages/salesforce/SalesforcePage'));
 const WorkdayPage = lazy(() => import('./components/innerPages/workday/WorkdayPage'));
@@ -48,6 +49,7 @@ function App() {
             <Route path="services/erp-implementation" element={<ErpImplementation />} />
             <Route path="services/ai-powered-erp" element={<AiPoweredERP />} />
             <Route path="services/data-migration" element={<DataMigration />} />
+            <Route path="services/crm-implementation" element={<CrmImplementation />} />
             <Route path="cloud-applications/netsuite" element={<NetSuitePage />} />
             <Route path="cloud-applications/salesforce" element={<SalesforcePage />} />
             <Route path="cloud-applications/workday" element={<WorkdayPage />} />
