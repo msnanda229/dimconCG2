@@ -1,0 +1,47 @@
+/* src/components/innerPages/workday/workday.css */
+
+.workday-page {
+  --workday-blue: #005cb9;
+  --workday-light: #e6f0fa;
+  --workday-gradient: linear-gradient(135deg, #005cb9 0%, #00458a 100%);
+}
+
+.wd-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 92, 185, 0.1);
+}
+
+.wd-glass-dark {
+  background: rgba(0, 92, 185, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 92, 185, 0.1);
+}
+
+.wd-text-gradient {
+  background: var(--workday-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating animation for hero mockups */
+@keyframes wdFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.wd-animate-float {
+  animation: wdFloat 6s ease-in-out infinite;
+}
+
+.wd-animate-float-delayed {
+  animation: wdFloat 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
