@@ -9,8 +9,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Lazy load chatbot — don't block initial render
-const ChatBot = lazy(() => import('../../chatbot/ChatBot'));
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -107,9 +105,6 @@ const Layout = () => {
       </main>
 
       <Footer />
-      <Suspense fallback={null}>
-        <ChatBot />
-      </Suspense>
     </div>
   );
 };
