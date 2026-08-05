@@ -1,162 +1,240 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { Pause, Play, ChevronLeft, ChevronRight, ArrowRight, BrainCircuit, Cloud, Cpu, LineChart, Layers } from 'lucide-react';
 
-const Hero = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const cards = [
+  {
+    id: "erp",
+    title: "POWERING AI-FIRST ENTERPRISES",
+    highlight: "AI Advised Enterprise",
+    description: "Scale your cloud advantage with the world's most comprehensive and adopted cloud provider. Dimension enables AI-driven ERP architectures tailored to your industry constraints.",
+    image: "/dimension_ERP.png",
+    color: "bg-[#0B3A5A]/95", // Deep Navy
+    logo: BrainCircuit
+  },
+  {
+    id: "cloud",
+    title: "ORACLE CLOUD TRANSFORMATION",
+    highlight: "Oracle Center of Excellence",
+    description: "Accelerate your transition to OCI. From on-premise migrations to cloud-native application development, our Oracle experts deliver zero-disruption implementations.",
+    image: "/dimension_pro.png",
+    color: "bg-[#42258F]/95", // Purple
+    logo: Cloud
+  },
+  {
+    id: "ai",
+    title: "APPLIED AI SOLUTIONS",
+    highlight: "Enterprise Intelligence",
+    description: "Move beyond generative AI hype. Deploy secure, fine-tuned LLMs that connect to your proprietary enterprise data and integrate directly into daily workflows.",
+    image: "/dimension_ai.png",
+    color: "bg-[#0A4B41]/95", // Deep Teal/Green
+    logo: Cpu
+  },
+  {
+    id: "strategy",
+    title: "DIGITAL INNOVATION STRATEGY",
+    highlight: "Strategic Consulting",
+    description: "Navigate digital disruption with confidence. Our advisory services bridge the gap between technical execution and board-level business objectives.",
+    image: "/aiadvStr.png",
+    color: "bg-[#592B19]/95", // Deep Rust/Orange
+    logo: LineChart
+  },
+  {
+    id: "digital",
+    title: "DIGITAL TRANSFORMATION",
+    highlight: "End-to-End Modernization",
+    description: "Comprehensive digital overhauls for legacy systems. We build scalable, resilient architectures that future-proof your organization.",
+    image: "/dimconDigi.png",
+    color: "bg-[#163375]/95", // Deep Royal Blue
+    logo: Layers
+  }
+];
 
-  const slides = [
-    {
-      id: "erp",
-      title: "POWERING AI-FIRST ENTERPRISES",
-      highlight: "AI Advisory & Strategy",
-      desc: "Turn AI ambition into a practical roadmap. We help organizations identify high-impact use cases, assess AI readiness, define implementation strategies, and accelerate adoption with measurable business outcomes.",
-      image: "/aiadvStr.png",
-      PrimaryCTA: "Explore Services",
-      SecondaryCTA: "Book an AI Assessment",
-    },
-
-    {
-      id: "netsuite",
-      title: "POWERING AI-FIRST ENTERPRISES",
-      highlight: "Enterprise AI Solutions",
-      desc: "Embed AI across your business with intelligent automation, predictive insights, AI agents, and enterprise-grade solutions that improve productivity, decision-making, and operational efficiency.",
-      image: "/dimension_ai.png",
-      PrimaryCTA: "Explore Services",
-      SecondaryCTA: "Talk to an AI Expert",
-    },
-
-    {
-      id: "oracle",
-      title: "MODERNIZING ENTERPRISE OPERATIONS",
-      highlight: "AI-Driven ERP Transformation",
-      desc: "Transform finance, supply chain, HR, and operations with Oracle, NetSuite, Salesforce, Workday, and AI-powered ERP solutions designed for faster adoption and long-term business value.",
-      image: "/dimension_ERP.png",
-      PrimaryCTA: "Explore Services",
-      SecondaryCTA: "Schedule a Consultation",
-    },
-
-    {
-      id: "salesforce",
-      title: "BUILDING THE DIGITAL ENTERPRISE",
-      highlight: "Digital Transformation",
-      desc: "Modernize legacy systems, streamline business processes, and build connected digital experiences through cloud technologies, enterprise applications, automation, and intelligent integration.",
-      image: "/dimconDigi.png",
-      PrimaryCTA: "Explore Services",
-      SecondaryCTA: "Book a Strategy Call",
-    },
-
-    {
-      id: "workday",
-      title: "INNOVATION BEYOND CONSULTING",
-      highlight: "AI Products & Enterprise Accelerators",
-      desc: "Accelerate transformation with our proprietary solutions. From AI-powered lead management and cloud migration acceleration to modern HR management, our products help businesses innovate faster.",
-      image: "/dimension_pro.png",
-      PrimaryCTA: "Explore Services",
-      SecondaryCTA: "Book a Product Demo",
-    }
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % slides.length);
-    }, 15000); // Rotate every 5 seconds
-    return () => clearInterval(interval);
-  }, [slides.length]);
-
-  return (
-    <>
-      <section className="relative w-full min-h-[100svh] overflow-hidden bg-white">
-
-
-        {/* Content Container */}
-
-        <div className="relative z-10 max-w-[1500px] mx-auto w-full px-5 sm:px-6 md:px-8 lg:px-10 xl:px-16 pt-28 sm:pt-32 lg:pt-0 min-h-[100svh] flex items-center">
-
-          <div className="relative w-full flex flex-col lg:flex-row items-center justify-center min-h-[600px] lg:min-h-[720px]">
-            {slides.map((slide, index) => (
-              <div
-                key={slide.id}
-                className={`absolute inset-0 w-full flex flex-col lg:flex-row items-center justify-center lg:justify-between gap-6 lg:gap-14 transition-all duration-slider ease-slider ${index === activeIndex ? 'opacity-100 z-10 translate-y-0 pointer-events-auto' : 'opacity-0 z-0 translate-y-8 pointer-events-none'
-                  }`}
-              >
-
-                {/* Left Column (Illustration on Desktop, Top on Mobile) */}
-                <div className="w-full lg:w-[45%] min-[1130px]:w-[50%] flex items-center justify-center lg:justify-start order-1 mb-8 lg:mb-0">
-                  <div className="relative w-full aspect-[4/3] max-h-[35vh] lg:max-h-none lg:aspect-auto h-full flex items-center justify-center">
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      loading={index === 0 ? "eager" : "lazy"}
-                      fetchPriority={index === 0 ? "high" : "auto"}
-                      decoding="async"
-                      className="w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[700px] xl:max-w-[850px] h-full lg:h-auto object-contain drop-shadow-2xl will-change-transform lg:scale-90 min-[1130px]:scale-100 origin-center lg:origin-right transition-transform"
-                    />
-                  </div>
-                </div>
-
-                {/* Right Column (Content on Desktop, Bottom on Mobile) */}
-                <div className="w-full lg:w-[55%] min-[1130px]:w-[50%] max-w-[650px] order-2 flex flex-col justify-center items-center lg:items-start text-center lg:text-left mt-0 lg:mt-0 lg:pl-4 min-[1130px]:pl-0">
-                  <h1 className="flex flex-col m-0 p-0 w-full">
-                    <span className="text-[10px] sm:text-xs md:text-sm lg:text-base min-[1130px]:text-lg font-semibold tracking-[0.18em] text-[#64748B] uppercase mb-2 lg:mb-3">
-                      {slide.title}
-                    </span>
-                    <span
-                      className="font-semibold text-[#0F172A]"
-                      style={{
-                        fontSize: "clamp(2rem, 4.5vw, 4.75rem)",
-                        fontWeight: 600,
-                        lineHeight: 1.05,
-                        letterSpacing: "-0.045em",
-                        textWrap: "balance"
-                      }}
-                    >
-                      {slide.highlight}
-                    </span>
-                  </h1>
-
-                  <p
-                    className="mt-4 lg:mt-5 min-[1130px]:mt-6 max-w-[500px] min-[1130px]:max-w-[560px] text-sm sm:text-base lg:text-lg min-[1130px]:text-xl leading-relaxed text-[#475569]"
-                  >
-                    {slide.desc}
-                  </p>
-
-                  <div
-                    className="mt-6 lg:mt-8 min-[1130px]:mt-10 flex flex-col sm:flex-row gap-3 lg:gap-4 w-full sm:w-auto px-4 sm:px-0 sm:flex-nowrap"
-                  >
-                    <button className="group relative flex items-center justify-center gap-2 h-12 lg:h-[46px] min-[1130px]:h-14 px-6 text-sm sm:text-base bg-[#FF9D4D] text-white font-semibold rounded-full transition-all duration-300 hover:bg-[#E88C41] shadow-lg hover:shadow-[0_10px_40px_rgba(255,157,77,0.3)] w-full sm:w-auto flex-shrink-0 whitespace-nowrap">
-                      <span className="relative z-10">{slide.PrimaryCTA}</span>
-                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </button>
-
-                    <button className="group relative flex items-center justify-center h-12 lg:h-[46px] min-[1130px]:h-14 px-6 text-sm sm:text-base bg-white text-[#000000] border border-[#000000] font-semibold rounded-full transition-all duration-300 hover:bg-slate-50 w-full sm:w-auto flex-shrink-0 whitespace-nowrap">
-                      {slide.SecondaryCTA}
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-            ))}
-          </div>
-
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-              className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-[#1774C3] scale-125' : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-            />
-          ))}
-        </div>
-
-      </section>
-    </>
-  );
+const cardVariants = {
+  center: { x: '0%', scale: 1, zIndex: 10, opacity: 1 },
+  left: { x: '-70%', scale: 0.85, zIndex: 5, opacity: 0.6 },
+  right: { x: '70%', scale: 0.85, zIndex: 5, opacity: 0.6 },
+  hiddenLeft: { x: '-120%', scale: 0.5, zIndex: 0, opacity: 0 },
+  hiddenRight: { x: '120%', scale: 0.5, zIndex: 0, opacity: 0 },
 };
 
-export default Hero;
+const getPosition = (index, currentIndex, length) => {
+  if (index === currentIndex) return 'center';
+  if (index === (currentIndex + 1) % length) return 'right';
+  if (index === (currentIndex - 1 + length) % length) return 'left';
+
+  const diff = index - currentIndex;
+  const wrappedDiff = diff < -Math.floor(length / 2) ? diff + length : (diff > Math.floor(length / 2) ? diff - length : diff);
+  return wrappedDiff > 0 ? 'hiddenRight' : 'hiddenLeft';
+};
+
+export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  const length = cards.length;
+  const SLIDE_INTERVAL = 6000;
+
+  useEffect(() => {
+    let progressInterval;
+    let slideTimeout;
+
+    if (!isPaused) {
+      const step = 50;
+      progressInterval = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) return 100;
+          return prev + (step / SLIDE_INTERVAL) * 100;
+        });
+      }, step);
+
+      slideTimeout = setTimeout(() => {
+        handleNext();
+      }, SLIDE_INTERVAL);
+    }
+
+    return () => {
+      clearInterval(progressInterval);
+      clearTimeout(slideTimeout);
+    };
+  }, [isPaused, currentIndex]);
+
+  const handleNext = () => {
+    setProgress(0);
+    setCurrentIndex((prev) => (prev + 1) % length);
+  };
+
+  const handlePrev = () => {
+    setProgress(0);
+    setCurrentIndex((prev) => (prev - 1 + length) % length);
+  };
+
+  const togglePause = () => {
+    setIsPaused(!isPaused);
+  };
+
+  return (
+    <section className="relative w-full min-h-[100svh] overflow-hidden bg-white font-sans text-slate-900 flex flex-col justify-between pb-8 pt-24">
+      
+      {/* Background Subtle Gradient overlay */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+         <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-[#00C2FF] rounded-full mix-blend-multiply filter blur-[200px] opacity-[0.1]"></div>
+         <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-[#0B5FFF] rounded-full mix-blend-multiply filter blur-[150px] opacity-[0.1]"></div>
+      </div>
+
+      {/* Top Header */}
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-8">
+
+
+        {/* Navigation Controls */}
+        <div className="flex items-center gap-3 shrink-0 ml-auto">
+          <button 
+            onClick={togglePause}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 transition-all hover:bg-slate-900 hover:text-white hover:border-slate-900"
+            aria-label={isPaused ? "Play" : "Pause"}
+          >
+            {isPaused ? <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-current" /> : <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />}
+          </button>
+          <button 
+            onClick={handlePrev}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 transition-all hover:bg-slate-900 hover:text-white hover:border-slate-900"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+          <button 
+            onClick={handleNext}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-slate-300 flex items-center justify-center text-slate-600 transition-all hover:bg-slate-900 hover:text-white hover:border-slate-900"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+        </div>
+      </div>
+
+      {/* Carousel */}
+      <div className="relative z-10 flex-1 w-full flex items-center justify-center perspective-[2000px] my-6">
+        <div className="relative w-full max-w-[800px] h-[320px] sm:h-[400px] lg:h-[460px] flex items-center justify-center">
+          {cards.map((card, index) => {
+            const position = getPosition(index, currentIndex, length);
+            const isCenter = position === 'center';
+            const Icon = card.logo;
+            
+            return (
+              <motion.div
+                key={card.id}
+                variants={cardVariants}
+                initial={false}
+                animate={position}
+                transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+                className={`absolute w-[90%] sm:w-[650px] lg:w-[800px] h-full rounded-2xl sm:rounded-3xl overflow-hidden cursor-pointer shadow-2xl bg-slate-100 ${!isCenter && 'pointer-events-none'}`}
+                onClick={() => !isCenter && setCurrentIndex(index)}
+              >
+                {/* Image Background */}
+                <img 
+                  src={card.image} 
+                  alt={card.title}
+                  className="absolute inset-0 w-full h-full object-cover object-center opacity-85"
+                />
+                
+                {/* Colored Info Panel Overlay */}
+                <div className={`absolute top-2 right-2 bottom-2 w-[65%] sm:top-4 sm:right-4 sm:bottom-4 sm:w-[50%] ${card.color} backdrop-blur-md rounded-xl sm:rounded-2xl p-5 sm:p-8 flex flex-col justify-between border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)]`}>
+                  <div>
+                     <div className="flex items-center gap-3 mb-4 opacity-90 text-white">
+                       <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[#00C2FF]" />
+                       <span className="text-sm sm:text-base font-bold tracking-wide uppercase">{card.highlight}</span>
+                     </div>
+                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 leading-tight">{card.title}</h3>
+                     <p className="text-xs sm:text-sm text-gray-200 leading-relaxed max-w-[95%]">
+                       {card.description}
+                     </p>
+                  </div>
+                  
+                  <div className="flex items-center gap-2 font-semibold text-sm sm:text-base text-white group w-fit cursor-pointer mt-4">
+                    Learn More 
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Bottom Progress & Logos */}
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 sm:px-12 lg:px-20 mt-auto pt-6">
+        <div className="flex items-end justify-between gap-3 sm:gap-6">
+          {cards.map((card, idx) => {
+            const isActive = idx === currentIndex;
+            return (
+              <div 
+                key={card.id} 
+                className={`flex-1 flex flex-col gap-3 sm:gap-4 items-center cursor-pointer transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-40 hover:opacity-70'}`}
+                onClick={() => {
+                  setProgress(0);
+                  setCurrentIndex(idx);
+                }}
+              >
+                {/* Progress Bar Line */}
+                <div className="w-full h-[2px] bg-slate-200 relative rounded-full overflow-hidden">
+                  {isActive && (
+                    <motion.div 
+                      className="absolute top-0 left-0 h-full bg-[#0B5FFF] rounded-full"
+                      initial={{ width: `${progress}%` }}
+                      animate={{ width: `${progress}%` }}
+                      transition={{ duration: 0.1, ease: "linear" }}
+                    />
+                  )}
+                </div>
+                {/* Short Title under line */}
+                <div className="flex items-center justify-center h-8">
+                  <span className="hidden sm:block font-medium tracking-wide text-xs sm:text-sm text-center line-clamp-1 text-slate-700">{card.highlight}</span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      
+    </section>
+  );
+}

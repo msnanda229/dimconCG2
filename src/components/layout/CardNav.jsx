@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
+import { 
   ChevronDown, Menu, X, ArrowRight,
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus, Bot
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download
 } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { generateNavigationData } from '../../utils/navigation';
@@ -15,12 +15,12 @@ const iconMap = {
   Cloud, Layers, Building2, Handshake, Users, BookOpen,
   Database, Server, Briefcase, Cpu, RefreshCw, Settings,
   Shield, Zap, LifeBuoy, Heart, DollarSign, Truck, BarChart,
-  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download, Factory, ShoppingCart, ShieldPlus, Bot,
+  Map, Lightbulb, Activity, TrendingUp, FileText, HelpCircle, Download,
   CloudUpload: Cloud // alias
 };
 
 const getCategoryIcon = (slug) => {
-  switch (slug) {
+  switch(slug) {
     case 'services': return <Layers size={32} strokeWidth={1.5} />;
     case 'cloud-applications': return <Cloud size={32} strokeWidth={1.5} />;
     case 'industry-solutions': return <Building2 size={32} strokeWidth={1.5} />;
@@ -36,51 +36,41 @@ const aiSolutionsData = [
   {
     heading: "AI Strategy",
     items: [
-      { title: "AI Assessment", description: "Evaluate enterprise AI maturity and opportunities.", icon: "Activity", path: "/ai-solutions/assessment" },
-      { title: "AI Readiness", description: "Prepare people, processes, and technology for AI adoption.", icon: "Database", path: "/ai-solutions/readiness" },
-      { title: "AI Advisory", description: "Define an enterprise AI roadmap aligned with business goals.", icon: "Lightbulb", path: "/ai-solutions/advisory" }
+      { title: "AI Assessment", description: "Evaluate enterprise AI maturity and opportunities.", icon: "Activity", path: "#" },
+      { title: "AI Readiness", description: "Prepare people, processes, and technology for AI adoption.", icon: "Database", path: "#" },
+      { title: "AI Advisory", description: "Define an enterprise AI roadmap aligned with business goals.", icon: "Lightbulb", path: "#" }
     ]
   },
   {
     heading: "Enterprise AI",
     items: [
-      { title: "Generative AI", description: "LLM-powered enterprise applications and copilots.", icon: "RefreshCw", path: "/ai-solutions/generative-ai" },
-      { title: "Agentic AI", description: "Autonomous AI agents for intelligent business workflows.", icon: "Cpu", path: "/ai-solutions/agentic-ai" },
-      { title: "AI Assistants", description: "Intelligent virtual assistants to augment human productivity.", icon: "Bot", path: "/ai-solutions/assistants" },
-      { title: "AI Automation", description: "AI-powered business process automation.", icon: "Zap", path: "/ai-solutions/automation" }
+      { title: "Generative AI", description: "LLM-powered enterprise applications and copilots.", icon: "RefreshCw", path: "#" },
+      { title: "Agentic AI", description: "Autonomous AI agents for intelligent business workflows.", icon: "Cpu", path: "#" },
+      { title: "AI Automation", description: "AI-powered business process automation.", icon: "Zap", path: "#" }
     ]
   },
   {
     heading: "Responsible AI",
     items: [
-      { title: "AI Governance", description: "Secure, compliant, ethical, and scalable AI frameworks.", icon: "Shield", path: "/ai-solutions/governance" }
+      { title: "AI Governance", description: "Secure, compliant, ethical, and scalable AI frameworks.", icon: "Shield", path: "#" }
     ]
   }
 ];
-
-const logoSizes = {
-  Oracle: "max-w-[75%] max-h-[70%]",
-  Salesforce: "max-w-[75%] max-h-[70%]",
-  Rootstock: "max-w-[80%] max-h-[70%]",
-  NetSuite: "max-w-[78%] max-h-[68%]",
-  Celigo: "max-w-[65%] max-h-[60%]",
-  Opkey: "max-w-[65%] max-h-[60%]",
-};
 
 const CardNav = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200);
-
+  
   // Desktop Mega Menu State
   const [activeMenu, setActiveMenu] = useState(null);
   const [hoverIntent, setHoverIntent] = useState(null);
-
+  
   // Mobile Drawer State
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeAccordion, setActiveAccordion] = useState(null);
-
+  
   const navData = useMemo(() => generateNavigationData(), []);
 
   // Handle Resize
@@ -159,7 +149,7 @@ const CardNav = () => {
 
   // Close menus on route change or resize to desktop
   useEffect(() => {
-    if (windowWidth >= 1130) {
+    if (windowWidth >= 1024) {
       setIsMobileMenuOpen(false);
     }
   }, [windowWidth]);
@@ -192,8 +182,8 @@ const CardNav = () => {
     return "64px";
   };
 
-  const isMobile = windowWidth < 1130;
-  const isLightBg = !['/industries'].includes(location.pathname);
+  const isMobile = windowWidth < 1024;
+  const isLightBg = location.pathname === '/' || location.pathname === '/contact';
   const effectiveIsScrolled = isScrolled || activeMenu !== null;
 
   // 3. SCROLL BEHAVIOR:
@@ -281,13 +271,13 @@ const CardNav = () => {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="flex items-center justify-between w-full h-full relative z-10 max-w-[1920px] mx-auto">
-
+            
             {/* Left: Logo */}
             <div className="flex-1 min-w-0 flex items-center justify-start h-full">
               <Link to="/" onClick={handleLogoClick} className="flex-shrink-0 flex items-center h-full group" aria-label="Home" onMouseEnter={() => setHoverIntent(null)}>
-                <motion.img
-                  src="/logo.png"
-                  alt="Dimension Consulting Logo"
+                <motion.img 
+                  src="/logo.png" 
+                  alt="Dimension Consulting Logo" 
                   fetchPriority="high"
                   className="h-9 md:h-10 lg:h-12 xl:h-14 object-contain max-w-[180px] xl:max-w-[220px] w-auto group-hover:scale-[1.03] transition-transform duration-300 ease-out"
                   animate={{
@@ -300,8 +290,8 @@ const CardNav = () => {
             </div>
 
             {/* Center: Navigation Links */}
-            <div
-              className="hidden min-[1130px]:flex min-w-0 items-center justify-center gap-1 xl:gap-2 2xl:gap-3 h-full z-20"
+            <div 
+              className="hidden lg:flex min-w-0 items-center justify-center gap-1 xl:gap-2 2xl:gap-3 h-full z-20"
               onMouseLeave={() => setHoverIntent(null)}
             >
               {navData.map((category) => {
@@ -312,19 +302,23 @@ const CardNav = () => {
                     className="h-full flex items-center relative group"
                     onMouseEnter={() => setHoverIntent(category.slug)}
                   >
-                    <button
+                    <button 
                       onClick={(e) => handleNavClick(category.slug, e)}
-                      className={`relative px-2 xl:px-3 py-2 flex items-center justify-center transition-colors focus:outline-none min-h-[48px] ${isHovered
-                        ? 'text-[#2563EB]'
-                        : (effectiveIsScrolled
-                          ? 'text-[#0F172A] hover:text-[#2563EB]'
-                          : (isLightBg ? 'text-black hover:text-[#2563EB]' : 'text-white/80 hover:text-white')
-                        )
-                        }`}
+                      className={`relative px-2 xl:px-3 py-2 flex items-center justify-center transition-colors focus:outline-none min-h-[48px] ${
+                        isHovered 
+                          ? 'text-[#2563EB]' 
+                          : (effectiveIsScrolled 
+                              ? 'text-[#0F172A] hover:text-[#2563EB]' 
+                              : (isLightBg ? 'text-slate-800 hover:text-[#2563EB]' : 'text-white/80 hover:text-white')
+                            )
+                      }`}
                       aria-expanded={activeMenu === category.slug}
                     >
-
-
+                      {/* Top Dot */}
+                      <div className={`absolute top-0 w-[5px] h-[5px] rounded-full transition-all duration-300 ${
+                        isHovered ? 'bg-[#2563EB] shadow-[0_0_8px_rgba(37,99,235,0.8)] opacity-100 scale-100' : 'bg-transparent opacity-0 scale-0'
+                      }`}></div>
+                      
                       <span className={`text-sm font-semibold relative whitespace-nowrap transition-all duration-200 ${isHovered ? "text-[#2563EB]" : ""}`}>
                         {category.name}
                         {/* Animated Underline */}
@@ -343,37 +337,45 @@ const CardNav = () => {
             </div>
 
             {/* Right: CTA & Hamburger */}
-            <div className="flex-1 min-w-0 flex items-center justify-end gap-2 min-[1130px]:gap-3">
+            <div className="flex-1 min-w-0 flex items-center justify-end gap-2 lg:gap-3">
+              {/* Desktop CTA */}
+              <div 
+                className="hidden lg:flex items-center h-full relative"
+                onMouseEnter={() => setHoverIntent('ai-solutions')}
+                onMouseLeave={() => setHoverIntent(null)}
+              >
+                <button 
+                  className={`inline-flex items-center justify-center min-h-11 px-5 xl:px-6 rounded-full font-semibold tracking-wide transition-all duration-300 group text-sm ${
+                    activeMenu === 'ai-solutions' 
+                      ? 'bg-gradient-to-r from-[#D9872A] to-[#BF6206] text-white shadow-[0_10px_24px_rgba(191,98,6,0.28)]' 
+                      : 'bg-gradient-to-r from-[#D9872A] to-[#BF6206] hover:from-[#C7781C] hover:to-[#A75404] text-white'
+                  }`}
+                  aria-expanded={activeMenu === 'ai-solutions'}
+                >
+                  AI Solutions 
+                  <ChevronDown className={`w-4 h-4 ml-1.5 transition-transform duration-300 ${activeMenu === 'ai-solutions' ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
 
-              {/* Mobile Hamburger (Now before CTA on <1130px) */}
-              <button
-                className={`min-[1130px]:hidden flex items-center justify-center w-[44px] h-[44px] focus:outline-none rounded-md transition-colors ${(effectiveIsScrolled || isLightBg) ? 'text-black' : 'text-white'}`}
+              {/* Mobile/Tablet CTA */}
+              <div className="block lg:hidden">
+                <button onClick={() => setIsMobileMenuOpen(true)} className="inline-flex items-center justify-center h-9 sm:h-10 px-4 sm:px-5 rounded-full bg-gradient-to-r from-[#D9872A] to-[#BF6206] hover:from-[#C7781C] hover:to-[#A75404] text-white text-xs sm:text-sm font-semibold transition-all duration-300 shadow-[0_8px_20px_rgba(191,98,6,0.2)]">
+                  <span className="hidden sm:inline">AI Solutions</span>
+                  <span className="sm:hidden">AI</span>
+                </button>
+              </div>
+              
+              {/* Mobile Hamburger */}
+              <button 
+                className={`lg:hidden flex items-center justify-center w-[44px] h-[44px] focus:outline-none rounded-md transition-colors ${(effectiveIsScrolled || isLightBg) ? 'text-slate-800' : 'text-white'}`}
                 aria-label="Open Mobile Menu"
                 aria-expanded={isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(true)}
               >
                 <Menu size={26} />
               </button>
-
-              {/* Desktop CTA */}
-              <div
-                className="hidden min-[1130px]:flex items-center h-full relative"
-                onMouseEnter={() => setHoverIntent('ai-solutions')}
-                onMouseLeave={() => setHoverIntent(null)}
-              >
-                <button
-                  className={`inline-flex items-center justify-center min-h-11 px-5 xl:px-6 rounded-full font-semibold tracking-wide transition-all duration-300 group text-sm ${activeMenu === 'ai-solutions'
-                    ? 'bg-gradient-to-r from-[#D9872A] to-[#BF6206] text-white shadow-[0_10px_24px_rgba(191,98,6,0.28)]'
-                    : 'bg-gradient-to-r from-[#D9872A] to-[#BF6206] hover:from-[#C7781C] hover:to-[#A75404] text-white'
-                    }`}
-                  aria-expanded={activeMenu === 'ai-solutions'}
-                >
-                  AI Solutions
-                  <ChevronDown className={`w-4 h-4 ml-1.5 transition-transform duration-300 ${activeMenu === 'ai-solutions' ? 'rotate-180' : ''}`} />
-                </button>
-              </div>
             </div>
-
+            
           </div>
         </motion.nav>
 
@@ -395,19 +397,19 @@ const CardNav = () => {
               {(() => {
                 if (activeMenu === 'ai-solutions') {
                   return (
-                    <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-8 mt-4 h-fit">
-
+                    <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-8 mt-4">
+                      
                       {/* Left: AI Solutions Sub-navigation grid */}
-                      <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-4 border-r border-[#E8ECF5] pr-6">
+                      <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-1 content-start border-r border-[#E8ECF5] pr-6">
                         {aiSolutionsData.map((col, colIdx) => (
                           <div key={colIdx} className="flex flex-col gap-2">
                             <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">
                               {col.heading}
                             </h4>
                             {col.items.map((item, idx) => (
-                              <Link
-                                key={idx}
-                                to={item.path}
+                              <Link 
+                                key={idx} 
+                                to={item.path} 
                                 className="group/item flex gap-3 p-3 rounded-xl hover:bg-orange-50/50 border border-transparent hover:border-orange-100/50 transition-all duration-micro min-h-12 relative overflow-hidden"
                                 onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
                               >
@@ -467,11 +469,10 @@ const CardNav = () => {
                 const category = navData.find(c => c.slug === activeMenu);
                 if (!category) return null;
                 return (
-                  <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4 relative h-fit">
-
-
+                  <div className="bg-white rounded-3xl border border-[#E8ECF5] shadow-[0_12px_40px_rgba(15,23,42,0.12)] w-full max-w-7xl p-8 flex gap-10 mt-4">
+                    
                     {/* COLUMN 1: Overview */}
-                    <div className="w-[28%] flex flex-col border-r border-[#E8ECF5] pr-6 shrink-0 relative z-10">
+                    <div className="w-[28%] flex flex-col border-r border-[#E8ECF5] pr-6 shrink-0">
                       <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2563EB]/10 to-[#60A5FA]/10 flex items-center justify-center text-[#2563EB] mb-6">
                         {getCategoryIcon(category.slug)}
                       </div>
@@ -481,91 +482,61 @@ const CardNav = () => {
                       <p className="text-sm text-[#64748B] leading-relaxed mb-6">
                         {category.description}
                       </p>
-                      <Link
-                        to={`/${category.slug}`}
+                      <Link 
+                        to={`/${category.slug}`} 
                         className="inline-flex items-center text-sm font-bold text-[#2563EB] hover:text-[#1D4ED8] transition-colors gap-2 group mt-auto min-h-12"
                         onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
                       >
-                        {category.featuredCTA}
+                        {category.featuredCTA} 
                         <ArrowRight size={16} className="group-hover:translate-x-[4px] transition-transform duration-micro" />
                       </Link>
                     </div>
-
+                    
                     {/* COLUMN 2: Sub-navigation grid */}
-                    <div className={
-                      category.slug === "partnerships"
-                        ? "w-[72%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10"
-                        : "w-[72%] grid grid-cols-3 gap-x-5 gap-y-4 relative z-10"
-                    }>
-                      {category.slug === "partnerships" ? (
-                        category.columns.flatMap(col => col.items).map((item, idx) => (
-                          <Link
-                            key={idx}
-                            to={item.path}
-                            className="bg-white rounded-2xl border border-[#E2E8F0] shadow-sm flex items-center justify-center h-[90px] xl:h-[100px] hover:-translate-y-1 hover:border-[#2563EB] hover:shadow-[0_8px_20px_rgba(37,99,235,0.12)] hover:bg-[#F8FBFF] transition-all duration-300 group/partner relative overflow-hidden"
-                            onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
-                          >
-                            <img
-                              src={item.image}
-                              alt={item.title}
-                              className={`object-contain transition-transform duration-300 group-hover/partner:scale-105 ${logoSizes[item.title] || "max-w-[75%] max-h-[70%]"}`}
-                            />
-                          </Link>
-                        ))
-                      ) : (
-                        category.columns?.map((col, colIdx) => (
-                          <div key={colIdx} className="flex flex-col gap-2">
-                            {col.heading && (
-                              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">
-                                {col.heading}
-                              </h4>
-                            )}
-                            {col.items.map((item, idx) => (
-                              <Link
-                                key={idx}
-                                to={item.path}
-                                className="group/item flex gap-3 p-3 rounded-xl border border-transparent transition-all min-h-12 relative overflow-hidden hover:bg-blue-50/50 hover:border-blue-100/50 duration-micro"
-                                onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
-                              >
-                                <div
-                                  className="w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden"
-                                >
-                                  {item.image ? (
-                                    <img
-                                      src={item.image}
-                                      alt={item.title}
-                                      className="object-contain w-full h-full scale-[1.8] transition-transform duration-300"
-                                    />
-                                  ) : (
-                                    (() => {
-                                      const IconComponent = iconMap[item.icon] || Cloud;
-                                      return (
-                                        <IconComponent size={16} />
-                                      );
-                                    })()
-                                  )}
-                                </div>
-
-                                <div className="flex-1 min-w-0 pr-4">
-                                  <h4 className="font-semibold text-sm text-[#0F172A] mb-0.5 group-hover/item:text-[#2563EB] transition-colors duration-micro truncate">
-                                    {item.title}
-                                  </h4>
-                                  <p className="text-xs text-[#64748B] leading-snug truncate">
-                                    {item.description}
-                                  </p>
-                                </div>
-
-                                {/* Hover Arrow */}
-                                <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-[#2563EB]">
-                                  <ArrowRight size={14} />
-                                </div>
-                              </Link>
-                            ))}
-                          </div>
-                        ))
-                      )}
+                    <div className="w-[72%] grid grid-cols-3 gap-x-5 gap-y-1 content-start">
+                      {category.columns?.map((col, colIdx) => (
+                        <div key={colIdx} className="flex flex-col gap-2">
+                          {col.heading && (
+                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-2">
+                              {col.heading}
+                            </h4>
+                          )}
+                          {col.items.map((item, idx) => (
+                            <Link 
+                              key={idx} 
+                              to={item.path} 
+                              className="group/item flex gap-3 p-3 rounded-xl hover:bg-blue-50/50 border border-transparent hover:border-blue-100/50 transition-all duration-micro min-h-12 relative overflow-hidden"
+                              onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
+                            >
+                              <div className="w-9 h-9 rounded-lg bg-[#F8FAFC] border border-[#E2E8F0] flex items-center justify-center text-[#94A3B8] group-hover/item:text-[#2563EB] group-hover/item:border-blue-100 group-hover/item:bg-white transition-colors duration-micro shrink-0 overflow-hidden">
+                                {item.image ? (
+                                  <img src={item.image} alt={item.title} className="w-[70%] h-[70%] object-contain" />
+                                ) : (
+                                  (() => {
+                                    const IconComponent = iconMap[item.icon] || Cloud;
+                                    return <IconComponent size={16} />;
+                                  })()
+                                )}
+                              </div>
+                              <div className="flex-1 min-w-0 pr-4">
+                                <h4 className="font-semibold text-sm text-[#0F172A] mb-0.5 group-hover/item:text-[#2563EB] transition-colors duration-micro truncate">
+                                  {item.title}
+                                </h4>
+                                <p className="text-xs text-[#64748B] leading-snug truncate">
+                                  {item.description}
+                                </p>
+                              </div>
+                              
+                              {/* Hover Arrow */}
+                              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300 text-[#2563EB]">
+                                <ArrowRight size={14} />
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      ))}
                     </div>
-
+                    
                   </div>
                 );
               })()}
@@ -573,17 +544,17 @@ const CardNav = () => {
           )}
         </AnimatePresence>
       </div>
-
+      
       {/* Desktop Full-Screen Overlay */}
       <AnimatePresence>
         {activeMenu && (
-          <motion.div
+          <motion.div 
             className="fixed inset-0 z-[998] cursor-pointer"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            style={{
+            style={{ 
               backgroundColor: "rgba(15,23,42,0.35)"
             }}
             onClick={() => { setHoverIntent(null); setActiveMenu(null); }}
@@ -597,14 +568,14 @@ const CardNav = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            <motion.div
+            <motion.div 
               className="fixed inset-0 z-[1998] bg-slate-950/40 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            <motion.div
+            <motion.div 
               className="fixed inset-y-0 right-0 z-[1999] w-full max-w-[400px] bg-white shadow-2xl flex flex-col"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -613,7 +584,7 @@ const CardNav = () => {
             >
               <div className="p-6 border-b border-[#E2E8F0] flex items-center justify-between">
                 <img src="/logo.png" alt="Dimension Consulting Logo" fetchPriority="high" className="h-8 object-contain" />
-                <button
+                <button 
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-4 text-slate-500 hover:text-slate-800 hover:bg-slate-100 rounded-full transition-colors"
                   aria-label="Close menu"
@@ -623,20 +594,81 @@ const CardNav = () => {
               </div>
 
               <div className="flex-1 overflow-y-auto py-2 px-6 flex flex-col gap-1">
+                {/* AI Solutions Mobile Accordion */}
+                <div className="border-b border-[#E2E8F0] py-2">
+                  <button 
+                    className={`flex items-center justify-between w-full py-4 text-left font-heading text-lg font-bold focus:outline-none transition-colors ${activeAccordion === 'ai-solutions' ? 'text-[#D9872A]' : 'text-[#0F172A]'}`}
+                    onClick={() => toggleAccordion('ai-solutions')}
+                    aria-expanded={activeAccordion === 'ai-solutions'}
+                  >
+                    AI Solutions
+                    <ChevronDown 
+                      size={18} 
+                      className={`text-[#94A3B8] transition-transform duration-300 ${activeAccordion === 'ai-solutions' ? 'rotate-180 text-[#D9872A]' : ''}`} 
+                    />
+                  </button>
+                  <AnimatePresence>
+                    {activeAccordion === 'ai-solutions' && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <ul className="flex flex-col gap-2 pb-6 pt-2">
+                          {aiSolutionsData.flatMap(c => c.items).map((item, idx) => (
+                            <motion.li 
+                              key={idx}
+                              initial={{ opacity: 0, x: -10 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              transition={{ delay: idx * 0.05 }}
+                            >
+                              <Link 
+                                to={item.path} 
+                                className="flex items-center gap-3 text-base font-medium text-[#64748B] hover:text-[#D9872A] transition-colors py-3 px-4 min-h-[44px] rounded-lg hover:bg-orange-50"
+                              >
+                                {(() => {
+                                  const IconComponent = iconMap[item.icon] || Cloud;
+                                  return <IconComponent size={16} />;
+                                })()}
+                                {item.title}
+                              </Link>
+                            </motion.li>
+                          ))}
+                          <motion.li
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: aiSolutionsData.flatMap(c => c.items).length * 0.05 }}
+                            className="mt-4 px-3"
+                          >
+                            <Link 
+                              to="/contact" 
+                              className="inline-flex items-center justify-center w-full gap-2 text-sm font-bold text-white bg-gradient-to-r from-[#D9872A] to-[#BF6206] px-4 py-3 rounded-full transition-colors shadow-sm"
+                            >
+                              Talk to an AI Expert
+                              <ArrowRight size={14} />
+                            </Link>
+                          </motion.li>
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
 
                 {navData.map((category) => {
                   const isActive = activeAccordion === category.slug;
                   return (
-                    <div key={category.slug} className="border-b border-[#E2E8F0] py-2">
-                      <button
+                    <div key={category.slug} className="border-b border-[#E2E8F0] last:border-0 py-2">
+                      <button 
                         className={`flex items-center justify-between w-full py-4 text-left font-heading text-lg font-bold focus:outline-none transition-colors ${isActive ? 'text-[#2563EB]' : 'text-[#0F172A]'} min-h-[56px]`}
                         onClick={() => toggleAccordion(category.slug)}
                         aria-expanded={isActive}
                       >
                         {category.name}
-                        <ChevronDown
-                          size={18}
-                          className={`text-[#94A3B8] transition-transform duration-300 ${isActive ? 'rotate-180 text-[#2563EB]' : ''}`}
+                        <ChevronDown 
+                          size={18} 
+                          className={`text-[#94A3B8] transition-transform duration-300 ${isActive ? 'rotate-180 text-[#2563EB]' : ''}`} 
                         />
                       </button>
                       <AnimatePresence>
@@ -650,14 +682,14 @@ const CardNav = () => {
                           >
                             <ul className="flex flex-col gap-2 pb-6 pt-2">
                               {category.columns?.flatMap(c => c.items).map((item, idx) => (
-                                <motion.li
+                                <motion.li 
                                   key={idx}
                                   initial={{ opacity: 0, x: -10 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: idx * 0.05 }}
                                 >
-                                  <Link
-                                    to={item.path}
+                                  <Link 
+                                    to={item.path} 
                                     className="flex items-center gap-3 text-base font-medium text-[#64748B] hover:text-[#2563EB] transition-colors py-3 px-4 min-h-[44px] rounded-lg hover:bg-blue-50"
                                   >
                                     {item.image ? (
@@ -678,8 +710,8 @@ const CardNav = () => {
                                 transition={{ delay: (category.columns?.flatMap(c => c.items).length || 0) * 0.05 }}
                                 className="mt-4 px-3"
                               >
-                                <Link
-                                  to={`/${category.slug}`}
+                                <Link 
+                                  to={`/${category.slug}`} 
                                   className="inline-flex items-center justify-center w-full gap-2 text-sm font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] px-4 py-3 rounded-full transition-colors shadow-sm"
                                 >
                                   {category.featuredCTA}
@@ -693,68 +725,6 @@ const CardNav = () => {
                     </div>
                   );
                 })}
-
-                {/* AI Solutions Mobile Accordion (Moved to end) */}
-                <div className="border-b border-[#E2E8F0] last:border-0 py-2">
-                  <button
-                    className={`flex items-center justify-between w-full py-4 text-left font-heading text-lg font-bold focus:outline-none transition-colors ${activeAccordion === 'ai-solutions' ? 'text-[#D9872A]' : 'text-[#0F172A]'}`}
-                    onClick={() => toggleAccordion('ai-solutions')}
-                    aria-expanded={activeAccordion === 'ai-solutions'}
-                  >
-                    AI Solutions
-                    <ChevronDown
-                      size={18}
-                      className={`text-[#94A3B8] transition-transform duration-300 ${activeAccordion === 'ai-solutions' ? 'rotate-180 text-[#D9872A]' : ''}`}
-                    />
-                  </button>
-                  <AnimatePresence>
-                    {activeAccordion === 'ai-solutions' && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <ul className="flex flex-col gap-2 pb-6 pt-2">
-                          {aiSolutionsData.flatMap(c => c.items).map((item, idx) => (
-                            <motion.li
-                              key={idx}
-                              initial={{ opacity: 0, x: -10 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: idx * 0.05 }}
-                            >
-                              <Link
-                                to={item.path}
-                                className="flex items-center gap-3 text-base font-medium text-[#64748B] hover:text-[#D9872A] transition-colors py-3 px-4 min-h-[44px] rounded-lg hover:bg-orange-50"
-                              >
-                                {(() => {
-                                  const IconComponent = iconMap[item.icon] || Cloud;
-                                  return <IconComponent size={16} />;
-                                })()}
-                                {item.title}
-                              </Link>
-                            </motion.li>
-                          ))}
-                          <motion.li
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: aiSolutionsData.flatMap(c => c.items).length * 0.05 }}
-                            className="mt-4 px-3"
-                          >
-                            <Link
-                              to="/contact"
-                              className="inline-flex items-center justify-center w-full gap-2 text-sm font-bold text-white bg-gradient-to-r from-[#D9872A] to-[#BF6206] px-4 py-3 rounded-full transition-colors shadow-sm"
-                            >
-                              Talk to an AI Expert
-                              <ArrowRight size={14} />
-                            </Link>
-                          </motion.li>
-                        </ul>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
               </div>
               <div className="p-8 border-t border-[#E2E8F0] bg-slate-50 mt-auto">
                 <div className="flex flex-col gap-4">
